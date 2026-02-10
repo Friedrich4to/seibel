@@ -1,17 +1,310 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
+import ImpactCard from '../components/ImpactCard.astro';
+import TeamMemberCard from '../components/TeamMemberCard.astro';
+import altoImpactoData from '../data/altoImpacto.json';
+import teamMembersData from '../data/teamMembers.json';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout
+	title="Home"
+	description="Welcome to Seibel Henriquez website"
+	keywords="your, keywords, here"
+>
+	<!-- Hero Section -->
+	<section class="relative h-screen w-full flex items-end justify-start pb-12 pl-12">
+		<!-- Placeholder for hero image -->
+		<video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline>
+			<source src="/hero_video.mp4" type="video/mp4" />
+		</video>
+
+		<h1 class="text-light-gray text-3xl md:text-4xl lg:text-6xl font-regular z-10">
+			Transformamos el derecho en desarrollo.
+		</h1>
+	</section>
+
+	<!-- Stats Section -->
+	<section class="bg-light-gray py-16 md:py-24 px-6 md:px-12 lg:px-20" id="statsSection">
+		<div class="max-w-360 mx-auto grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+			<div class="text-center lg:text-left">
+				<h2 class="text-bronze text-4xl md:text-5xl font-regular mb-2">
+					+<span class="counter" data-target="1800">0</span>
+				</h2>
+				<p class="text-dark-slate text-sm md:text-xl font-light">Casos atendidos</p>
+			</div>
+			<div class="text-center lg:text-left">
+				<h2 class="text-bronze text-4xl md:text-5xl font-regular mb-2">
+					+<span class="counter" data-target="450">0</span>
+				</h2>
+				<p class="text-dark-slate text-sm md:text-xl font-light">Clientes asesorados</p>
+			</div>
+			<div class="text-center lg:text-left">
+				<h2 class="text-bronze text-4xl md:text-5xl font-regular mb-2">
+					+<span class="counter" data-target="20">0</span>
+				</h2>
+				<p class="text-dark-slate text-sm md:text-xl font-light">Años de experiencia</p>
+			</div>
+			<div class="text-center lg:text-left">
+				<h2 class="text-bronze text-4xl md:text-5xl font-regular mb-2">
+					+<span class="counter" data-target="14">0</span>
+				</h2>
+				<p class="text-dark-slate text-sm md:text-xl font-light">Colaboraciones internacionales</p>
+			</div>
+		</div>
+	</section>
+
+	<script>
+		// Counter animation for stats
+		const statsSection = document.getElementById('statsSection');
+		const counters = document.querySelectorAll('.counter');
+		let hasAnimated = false;
+
+		const animateCounter = (counter: Element) => {
+			const target = parseInt(counter.getAttribute('data-target') || '0');
+			const duration = 5000; // 2 seconds
+			const increment = target / (duration / 16); // 60fps
+			let current = 0;
+
+			const updateCounter = () => {
+				current += increment;
+				if (current < target) {
+					counter.textContent = Math.floor(current).toString();
+					requestAnimationFrame(updateCounter);
+				} else {
+					counter.textContent = target.toString();
+				}
+			};
+
+			updateCounter();
+		};
+
+		// Intersection Observer to trigger animation when section is visible
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting && !hasAnimated) {
+					hasAnimated = true;
+					counters.forEach((counter) => {
+						animateCounter(counter);
+					});
+				}
+			});
+		}, {
+			threshold: 0.5 // Trigger when 50% of the section is visible
+		});
+
+		if (statsSection) {
+			observer.observe(statsSection);
+		}
+	</script>
+
+	<!-- LA FIRMA Section -->
+	<section class="bg-light-gray py-16 md:py-24 px-6 md:px-12 lg:px-20">
+		
+		<div class="max-w-360 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+			<div>
+				<h2 class="text-dark-slate text-3xl md:text-4xl font-light mb-8 tracking-wide">LA FIRMA</h2>
+				
+				<p class="text-dark-slate text-base md:text-2xl mb-4 leading-tight font-light">
+					Establecida en Santo Domingo desde 2005, <span class="font-semibold">Seibel & Henríquez</span> es una firma legal de práctica general que brinda asesoría directa y práctica a clientes empresariales.
+				</p>
+				<p class="text-dark-slate text-base md:text-2xl mb-4 leading-tight font-light">
+					Atendemos desde necesidades cotidianas hasta transacciones y litigios complejos.
+				</p>
+				<button class="border-2 border-bronze text-bronze px-8 py-3 hover:bg-bronze hover:text-white transition-colors duration-300 text-sm md:text-base tracking-wide">
+					Conoce más
+				</button>
+			</div>
+			<div class="bg-gray-300 h-64 md:h-96 w-full"></div>
+		</div>
+	</section>
+
+	<!-- SOCIOS Section -->
+	<section class="bg-dark-slate py-16 md:py-24 px-6 md:px-12 lg:px-20">
+		<div class="max-w-360 mx-auto">
+			<div class="mb-12">
+				<h2 class="text-white text-3xl md:text-4xl font-light tracking-wide">SOCIOS</h2>
+				<div class="w-20 h-0.75 bg-bronze mt-2"></div>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+				<!-- Partner 1 -->
+				<div class="group">
+					<img src="/assets/members/fernando.jpg" alt="Fernando P. Henríquez" class="aspect-square w-full mb-6 object-cover max-h-100 object-top">
+					<div class="flex items-center justify-between">
+						<h3 class="text-white text-xl md:text-3xl font-light tracking-wide">FERNANDO P. HENRÍQUEZ</h3>
+						<button class="border border-white text-white px-6 py-2 text-sm hover:bg-white hover:text-dark-slate transition-colors duration-300">
+							Ver perfil
+						</button>
+					</div>
+				</div>
+
+				<!-- Partner 2 -->
+				<div class="group">
+					<img src="/assets/members/seibel.jpg" alt="John P. Seibel" class="aspect-square w-full mb-6 object-cover max-h-100 object-top">
+					<div class="flex items-center justify-between">
+						<h3 class="text-white text-xl md:text-3xl font-light tracking-wide">JOHN P. SEIBEL</h3>
+						<button class="border border-white text-white px-6 py-2 text-sm hover:bg-white hover:text-dark-slate transition-colors duration-300">
+							Ver perfil
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- NUESTRO EQUIPO Section -->
+	<section class="bg-dark-slate py-16 md:py-24">
+		<div class="max-w-360 mx-auto px-6 md:px-12 lg:px-0">
+			<div class="mb-12">
+				<h2 class="text-white text-3xl md:text-4xl font-light tracking-widest">NUESTRO EQUIPO</h2>
+				<p class="text-white text-base md:text-lg font-light mt-4 max-w-3xl">
+					Una nueva generación de abogados con formación local e internacional,
+					comprometidos con rigor técnico y soluciones prácticas.
+				</p>
+			</div>
+		</div>
+
+		<div class="embla relative" id="teamCarousel">
+			<div class="embla__viewport overflow-hidden">
+				<div class="embla__container h-150 flex gap-0">
+					{teamMembersData.map((member) => (
+						<TeamMemberCard
+							name={member.name}
+							position={member.position}
+							phone={member.phone}
+							email={member.email}
+							image={member.image}
+							imageAlt={member.imageAlt}
+							link={member.link}
+						/>
+					))}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script>
+		const teamCarousel = document.getElementById('teamCarousel');
+		if (teamCarousel && (window as any).EmblaCarousel) {
+			const emblaApi = (window as any).EmblaCarousel(
+				teamCarousel.querySelector('.embla__viewport'),
+				{
+					loop: true,
+					align: 'start',
+					skipSnaps: false,
+					dragFree: true
+				}
+			);
+		}
+	</script>
+
+	<!-- ALTO IMPACTO Section -->
+	<section class="bg-light-gray py-16 md:py-24 px-6 md:px-12 lg:px-20">
+		<div class="max-w-360 mx-auto">
+			<div class="mb-12">
+				<h2 class="text-dark-slate text-3xl md:text-4xl font-light tracking-widest">ALTO IMPACTO</h2>
+			</div>
+
+			<div class="embla relative" id="altoImpactoCarousel">
+				<div class="embla__viewport overflow-hidden">
+					<div class="embla__container flex gap-0">
+						{altoImpactoData.map((item) => (
+							<ImpactCard
+								title={item.title}
+								description={item.description}
+								image={item.image}
+								imageAlt={item.imageAlt}
+							/>
+						))}
+					</div>
+				</div>
+
+				<button
+					class="embla__prev absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-8 w-12 h-12 rounded-full bg-bronze text-white flex items-center justify-center hover:bg-opacity-80 transition-all duration-300 z-10 cursor-pointer"
+					aria-label="Previous slide"
+				>
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+					</svg>
+				</button>
+
+				<button
+					class="embla__next absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-8 w-12 h-12 rounded-full bg-bronze text-white flex items-center justify-center hover:bg-opacity-80 transition-all duration-300 z-10 cursor-pointer"
+					aria-label="Next slide"
+				>
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+					</svg>
+				</button>
+			</div>
+		</div>
+	</section>
+
+	<script>
+		const altoImpactoCarousel = document.getElementById('altoImpactoCarousel');
+		if (altoImpactoCarousel && (window as any).EmblaCarousel) {
+			const emblaApi = (window as any).EmblaCarousel(
+				altoImpactoCarousel.querySelector('.embla__viewport'),
+				{
+					loop: true,
+					align: 'start',
+					skipSnaps: false,
+					dragFree: false
+				}
+			);
+
+			const prevBtn = altoImpactoCarousel.querySelector('.embla__prev');
+			const nextBtn = altoImpactoCarousel.querySelector('.embla__next');
+
+			if (prevBtn && nextBtn) {
+				prevBtn.addEventListener('click', () => emblaApi.scrollPrev());
+				nextBtn.addEventListener('click', () => emblaApi.scrollNext());
+			}
+		}
+	</script>
+
+	<!-- PRÁCTICA RESPONSABLE Section -->
+	<section class="relative h-[80vh] w-full flex items-center">
+		<img
+			src="/assets/practica_responsable.jpg"
+			alt="Práctica Responsable"
+			class="absolute inset-0 w-full h-full object-cover"
+		/>
+
+		<div class="relative z-10 max-w-360 mx-auto px-6 md:px-12 lg:px-0 w-full">
+			<div class="max-w-xl">
+				<h2 class="text-white text-3xl md:text-4xl lg:text-5xl font-light mb-6 tracking-wide">
+					PRÁCTICA RESPONSABLE
+				</h2>
+				<p class="text-white text-base md:text-lg lg:text-xl mb-8 font-light leading-relaxed">
+					Trabajamos junto a nuestros clientes y aliados, utilizando el derecho para contribuir a una mejor sociedad.
+				</p>
+				<button class="border-2 border-bronze text-bronze bg-white bg-opacity-90 px-8 py-3 hover:bg-bronze hover:text-white transition-colors duration-300 text-sm md:text-base tracking-wide">
+					Conoce nuestro compromiso
+				</button>
+			</div>
+		</div>
+	</section>
+
+	<!-- INSIGHTS Section -->
+	<section class="bg-light-gray py-16 md:py-24 px-6 md:px-12 lg:px-20">
+		<div class="max-w-360 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+			<div>
+				<h2 class="text-dark-slate text-3xl md:text-4xl lg:text-5xl font-light mb-6 tracking-wide">
+					INSIGHTS
+				</h2>
+				<p class="text-dark-slate text-base md:text-lg lg:text-xl mb-8 font-light leading-relaxed">
+					Artículos, análisis y actualidad legal sobre los temas que impactan a las empresas.
+				</p>
+				<button class="border-2 border-bronze text-bronze px-8 py-3 hover:bg-bronze hover:text-white transition-colors duration-300 text-sm md:text-base tracking-wide">
+					Únete a nuestro newsletter
+				</button>
+			</div>
+			<div class="relative h-64 md:h-96 bg-bronze bg-opacity-10 overflow-hidden">
+				<div class="absolute left-0 top-1/4 w-full h-1 bg-bronze opacity-30"></div>
+				<div class="absolute left-0 top-1/2 w-3/4 h-1 bg-bronze opacity-40"></div>
+				<div class="absolute left-0 top-3/4 w-1/2 h-1 bg-bronze opacity-30"></div>
+			</div>
+		</div>
+	</section>
+</Layout>

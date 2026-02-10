@@ -1,0 +1,14 @@
+@import "tailwindcss";
+@import "./fonts.css";
+
+/* Custom Color Variables for Tailwind */
+@theme {
+  --color-dark-slate: #323b43;
+  --color-bronze: #8a5f2a;
+  --color-light-gray: #f3f3f3;
+}
+
+/* Base Styles */
+* {
+  font-family: 'Sofia Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
