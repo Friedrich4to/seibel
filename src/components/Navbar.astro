@@ -1,8 +1,9 @@
 ---
+const currentPath = Astro.url.pathname;
 ---
 
 <nav id="navbar" class="hidden lg:block fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-  <div class="max-w-360 mx-auto px-4 sm:px-6 lg:px-0">
+  <div class="mx-auto px-4 sm:px-6 lg:px-12">
     <div class="flex items-center justify-between h-20">
       <!-- Logo -->
       <div class="shrink-0">
@@ -45,22 +46,22 @@
 
       <!-- Desktop Navigation -->
       <div class="flex items-center space-x-8 uppercase">
-        <a href="/la-firma" class="nav-link text-base font-light hover:text-bronze transition-colors">
+        <a href="/la-firma" class:list={["nav-link text-base font-light hover:text-bronze transition-colors", { "active": currentPath.startsWith("/la-firma") }]}>
           La Firma
         </a>
-        <a href="/nuestro-equipo" class="nav-link text-base font-light hover:text-bronze transition-colors">
+        <a href="/nuestro-equipo" class:list={["nav-link text-base font-light hover:text-bronze transition-colors", { "active": currentPath.startsWith("/nuestro-equipo") }]}>
           Nuestro Equipo
         </a>
-        <a href="/areas-de-practica" class="nav-link text-base font-light hover:text-bronze transition-colors">
+        <a href="/areas-de-practica" class:list={["nav-link text-base font-light hover:text-bronze transition-colors", { "active": currentPath.startsWith("/areas-de-practica") }]}>
           Áreas de Práctica
         </a>
-        <a href="/recursos" class="nav-link text-base font-light hover:text-bronze transition-colors">
+        <a href="" class="nav-link text-base font-light hover:text-bronze transition-colors pointer-events-none cursor-default opacity-30">
           Recursos
         </a>
-        <a href="/carreras" class="nav-link text-base font-light hover:text-bronze transition-colors">
+        <a href="/carreras" class:list={["nav-link text-base font-light hover:text-bronze transition-colors", { "active": currentPath.startsWith("/carreras") }]}>
           Carreras
         </a>
-        <a href="/compromiso-social" class="nav-link text-base font-light hover:text-bronze transition-colors">
+        <a href="/compromiso-social" class:list={["nav-link text-base font-light hover:text-bronze transition-colors", { "active": currentPath.startsWith("/compromiso-social") }]}>
           Compromiso Social
         </a>
       </div>
@@ -89,6 +90,11 @@
 
   #navbar.scrolled .nav-link {
     color: var(--color-dark-slate);
+  }
+
+  #navbar .nav-link:hover,
+  #navbar .nav-link.active {
+    color: var(--color-bronze);
   }
 
   #navbar.scrolled svg .cls-2 {

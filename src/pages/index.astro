@@ -2,8 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 import ImpactCard from '../components/ImpactCard.astro';
 import TeamMemberCard from '../components/TeamMemberCard.astro';
+import PracticeAreaCard from '../components/PracticeAreaCard.astro';
 import altoImpactoData from '../data/altoImpacto.json';
 import teamMembersData from '../data/teamMembers.json';
+import areasDePracticaData from '../data/areasDePractica.json';
 ---
 
 <Layout
@@ -12,15 +14,27 @@ import teamMembersData from '../data/teamMembers.json';
 	keywords="your, keywords, here"
 >
 	<!-- Hero Section -->
-	<section class="relative h-screen w-full flex items-end justify-start pb-12 pl-12">
+	<section class="relative h-screen w-full">
 		<!-- Placeholder for hero image -->
 		<video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline>
 			<source src="/hero_video.mp4" type="video/mp4" />
 		</video>
 
-		<h1 class="text-light-gray text-3xl md:text-4xl lg:text-6xl font-regular z-10">
-			Transformamos el derecho en desarrollo.
-		</h1>
+		<!-- Dark overlay -->
+		<div class="absolute inset-0 bg-black/30"></div>
+
+		<div class="relative z-10 w-full h-full flex flex-col items-center justify-center">
+			<h1 class="text-light-gray text-2xl md:text-3xl lg:text-4xl font-regular text-center">
+				Transformamos el derecho <br class="md:hidden"> en desarrollo
+			</h1>
+			<div class="w-full">
+				<div class="w-3/5 h-0.75 bg-bronze mt-2"></div>
+			</div>
+
+			<p class="absolute bottom-12 left-12 text-light-gray text-xl md:text-2xl font-light max-w-90">
+				Asesoría legal certera y práctica, caracterizada por un enfoque directo y eficiente.
+			</p>
+		</div>
 	</section>
 
 	<!-- Stats Section -->
@@ -105,7 +119,7 @@ import teamMembersData from '../data/teamMembers.json';
 				<h2 class="text-dark-slate text-3xl md:text-4xl font-light mb-8 tracking-wide">LA FIRMA</h2>
 				
 				<p class="text-dark-slate text-base md:text-2xl mb-4 leading-tight font-light">
-					Establecida en Santo Domingo desde 2005, <span class="font-semibold">Seibel & Henríquez</span> es una firma legal de práctica general que brinda asesoría directa y práctica a clientes empresariales.
+					Establecida en Santo Domingo desde 2005, <span class="font-bold">SeibelHenríquez</span> es una firma legal de práctica general que brinda asesoría directa y práctica a clientes empresariales.
 				</p>
 				<p class="text-dark-slate text-base md:text-2xl mb-4 leading-tight font-light">
 					Atendemos desde necesidades cotidianas hasta transacciones y litigios complejos.
@@ -118,8 +132,32 @@ import teamMembersData from '../data/teamMembers.json';
 		</div>
 	</section>
 
+	<!-- ÁREAS DE PRÁCTICA Section -->
+	<section class="bg-light-gray pt-36 md:pt-36 trigger">
+		<div class="mx-auto">
+			<div class="mb-12 max-w-360 mx-auto px-6 md:px-12 lg:px-0">
+				<h2 class="text-dark-slate text-3xl md:text-4xl font-light tracking-wide">ÁREAS DE PRÁCTICA</h2>
+				<div class="w-20 h-0.75 bg-bronze mt-2"></div>
+			</div>
+
+			<div class="areas-container flex overflow-x-hidden">
+				{areasDePracticaData.map((area) => (
+					<section class="areas-section py-8 ml-12 flex items-start justify-center">
+						<PracticeAreaCard
+							title={area.title}
+							description={area.description}
+							image={area.image}
+							imageAlt={area.imageAlt}
+							url={area.url}
+						/>
+					</section>
+				))}
+			</div>
+		</div>
+	</section>
+
 	<!-- SOCIOS Section -->
-	<section class="bg-dark-slate py-16 md:py-24 px-6 md:px-12 lg:px-20">
+	<section class="bg-dark-slate pt-16 md:pt-24 px-6 md:px-12 lg:px-20">
 		<div class="max-w-360 mx-auto">
 			<div class="mb-12">
 				<h2 class="text-white text-3xl md:text-4xl font-light tracking-wide">SOCIOS</h2>
@@ -157,7 +195,7 @@ import teamMembersData from '../data/teamMembers.json';
 		<div class="max-w-360 mx-auto px-6 md:px-12 lg:px-0">
 			<div class="mb-12">
 				<h2 class="text-white text-3xl md:text-4xl font-light tracking-widest">NUESTRO EQUIPO</h2>
-				<p class="text-white text-base md:text-lg font-light mt-4 max-w-3xl">
+				<p class="text-white text-base md:text-xl font-light mt-4 max-w-3xl">
 					Una nueva generación de abogados con formación local e internacional,
 					comprometidos con rigor técnico y soluciones prácticas.
 				</p>
@@ -308,3 +346,7 @@ import teamMembersData from '../data/teamMembers.json';
 		</div>
 	</section>
 </Layout>
+
+	<script>
+		import "../scripts/areas_gsap.js";
+	</script>

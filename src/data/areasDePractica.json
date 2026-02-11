@@ -1,0 +1,58 @@
+[
+	{
+		"title": "TRANSACCIONES Y EMPRESAS",
+		"description": "30+ años asesorando fusiones, adquisiciones y reestructuraciones para startups e inversionistas en operaciones locales e internacionales.",
+		"image": "/assets/areas/transacciones.avif",
+		"imageAlt": "Edificio corporativo moderno",
+		"url": "/areas/transacciones-y-empresas"
+	},
+	{
+		"title": "BANCA, FINANCIAMIENTO Y MERCADO DE CAPITALES",
+		"description": "Estructuración de créditos y operaciones de mercado de valores para entidades financieras locales e internacionales, con experiencia en financiamientos superiores a US$30 millones.",
+		"image": "/assets/areas/banca.avif",
+		"imageAlt": "Centro financiero",
+		"url": "/areas/banca-financiamiento-y-mercado-de-capitales"
+	},
+	{
+		"title": "DERECHO DEPORTIVO",
+		"description": "Práctica líder en Derecho Deportivo en la República Dominicana, asesor de profesionales y equipos, reconocida en organizaciones de Major League Baseball.",
+		"image": "/assets/areas/deporte.avif",
+		"imageAlt": "Deportes profesionales",
+		"url": "/areas/derecho-deportivo"
+	},
+	{
+		"title": "Energía",
+		"description": "Asesoría a empresas líderes del sector energético en proyectos de gran escala, incluyendo la planta de Manzanillo en Pedernales y la representación de AES, CESPM, CPEM, ENERGAS y la CDEEE.",
+		"image": "/assets/areas/energia.avif",
+		"imageAlt": "Edificio corporativo moderno",
+		"url": "/areas/transacciones-y-empresas"
+	},
+	{
+		"title": "Inmobiliario y Proyectos Comerciales",
+		"description": "Intervención en desarrollos inmobiliarios y comerciales de alto valor, con experiencia que incluye una ejecución hipotecaria transaccional por US$160MM.",
+		"image": "/assets/areas/inmobiliario.avif",
+		"imageAlt": "Centro financiero",
+		"url": "/areas/banca-financiamiento-y-mercado-de-capitales"
+	},
+	{
+		"title": "Litigios, Arbitraje y Resolución de Disputas",
+		"description": "Litigios y arbitrajes complejos para empresas y entidades públicas, incluyendo controversias bancarias, energéticas, de telecomunicaciones y arbitrajes de obras públicas bajo normas FIDIC.",
+		"image": "/assets/areas/litigios.avif",
+		"imageAlt": "Deportes profesionales",
+		"url": "/areas/derecho-deportivo"
+	},
+	{
+		"title": "Contratación Pública y Relaciones con el Estado",
+		"description": "Asesoría en contratación estatal y licitaciones nacionales e internacionales, con experiencia en impugnaciones administrativas y procesos de recuperación de activos públicos.",
+		"image": "/assets/areas/contratacion.avif",
+		"imageAlt": "Centro financiero",
+		"url": "/areas/banca-financiamiento-y-mercado-de-capitales"
+	},
+	{
+		"title": "Infraestructura",
+		"description": "Litigios y arbitrajes complejos para empresas y entidades públicas, incluyendo controversias bancarias, energéticas, de telecomunicaciones y arbitrajes de obras públicas bajo normas FIDIC.",
+		"image": "/assets/areas/infraestructura.avif",
+		"imageAlt": "Infraestructura",
+		"url": "/areas/derecho-deportivo"
+	}
+]
