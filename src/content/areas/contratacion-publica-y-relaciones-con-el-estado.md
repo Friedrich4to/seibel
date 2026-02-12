@@ -1,30 +1,24 @@
 ---
 title: "Contratación Pública y Relaciones con el Estado"
-description: "Asesoría en contratación estatal y licitaciones nacionales e internacionales, con experiencia en impugnaciones administrativas y procesos de recuperación de activos públicos."
+description: "Asesoría estratégica en contratación estatal y licitaciones nacionales e internacionales. Especialistas en impugnaciones administrativas y la recuperación de activos públicos de alta complejidad."
 order: 7
 image: "/assets/areas/contratacion.avif"
 imageAlt: "Contratación pública"
 servicios:
-  - titulo: "Licitaciones y procesos de contratación estatal"
-    descripcion: "Asesoría integral en la preparación y presentación de ofertas en procesos de licitación pública nacional e internacional, incluyendo la revisión de pliegos de condiciones y el cumplimiento de requisitos de elegibilidad."
-  - titulo: "Impugnaciones y recursos administrativos"
-    descripcion: "Representación en procedimientos de impugnación de adjudicaciones y decisiones administrativas ante la Dirección General de Contrataciones Públicas y tribunales contencioso-administrativos."
-  - titulo: "Contratos administrativos y concesiones"
-    descripcion: "Negociación y redacción de contratos administrativos, acuerdos de concesión y convenios de colaboración público-privada, incluyendo la estructuración de mecanismos de pago y resolución de controversias."
-  - titulo: "Cumplimiento regulatorio y gobierno corporativo público"
-    descripcion: "Asesoría a empresas contratistas del Estado en el cumplimiento de normativas anticorrupción, transparencia y rendición de cuentas aplicables a la contratación pública."
-  - titulo: "Recuperación de activos y reclamaciones al Estado"
-    descripcion: "Representación en procedimientos de reclamación por incumplimiento contractual del Estado, incluyendo la gestión de procesos de recuperación de activos y cobro de obligaciones pendientes."
+  - titulo: "Renegociación de concesiones públicas estratégicas"
+    descripcion: "Asesoría legal en procesos de renegociación de contratos de concesión de infraestructura pública, incluyendo análisis constitucional, administrativo y de contratación pública."
+  - titulo: "Auditorías legales de proyectos públicos complejos"
+    descripcion: "Ejecución de auditorías jurídicas independientes en proyectos de infraestructura pública y transporte masivo, evaluando procesos de contratación y cumplimiento normativo."
+  - titulo: "Asesoría institucional en infraestructura pública"
+    descripcion: "Acompañamiento legal a entidades públicas en el análisis contractual y regulatorio de proyectos estratégicos de infraestructura."
 ---
 
-Nuestra práctica de contratación pública comprende la asesoría a empresas nacionales e internacionales en sus relaciones contractuales con el Estado dominicano y sus instituciones descentralizadas.
-
-Contamos con amplia experiencia en procesos de licitación, impugnaciones administrativas y recuperación de activos públicos, acompañando a nuestros clientes en todas las etapas de la contratación estatal.
+Brindamos asesoría estratégica en procesos de contratación estatal y licitaciones nacionales e internacionales, acompañando a empresas y entidades en entornos altamente regulados. Nuestra experiencia incluye impugnaciones administrativas y procesos de recuperación de activos públicos de alta complejidad.
 
 Nuestra experiencia en esta área incluye, entre otros:
 
-- Preparación de ofertas para licitaciones públicas.
-- Impugnación de decisiones de adjudicación.
-- Negociación de contratos administrativos y concesiones.
-- Cumplimiento de normativas de transparencia y anticorrupción.
-- Reclamaciones por incumplimiento contractual del Estado.
+- Procesos de contratación y concesión pública.
+- Ejecución y renegociación de contratos administrativos.
+- Auditorías legales y análisis de cumplimiento.
+- Asesoría institucional en proyectos estratégicos.
+- Gestión de relaciones regulatorias con entidades públicas.

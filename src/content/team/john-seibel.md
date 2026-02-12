@@ -30,10 +30,10 @@ La práctica que ha desarrollado comprende igualmente la consultoría a empresas
 
 Su formación transcultural, sumada a su competencia profesional, lo coloca en una posición privilegiada para atender las necesidades de clientes locales y extranjeros dentro del marco del derecho dominicano. Esta diversidad de experiencia le permite ofrecer a sus clientes una asesoría global, con soluciones jurídicas precisas y efectivas.
 
-## DESARROLLO...
+## Asociaciones
 
 - Miembro, Colegio de Abogados de la República Dominicana.
-- Miembro Fundador y Vicepresidente de la Federación Dominicana de Esports
+- Miembro Fundador y Vicepresidente, Federación Dominicana de Esports.
 
 ## EXPERIENCIA
 

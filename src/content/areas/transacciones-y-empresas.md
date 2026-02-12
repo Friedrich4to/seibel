@@ -1,6 +1,6 @@
 ---
 title: "Transacciones y Empresas"
-description: "30+ años asesorando fusiones, adquisiciones y reestructuraciones para startups e inversionistas en operaciones locales e internacionales."
+description: "Dos décadas de maestría en el diseño de estructuras corporativas complejas, gestión de operaciones de gran escala y fusiones transfronterizas."
 order: 1
 image: "/assets/areas/transacciones.avif"
 imageAlt: "Edificio corporativo moderno"
@@ -17,9 +17,7 @@ servicios:
     descripcion: "Asesoría a inversionistas extranjeros en la estructuración corporativa y adquisición de activos inmobiliarios estratégicos en desarrollos turísticos y residenciales de alto valor."
 ---
 
-Acompañamos a empresas y grupos empresariales en el diseño y ejecución de estructuras corporativas complejas, así como en la gestión de transacciones de gran escala y operaciones de carácter transfronterizo.
-
-Nuestra práctica en transacciones y asuntos corporativos se apoya en décadas de experiencia asesorando decisiones estratégicas que definen la estructura, el crecimiento y la proyección a largo plazo de organizaciones locales e internacionales.
+Acompañamos a empresas y grupos empresariales en el diseño y ejecución de estructuras corporativas complejas, así como en la gestión de transacciones de gran escala y operaciones de carácter transfronterizo. Nuestra práctica en transacciones y asuntos corporativos se apoya en décadas de experiencia asesorando decisiones estratégicas que definen la estructura, el crecimiento y la proyección a largo plazo de organizaciones locales e internacionales.
 
 Nuestra experiencia en esta área incluye, entre otros:
 

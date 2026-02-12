@@ -1,30 +1,24 @@
 ---
-title: "Derecho Deportivo"
-description: "Práctica líder en Derecho Deportivo en la República Dominicana, asesor de profesionales y equipos, reconocida en organizaciones de Major League Baseball."
+title: "DERECHO DEPORTIVO"
+description: "Firma líder en Derecho Deportivo, brindando asesoría estratégica a ligas élite y organizaciones de Major League Baseball en la República Dominicana."
 order: 3
 image: "/assets/areas/deporte.avif"
 imageAlt: "Deportes profesionales"
 servicios:
-  - titulo: "Representación de atletas profesionales"
-    descripcion: "Asesoría legal integral a deportistas de alto rendimiento en la negociación y revisión de contratos deportivos, acuerdos de patrocinio y gestión de derechos de imagen en ligas nacionales e internacionales."
-  - titulo: "Asesoría a equipos y franquicias deportivas"
-    descripcion: "Acompañamiento jurídico a equipos profesionales en asuntos corporativos, laborales, impositivos y regulatorios, incluyendo la planificación y construcción de instalaciones deportivas en la República Dominicana."
-  - titulo: "Resolución de disputas deportivas"
-    descripcion: "Representación en procedimientos arbitrales y litigiosos derivados de controversias contractuales, sanciones disciplinarias y conflictos entre actores del ecosistema deportivo nacional e internacional."
-  - titulo: "Cumplimiento regulatorio en organizaciones deportivas"
-    descripcion: "Asesoría en el cumplimiento de normativas de ligas nacionales e internacionales, incluyendo regulaciones de Major League Baseball y federaciones deportivas dominicanas."
-  - titulo: "Estructuración de academias deportivas"
-    descripcion: "Asesoría legal en la planificación, desarrollo y operación de academias de formación deportiva, incluyendo aspectos inmobiliarios, laborales y regulatorios de las instalaciones."
+  - titulo: "Desarrollo de complejos deportivos de alcance internacional"
+    descripcion: "Asesoría legal integral en la adquisición de terrenos, estructuración jurídica y obtención de permisos para el desarrollo de complejos deportivos de alto nivel en la República Dominicana."
+  - titulo: "Estructuración de academias deportivas profesionales"
+    descripcion: "Acompañamiento legal en el diseño y desarrollo de academias deportivas vinculadas a organizaciones internacionales, integrando componentes inmobiliarios, regulatorios y corporativos."
+  - titulo: "Proyectos deportivos con impacto inmobiliario y transfronterizo"
+    descripcion: "Asesoría en proyectos deportivos que combinan inversión extranjera, desarrollo inmobiliario y cumplimiento normativo local, alineados con estándares internacionales de la industria."
 ---
 
-Somos reconocidos como una de las prácticas líderes en Derecho Deportivo en la República Dominicana, con una trayectoria destacada en la representación de atletas profesionales, equipos y organizaciones deportivas de primer nivel.
-
-Nuestra experiencia incluye el asesoramiento a organizaciones vinculadas a Major League Baseball, ligas deportivas profesionales dominicanas y atletas de alto rendimiento en múltiples disciplinas.
+Nuestra práctica en derecho deportivo se ha consolidado como un referente en la República Dominicana, asesorando a ligas profesionales, organizaciones deportivas y actores estratégicos de la industria. Participamos de manera activa en la estructuración y gestión de asuntos legales complejos vinculados al deporte de alto nivel y a organizaciones relacionadas con Major League Baseball.
 
 Nuestra experiencia en esta área incluye, entre otros:
 
-- Negociación de contratos deportivos profesionales.
-- Asesoría corporativa a equipos de ligas profesionales.
-- Planificación y construcción de academias de baseball.
-- Gestión de derechos de imagen y patrocinios deportivos.
-- Representación en procedimientos disciplinarios y arbitrales.
+- Operaciones legales vinculadas a la industria deportiva
+- Desarrollo de proyectos deportivos de alcance internacional
+- Estructuración de activos y operaciones deportivas
+- Interacción con autoridades regulatorias y municipales
+- Proyectos con componentes inmobiliarios y transfronterizos

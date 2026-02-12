@@ -1,30 +1,26 @@
 ---
 title: "Infraestructura"
-description: "Asesoría legal en proyectos de infraestructura de gran envergadura, incluyendo estructuración de alianzas público-privadas y cumplimiento regulatorio en el sector construcción."
+description: "Maestría jurídica en el desarrollo de infraestructuras de envergadura nacional. Gestión integral de proyectos estratégicos en los sectores energético, logístico y turístico."
 order: 8
 image: "/assets/areas/infraestructura.avif"
 imageAlt: "Infraestructura"
 servicios:
-  - titulo: "Estructuración de proyectos de infraestructura"
-    descripcion: "Asesoría legal integral en la planificación y desarrollo de proyectos de infraestructura vial, portuaria, aeroportuaria y de servicios públicos, incluyendo la obtención de permisos y autorizaciones gubernamentales."
-  - titulo: "Alianzas público-privadas"
-    descripcion: "Estructuración de esquemas de colaboración entre el sector público y privado para el desarrollo de infraestructura estratégica, incluyendo la negociación de acuerdos de concesión y contratos de gestión."
-  - titulo: "Contratos de construcción y normas FIDIC"
-    descripcion: "Negociación y redacción de contratos de construcción bajo condiciones FIDIC y otras modalidades contractuales, incluyendo la gestión de reclamaciones por variaciones, extensiones de plazo y sobrecostos."
-  - titulo: "Financiamiento de infraestructura"
-    descripcion: "Estructuración legal de esquemas de financiamiento para proyectos de infraestructura, incluyendo project finance, emisiones de bonos de infraestructura y facilidades crediticias con organismos multilaterales."
-  - titulo: "Regulación y permisos ambientales"
-    descripcion: "Asesoría en el cumplimiento del marco regulatorio ambiental aplicable a proyectos de infraestructura, incluyendo la obtención de licencias ambientales y la gestión de evaluaciones de impacto ambiental."
+  - titulo: "Infraestructura aeroportuaria estratégica"
+    descripcion: "Asesoría legal al Estado dominicano en la renegociación de concesiones aeroportuarias vinculadas a la operación y desarrollo de infraestructura aeroportuaria estratégica."
+  - titulo: "Infraestructura energética de gran escala"
+    descripcion: "Asesoría legal en el desarrollo, financiamiento y estructuración regulatoria de proyectos de infraestructura energética con impacto directo en la seguridad energética nacional."
+  - titulo: "Infraestructura de transporte masivo"
+    descripcion: "Asesoría legal en procesos de auditoría, estructuración y control de legalidad de proyectos de transporte masivo desarrollados por el Estado dominicano."
+  - titulo: "Infraestructura hídrica estratégica"
+    descripcion: "Asesoría legal en proyectos de infraestructura hídrica de gran escala vinculados a la gestión de recursos naturales y al desarrollo sostenible."
 ---
 
-Nuestra práctica de infraestructura abarca la asesoría legal integral en proyectos de gran envergadura que incluyen obras viales, portuarias, aeroportuarias y de servicios públicos en la República Dominicana.
-
-Acompañamos a desarrolladores, contratistas e inversionistas en todas las etapas del ciclo de vida de proyectos de infraestructura, desde la estructuración inicial hasta la resolución de controversias durante la ejecución.
+Participamos en el desarrollo jurídico de proyectos de infraestructura de envergadura nacional, asesorando a desarrolladores, inversionistas y entidades públicas. Nuestra práctica integra la estructuración y ejecución legal de proyectos estratégicos en los sectores energético, logístico y turístico.
 
 Nuestra experiencia en esta área incluye, entre otros:
 
-- Estructuración de alianzas público-privadas.
-- Negociación de contratos de construcción bajo normas FIDIC.
-- Obtención de concesiones y permisos gubernamentales.
-- Financiamiento de proyectos con instituciones multilaterales.
-- Gestión de reclamaciones y disputas de construcción.
+- Proyectos de infraestructura pública y privada.
+- Iniciativas con múltiples actores institucionales.
+- Estructuración legal de proyectos estratégicos.
+- Coordinación regulatoria e interinstitucional.
+- Financiamiento y ejecución de obras de gran escala.
