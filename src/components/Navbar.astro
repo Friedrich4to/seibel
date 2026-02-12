@@ -1,8 +1,13 @@
 ---
+interface Props {
+  darkMode?: boolean;
+}
+
+const { darkMode = false } = Astro.props;
 const currentPath = Astro.url.pathname;
 ---
 
-<nav id="navbar" class="hidden lg:block fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+<nav id="navbar" class:list={["hidden lg:block fixed top-0 left-0 right-0 z-50 transition-all duration-300", { "dark-mode": darkMode }]}>
   <div class="mx-auto px-4 sm:px-6 lg:px-12">
     <div class="flex items-center justify-between h-20">
       <!-- Logo -->
@@ -98,6 +103,20 @@ const currentPath = Astro.url.pathname;
   }
 
   #navbar.scrolled svg .cls-2 {
+    fill: var(--color-dark-slate);
+  }
+
+  /* Dark mode - dark text from the start */
+  #navbar.dark-mode .nav-link {
+    color: var(--color-dark-slate);
+  }
+
+  #navbar.dark-mode .nav-link:hover,
+  #navbar.dark-mode .nav-link.active {
+    color: var(--color-bronze);
+  }
+
+  #navbar.dark-mode svg .cls-2 {
     fill: var(--color-dark-slate);
   }
 </style>

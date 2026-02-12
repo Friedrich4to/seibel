@@ -1,7 +1,12 @@
 ---
+interface Props {
+  darkMode?: boolean;
+}
+
+const { darkMode = false } = Astro.props;
 ---
 
-<nav id="navbar-mobile" class="block lg:hidden fixed w-full z-50">
+<nav id="navbar-mobile" class:list={["block lg:hidden fixed w-full z-50", { "dark-mode": darkMode }]}>
     <div class="flex flex-col">
       <!-- Top Bar with Logo and Burger -->
       <div class="py-8 px-6 flex items-center justify-between transition-all duration-300" id="top-bar">
@@ -122,6 +127,19 @@
   /* Burger lines color when scrolled or menu open */
   #navbar-mobile.scrolled .burger-line,
   #navbar-mobile.menu-open .burger-line {
+    background-color: var(--color-dark-slate);
+  }
+
+  /* Dark mode - dark text from the start */
+  #navbar-mobile.dark-mode .nav-link {
+    color: var(--color-dark-slate);
+  }
+
+  #navbar-mobile.dark-mode svg .cls-2 {
+    fill: var(--color-dark-slate);
+  }
+
+  #navbar-mobile.dark-mode .burger-line {
     background-color: var(--color-dark-slate);
   }
 

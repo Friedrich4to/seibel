@@ -4,8 +4,16 @@ import ImpactCard from '../components/ImpactCard.astro';
 import TeamMemberCard from '../components/TeamMemberCard.astro';
 import PracticeAreaCard from '../components/PracticeAreaCard.astro';
 import altoImpactoData from '../data/altoImpacto.json';
-import teamMembersData from '../data/teamMembers.json';
 import areasDePracticaData from '../data/areasDePractica.json';
+import { getCollection } from 'astro:content';
+
+const allMembers = await getCollection('team');
+const socios = allMembers
+	.filter((m) => m.data.role === 'socio')
+	.sort((a, b) => a.data.order - b.data.order);
+const teamMembers = allMembers
+	.filter((m) => m.data.role !== 'socio')
+	.sort((a, b) => a.data.order - b.data.order);
 ---
 
 <Layout
@@ -24,11 +32,11 @@ import areasDePracticaData from '../data/areasDePractica.json';
 		<div class="absolute inset-0 bg-black/30"></div>
 
 		<div class="relative z-10 w-full h-full flex flex-col items-center justify-center">
-			<h1 class="text-light-gray text-2xl md:text-3xl lg:text-4xl font-regular text-center">
+			<h1 id="hero-title" class="text-light-gray text-2xl md:text-3xl lg:text-4xl font-regular text-center">
 				Transformamos el derecho <br class="md:hidden"> en desarrollo
 			</h1>
 			<div class="w-full">
-				<div class="w-3/5 h-0.75 bg-bronze mt-2"></div>
+				<div id="hero-line" class="w-0 h-0.75 bg-bronze mt-2"></div>
 			</div>
 
 			<p class="absolute bottom-12 left-12 text-light-gray text-xl md:text-2xl font-light max-w-90">
@@ -165,27 +173,17 @@ import areasDePracticaData from '../data/areasDePractica.json';
 			</div>
 
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-				<!-- Partner 1 -->
-				<div class="group">
-					<img src="/assets/members/fernando.jpg" alt="Fernando P. Henríquez" class="aspect-square w-full mb-6 object-cover max-h-100 object-top">
-					<div class="flex items-center justify-between">
-						<h3 class="text-white text-xl md:text-3xl font-light tracking-wide">FERNANDO P. HENRÍQUEZ</h3>
-						<button class="border border-white text-white px-6 py-2 text-sm hover:bg-white hover:text-dark-slate transition-colors duration-300">
-							Ver perfil
-						</button>
+				{socios.map((socio) => (
+					<div class="group">
+						<img src={socio.data.image} alt={socio.data.imageAlt} class="aspect-square w-full mb-6 object-cover max-h-100 object-top" />
+						<div class="flex items-center justify-between">
+							<h3 class="text-white text-xl md:text-3xl font-light tracking-wide">{socio.data.name}</h3>
+							<a href={`/team/${socio.id}`} class="border border-white text-white px-6 py-2 text-sm hover:bg-white hover:text-dark-slate transition-colors duration-300">
+								Ver perfil
+							</a>
+						</div>
 					</div>
-				</div>
-
-				<!-- Partner 2 -->
-				<div class="group">
-					<img src="/assets/members/seibel.jpg" alt="John P. Seibel" class="aspect-square w-full mb-6 object-cover max-h-100 object-top">
-					<div class="flex items-center justify-between">
-						<h3 class="text-white text-xl md:text-3xl font-light tracking-wide">JOHN P. SEIBEL</h3>
-						<button class="border border-white text-white px-6 py-2 text-sm hover:bg-white hover:text-dark-slate transition-colors duration-300">
-							Ver perfil
-						</button>
-					</div>
-				</div>
+				))}
 			</div>
 		</div>
 	</section>
@@ -205,15 +203,15 @@ import areasDePracticaData from '../data/areasDePractica.json';
 		<div class="embla relative" id="teamCarousel">
 			<div class="embla__viewport overflow-hidden">
 				<div class="embla__container h-150 flex gap-0">
-					{teamMembersData.map((member) => (
+					{teamMembers.map((member) => (
 						<TeamMemberCard
-							name={member.name}
-							position={member.position}
-							phone={member.phone}
-							email={member.email}
-							image={member.image}
-							imageAlt={member.imageAlt}
-							link={member.link}
+							name={member.data.name}
+							position={member.data.position}
+							phone={member.data.phone}
+							email={member.data.email}
+							image={member.data.image}
+							imageAlt={member.data.imageAlt}
+							link={`/team/${member.id}`}
 						/>
 					))}
 				</div>
@@ -301,32 +299,124 @@ import areasDePracticaData from '../data/areasDePractica.json';
 		}
 	</script>
 
-	<!-- PRÁCTICA RESPONSABLE Section -->
-	<section class="relative h-[80vh] w-full flex items-center">
-		<img
-			src="/assets/practica_responsable.jpg"
-			alt="Práctica Responsable"
-			class="absolute inset-0 w-full h-full object-cover"
-		/>
+	<!-- Clients Section -->
+	<section class="bg-light-gray py-16 md:py-24 overflow-hidden">
+		<h2 class="text-dark-slate text-2xl md:text-3xl lg:text-4xl font-light italic tracking-wide text-center mb-12 md:mb-16">
+			CLIENTES QUE HAN CONFIADO EN NOSOTROS
+		</h2>
 
-		<div class="relative z-10 max-w-360 mx-auto px-6 md:px-12 lg:px-0 w-full">
-			<div class="max-w-xl">
+		<div
+			class="clients-carousel"
+			style="--duration: 30s;"
+		>
+			<div class="clients-track">
+				<img src="/assets/logos/logo_rs.png" alt="Red Sox" loading="lazy" />
+				<img src="/assets/logos/logo_iberica.png" alt="La Ibérica" loading="lazy" />
+				<img src="/assets/logos/logo_marlins.png" alt="Miami Marlins" loading="lazy" />
+				<img src="/assets/logos/logo_giants.png" alt="Giants" loading="lazy" />
+				<img src="/assets/logos/logo_angels.png" alt="Angels" loading="lazy" />
+				<img src="/assets/logos/logo_detroit.png" alt="Detroit Tigers" loading="lazy" />
+				<img src="/assets/logos/logo_diamond.png" alt="Diamond" loading="lazy" />
+				<img src="/assets/logos/logo_guardians.png" alt="Guardians" loading="lazy" />
+				<img src="/assets/logos/logo_alterra.png" alt="Alterra" loading="lazy" />
+				<img src="/assets/logos/logo_cepm.png" alt="CEPM" loading="lazy" />
+				<img src="/assets/logos/logo_manzanillo.png" alt="Manzanillo" loading="lazy" />
+				<img src="/assets/logos/logo_megacentro.png" alt="Megacentro" loading="lazy" />
+				<img src="/assets/logos/logo_ccn.png" alt="CCN" loading="lazy" />
+				<img src="/assets/logos/logo_agora.png" alt="Ágora" loading="lazy" />
+
+				<!-- Duplicate for seamless loop -->
+				<img src="/assets/logos/logo_rs.png" alt="Red Sox" loading="lazy" aria-hidden="true" />
+				<img src="/assets/logos/logo_iberica.png" alt="La Ibérica" loading="lazy" aria-hidden="true" />
+				<img src="/assets/logos/logo_marlins.png" alt="Miami Marlins" loading="lazy" aria-hidden="true" />
+				<img src="/assets/logos/logo_giants.png" alt="Giants" loading="lazy" aria-hidden="true" />
+				<img src="/assets/logos/logo_angels.png" alt="Angels" loading="lazy" aria-hidden="true" />
+				<img src="/assets/logos/logo_detroit.png" alt="Detroit Tigers" loading="lazy" aria-hidden="true" />
+				<img src="/assets/logos/logo_diamond.png" alt="Diamond" loading="lazy" aria-hidden="true" />
+				<img src="/assets/logos/logo_guardians.png" alt="Guardians" loading="lazy" aria-hidden="true" />
+				<img src="/assets/logos/logo_alterra.png" alt="Alterra" loading="lazy" aria-hidden="true" />
+				<img src="/assets/logos/logo_cepm.png" alt="CEPM" loading="lazy" aria-hidden="true" />
+				<img src="/assets/logos/logo_manzanillo.png" alt="Manzanillo" loading="lazy" aria-hidden="true" />
+				<img src="/assets/logos/logo_megacentro.png" alt="Megacentro" loading="lazy" aria-hidden="true" />
+				<img src="/assets/logos/logo_ccn.png" alt="CCN" loading="lazy" aria-hidden="true" />
+				<img src="/assets/logos/logo_agora.png" alt="Ágora" loading="lazy" aria-hidden="true" />
+			</div>
+		</div>
+	</section>
+
+	<style>
+		.clients-carousel {
+			width: 100%;
+			mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+			-webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+		}
+
+		.clients-track {
+			display: flex;
+			align-items: center;
+			gap: 3rem;
+			width: max-content;
+			animation: scroll var(--duration, 30s) linear infinite;
+		}
+
+		.clients-track img {
+			height: auto;
+			width: 120px;
+			object-fit: contain;
+			flex-shrink: 0;
+			filter: grayscale(100%);
+			opacity: 0.7;
+			transition: filter 0.3s, opacity 0.3s;
+		}
+
+		.clients-track img:hover {
+			filter: grayscale(0%);
+			opacity: 1;
+		}
+
+		@media (min-width: 768px) {
+			.clients-track {
+				gap: 4rem;
+			}
+			.clients-track img {
+				height: 80px;
+			}
+		}
+
+		@keyframes scroll {
+			to {
+				transform: translateX(-50%);
+			}
+		}
+	</style>
+
+	<!-- PRÁCTICA RESPONSABLE Section -->
+	<section class="relative h-[80vh] w-full flex items-start">
+		<img
+			src="/assets/compromiso.avif"
+			alt="Práctica Responsable"
+			class="absolute inset-0 w-full h-full object-cover object-bottom lg:object-left"
+		/>
+		<div class="absolute inset-0 bg-black/20"></div>
+
+		<div class="relative z-10 max-w-360 mx-auto px-6 md:px-12 lg:px-0 w-full flex justify-end py-12">
+			<div class="max-w-2xl">
 				<h2 class="text-white text-3xl md:text-4xl lg:text-5xl font-light mb-6 tracking-wide">
 					PRÁCTICA RESPONSABLE
 				</h2>
 				<p class="text-white text-base md:text-lg lg:text-xl mb-8 font-light leading-relaxed">
 					Trabajamos junto a nuestros clientes y aliados, utilizando el derecho para contribuir a una mejor sociedad.
 				</p>
-				<button class="border-2 border-bronze text-bronze bg-white bg-opacity-90 px-8 py-3 hover:bg-bronze hover:text-white transition-colors duration-300 text-sm md:text-base tracking-wide">
+				<a href="compromiso-social" class="border-2 border-bronze text-bronze bg-white bg-opacity-90 px-8 py-3 hover:bg-bronze hover:text-white transition-colors duration-300 text-sm md:text-base tracking-wide uppercase">
 					Conoce nuestro compromiso
-				</button>
+				</a>
 			</div>
 		</div>
 	</section>
 
 	<!-- INSIGHTS Section -->
 	<section class="bg-light-gray py-16 md:py-24 px-6 md:px-12 lg:px-20">
-		<div class="max-w-360 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+		<div class="max-w-360 mx-auto gap-12 items-center">
 			<div>
 				<h2 class="text-dark-slate text-3xl md:text-4xl lg:text-5xl font-light mb-6 tracking-wide">
 					INSIGHTS
@@ -334,19 +424,15 @@ import areasDePracticaData from '../data/areasDePractica.json';
 				<p class="text-dark-slate text-base md:text-lg lg:text-xl mb-8 font-light leading-relaxed">
 					Artículos, análisis y actualidad legal sobre los temas que impactan a las empresas.
 				</p>
-				<button class="border-2 border-bronze text-bronze px-8 py-3 hover:bg-bronze hover:text-white transition-colors duration-300 text-sm md:text-base tracking-wide">
-					Únete a nuestro newsletter
+				<button class="border-2 border-bronze text-bronze px-8 py-3 hover:bg-bronze hover:text-white transition-colors duration-300 text-sm md:text-base tracking-wide pointer-events-none opacity-30">
+					Únete a nuestro newsletter - proximamente
 				</button>
-			</div>
-			<div class="relative h-64 md:h-96 bg-bronze bg-opacity-10 overflow-hidden">
-				<div class="absolute left-0 top-1/4 w-full h-1 bg-bronze opacity-30"></div>
-				<div class="absolute left-0 top-1/2 w-3/4 h-1 bg-bronze opacity-40"></div>
-				<div class="absolute left-0 top-3/4 w-1/2 h-1 bg-bronze opacity-30"></div>
 			</div>
 		</div>
 	</section>
 </Layout>
 
-	<script>
-		import "../scripts/areas_gsap.js";
-	</script>
+<script>
+	import "../scripts/areas_gsap.js";
+	import "../scripts/anims.js";
+</script>

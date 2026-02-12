@@ -7,14 +7,16 @@ interface Props {
 	image: string;
 	imageAlt: string;
 	link: string;
+	wrapperClass?: string;
 }
 
-const { name, position, phone, email, image, imageAlt, link } = Astro.props;
+const { name, position, phone, email, image, imageAlt, link, wrapperClass } = Astro.props;
+const defaultClass = "embla__slide flex-[0_0_100%] min-w-0 md:flex-[0_0_45%] lg:flex-[0_0_32%] px-3 group cursor-pointer max-w-[320px] md:max-w-115";
 ---
 
 <a
 	href={link}
-	class="embla__slide flex-[0_0_100%] min-w-0 md:flex-[0_0_45%] lg:flex-[0_0_32%] px-3 group cursor-pointer max-w-[320px] md:max-w-115"
+	class={wrapperClass ?? defaultClass}
 >
 	<div class="flex flex-col overflow-hidden h-full">
 		<div class="w-full aspect-square bg-gray-300 overflow-hidden">

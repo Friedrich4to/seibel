@@ -1,11 +1,90 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import SocioCard from '../components/SocioCard.astro';
+import TeamMemberCard from '../components/TeamMemberCard.astro';
+import { getCollection } from 'astro:content';
+
+const allMembers = await getCollection('team');
+const socios = allMembers
+	.filter((m) => m.data.role === 'socio')
+	.sort((a, b) => a.data.order - b.data.order);
+const teamMembers = allMembers
+	.filter((m) => m.data.role !== 'socio')
+	.sort((a, b) => a.data.order - b.data.order);
 ---
 
 <Layout
 	title="Nuestro equipo"
 	description="Conoce a los socios y colaboradores de la firma."
 	keywords="your, keywords, here"
+	navbarDarkMode={true}
 >
+	<!-- SOCIOS Section -->
+	<section class="bg-light-gray py-16 md:py-24 px-6 md:px-12 lg:px-20">
+		<div class="max-w-360 mx-auto">
+			<div class="mb-12">
+				<h2 class="text-dark-slate text-3xl md:text-4xl font-light tracking-wide">SOCIOS</h2>
+				<div class="w-20 h-0.75 bg-bronze mt-2"></div>
+			</div>
 
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
+				<SocioCard
+					name={socios[0].data.name}
+					phone={socios[0].data.phone}
+					email={socios[0].data.email}
+					image={socios[0].data.image}
+					imageAlt={socios[0].data.imageAlt}
+					link={`/team/${socios[0].id}`}
+				>
+					<p>
+						Líder en Derecho Deportivo, con experiencia en litigios y
+						asesoría en derecho civil, comercial y laboral. Ofrece
+						soluciones globales a clientes locales e internacionales,
+						con énfasis en seguridad social y resolución de conflictos.
+					</p>
+				</SocioCard>
+
+				<SocioCard
+					name={socios[1].data.name}
+					phone={socios[1].data.phone}
+					email={socios[1].data.email}
+					image={socios[1].data.image}
+					imageAlt={socios[1].data.imageAlt}
+					link={`/team/${socios[1].id}`}
+				>
+					<p>
+						Abogado con más de 30 años de experiencia
+						en transacciones y resolución de controversias.
+						Asesora a empresas líderes en sectores estratégicos
+						y participa en asuntos de alto impacto institucional.
+					</p>
+				</SocioCard>
+			</div>
+		</div>
+	</section>
+
+	<!-- NUESTRO EQUIPO Section -->
+	<section class="bg-light-gray pb-16 md:pb-24 px-6 md:px-12 lg:px-20">
+		<div class="max-w-360 mx-auto">
+			<div class="mb-12">
+				<h2 class="text-dark-slate text-3xl md:text-4xl font-light tracking-wide">NUESTRO EQUIPO</h2>
+				<div class="w-20 h-0.75 bg-bronze mt-2"></div>
+			</div>
+
+			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+				{teamMembers.map((member) => (
+					<TeamMemberCard
+						name={member.data.name}
+						position={member.data.position}
+						phone={member.data.phone}
+						email={member.data.email}
+						image={member.data.image}
+						imageAlt={member.data.imageAlt}
+						link={`/team/${member.id}`}
+						wrapperClass="group cursor-pointer"
+					/>
+				))}
+			</div>
+		</div>
+	</section>
 </Layout>

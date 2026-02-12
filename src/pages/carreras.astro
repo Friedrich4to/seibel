@@ -7,5 +7,99 @@ import Layout from '../layouts/Layout.astro';
 	description="Descubre como es trabajar en nuestra firma."
 	keywords="your, keywords, here"
 >
+	<!-- Hero Section -->
+	<section class="relative w-full h-[40vh] md:h-[50vh] lg:h-[60vh] overflow-hidden">
+		<img
+			src="/assets/practica_responsable.jpg"
+			alt="Compromiso Social"
+			class="absolute inset-0 w-full h-full object-cover object-top"
+		/>
+		<div class="absolute inset-0 bg-black/40"></div>
 
+		<div class="relative z-10 w-full h-full flex flex-col justify-end px-6 md:px-12 lg:px-20 pb-10 md:pb-14">
+			<div class="max-w-360 mx-auto w-full">
+				<h1 class="text-light-gray text-3xl md:text-4xl lg:text-5xl font-regular tracking-wide uppercase">
+					Carreras
+				</h1>
+				<div class="w-24 md:w-32 h-0.75 bg-bronze mt-2"></div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Description Section -->
+	<section class="bg-light-gray py-16 md:py-24 px-6 md:px-12 lg:px-20">
+		<div class="max-w-4xl mx-auto">
+			<p class="text-dark-slate text-base md:text-xl lg:text-2xl font-light leading-relaxed mb-6">
+				En <strong class="font-semibold">SeibelHenríquez</strong> formamos abogados que participan activamente en asuntos complejos, con una práctica orientada al rigor técnico, el criterio jurídico y la responsabilidad profesional.
+			</p>
+			<p class="text-dark-slate text-base md:text-xl lg:text-2xl font-light leading-relaxed">
+				Nuestro trabajo se caracteriza por la cercanía con los socios, la participación directa en los asuntos y un alto nivel de exigencia profesional. Valoramos el análisis profundo, la claridad en los criterios y una relación de confianza construida sobre la seriedad y la ética.
+			</p>
+			<p class="text-dark-slate text-base md:text-xl lg:text-2xl font-light leading-relaxed">
+				El ejercicio del derecho en la firma se sustenta en valores democráticos, institucionales y de transparencia, con una clara vocación de impacto positivo en nuestro entorno.
+			</p>
+		</div>
+	</section>
+
+	<!-- Desarrollo Section -->
+	<section class="bg-light-gray px-6 md:px-12 lg:px-20 pb-16 md:pb-24">
+		<div class="max-w-360 mx-auto">
+			<div class="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center">
+				<!-- Text Content -->
+				<div class="w-full lg:w-1/2">
+					<h2 class="text-dark-slate text-2xl md:text-4xl font-light tracking-wide mb-2">
+						DESARROLLO...
+					</h2>
+					<div class="w-20 h-0.75 bg-bronze mb-6"></div>
+					<p class="text-dark-slate text-base md:text-xl lg:text-2xl font-light leading-relaxed">
+						Desde etapas tempranas, nuestros abogados se integran en equipos que trabajan en operaciones y litigios relevantes, con exposición constante a clientes y a asuntos de alcance local e internacional.
+					</p>
+					<p class="text-dark-slate text-base md:text-xl lg:text-2xl font-light leading-relaxed">
+						El aprendizaje práctico y el crecimiento sostenido forman parte esencial de nuestra cultura.
+					</p>
+				</div>
+
+				<!-- Image -->
+				<div class="w-full lg:w-1/2">
+					<img
+						src="/assets/members/placeholder.jpg"
+						alt="Vocación Humana"
+						class="w-full h-64 md:h-80 lg:h-96 object-cover"
+					/>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Postúlate Section -->
+	<section class="bg-light-gray px-6 md:px-12 lg:px-0 pb-16 md:pb-24">
+		<div class="max-w-360 mx-auto py-4 space-y-2">
+			<h2 class="text-dark-slate text-2xl md:text-4xl font-light tracking-wide uppercase">
+				POSTÚLATE CON NOSOTROS
+			</h2>
+			<div class="w-20 h-0.75 bg-bronze mt-2"></div>
+			<p class="text-dark-slate text-base md:text-xl font-light">
+				Recibimos candidaturas de manera continua en: <a href="mailto:carreras@seibelhenriquez.com" class="text-bronze font-semibold hover:underline">carreras@seibelhenriquez.com</a>
+			</p>
+		</div>
+	</section>
+
+	<!-- Banner Section -->
+	<section class="relative w-full py-24 md:py-32 lg:py-40 overflow-hidden">
+		<img
+			src="/assets/members/placeholder.jpg"
+			alt="Nuestro compromiso"
+			class="absolute inset-0 w-full h-full object-cover"
+		/>
+		<div class="absolute inset-0 bg-black/30"></div>
+
+		<div class="relative z-10 px-6 md:px-12 lg:px-20 h-150 grid items-end justify-start">
+			<div class="max-w-360 mx-auto">
+				<h2 class="text-light-gray text-2xl md:text-4xl lg:text-5xl font-regular tracking-wide leading-tight">
+					NUESTRO COMPROMISO VA MÁS ALLÁ<br />
+					<span class="underline decoration-bronze decoration-3 underline-offset-8">DE LA PRÁCTICA PROFESIONAL REMUNERADA</span>
+				</h2>
+			</div>
+		</div>
+	</section>
 </Layout>

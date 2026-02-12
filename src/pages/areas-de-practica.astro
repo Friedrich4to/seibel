@@ -1,11 +1,45 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import AreaCard from '../components/AreaCard.astro';
+import { getCollection } from 'astro:content';
+
+const areas = await getCollection('areas');
+const sortedAreas = areas.sort((a, b) => a.data.order - b.data.order);
 ---
 
 <Layout
 	title="Áreas de práctica"
-	description="Conoce a fondos las áreas en las que ejerce SeibelHenríquez"
-	keywords="your, keywords, here"
+	description="Conoce a fondo las áreas en las que ejerce Seibel Henríquez"
 >
+	<!-- Hero Banner -->
+	<section class="relative w-full h-72 md:h-96 overflow-hidden">
+		<video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline>
+			<source src="/hero_video.mp4" type="video/mp4" />
+		</video>
+		<div class="absolute inset-0 bg-dark-slate/60"></div>
+		<div class="absolute inset-0 flex items-end px-6 md:px-12 lg:px-20 pb-10 md:pb-14">
+			<div class="max-w-360 mx-auto w-full">
+				<h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-light tracking-wide uppercase">
+					Área de Práctica
+				</h1>
+				<div class="w-24 h-1 bg-bronze mt-4"></div>
+			</div>
+		</div>
+	</section>
 
+	<!-- Areas Grid -->
+	<section class="bg-light-gray py-16 md:py-24 px-6 md:px-12 lg:px-20">
+		<div class="max-w-360 mx-auto">
+			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+				{sortedAreas.map((area) => (
+					<AreaCard
+						title={area.data.title}
+						image={area.data.image}
+						imageAlt={area.data.imageAlt}
+						url={`/areas/${area.id}`}
+					/>
+				))}
+			</div>
+		</div>
+	</section>
 </Layout>
