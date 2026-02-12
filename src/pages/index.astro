@@ -8,9 +8,6 @@ import { getCollection } from 'astro:content';
 
 const allMembers = await getCollection('team');
 const areasDePractica = (await getCollection('areas')).sort((a, b) => a.data.order - b.data.order);
-const socios = allMembers
-	.filter((m) => m.data.role === 'socio')
-	.sort((a, b) => a.data.order - b.data.order);
 const teamMembers = allMembers
 	.filter((m) => m.data.role !== 'socio')
 	.sort((a, b) => a.data.order - b.data.order);
@@ -125,7 +122,8 @@ const teamMembers = allMembers
 		
 		<div class="max-w-360 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 			<div>
-				<h2 class="text-dark-slate text-3xl md:text-4xl font-light mb-8 tracking-wide">LA FIRMA</h2>
+				<h2 class="text-dark-slate text-3xl md:text-4xl font-light tracking-wide">LA FIRMA</h2>
+				<div class="w-16 h-0.75 bg-bronze mb-8"></div>
 				
 				<p class="text-dark-slate text-base md:text-2xl mb-4 leading-tight font-light">
 					Establecida en Santo Domingo desde 2005, <span class="font-bold">SeibelHenríquez</span> es una firma legal de práctica general que brinda asesoría directa y práctica a clientes empresariales.
@@ -137,7 +135,9 @@ const teamMembers = allMembers
 					Conoce más
 				</button>
 			</div>
-			<div class="bg-gray-300 h-64 md:h-96 w-full"></div>
+			<div class="grid items-center justify-center">
+				<img src="/assets/logos/abstract.svg" alt="">
+			</div>
 		</div>
 	</section>
 
@@ -174,17 +174,35 @@ const teamMembers = allMembers
 			</div>
 
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-				{socios.map((socio) => (
-					<div class="group">
-						<img src={socio.data.image} alt={socio.data.imageAlt} class="aspect-square w-full mb-6 object-cover max-h-160 object-top" />
-						<div class="flex items-center justify-between">
-							<h3 class="text-white text-xl md:text-3xl font-light tracking-wide">{socio.data.name}</h3>
-							<a href={`/team/${socio.id}`} class="border border-white text-white px-6 py-2 text-sm hover:bg-white hover:text-dark-slate transition-colors duration-300">
+				<div class="">
+						<div class="relative overflow-hidden group">
+							<img src="/assets/members/seibel.jpg" alt="John P. Seibel - Socio" class="aspect-square w-full object-cover max-h-160 object-top" />
+							<div class="absolute inset-0 bg-bronze/70 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+								<p class="text-white text-sm md:text-base font-light leading-relaxed">Uno de los abogados líderes en Derecho Deportivo en la República Dominicana, con amplia experiencia en litigios civiles, comerciales, penales, laborales y mecanismos de resolución alternativa de conflictos.</p>
+							</div>
+						</div>
+						<div class="flex items-center justify-between mt-6">
+							<h3 class="text-white text-xl md:text-3xl font-light tracking-wide">JOHN P. SEIBEL</h3>
+							<a href="/team/john-seibel" class="border border-white text-white px-6 py-2 text-sm hover:bg-white hover:text-dark-slate transition-colors duration-300">
 								Ver perfil
 							</a>
 						</div>
 					</div>
-				))}
+
+					<div class="">
+						<div class="relative overflow-hidden group">
+							<img src="/assets/members/fernando.jpg" alt="Fernando P. Henríquez - Socio" class="aspect-square w-full object-cover max-h-160 object-top" />
+							<div class="absolute inset-0 bg-bronze/70 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+								<p class="text-white text-sm md:text-base font-light leading-relaxed">Más de treinta años de experiencia en la práctica del derecho, con una trayectoria destacada en resolución de controversias y en la estructuración y ejecución de asuntos transaccionales de alta complejidad.</p>
+							</div>
+						</div>
+						<div class="flex items-center justify-between mt-6">
+							<h3 class="text-white text-xl md:text-3xl font-light tracking-wide">FERNANDO P. HENRÍQUEZ</h3>
+							<a href="/team/fernando-henriquez" class="border border-white text-white px-6 py-2 text-sm hover:bg-white hover:text-dark-slate transition-colors duration-300">
+								Ver perfil
+							</a>
+						</div>
+					</div>
 			</div>
 		</div>
 	</section>

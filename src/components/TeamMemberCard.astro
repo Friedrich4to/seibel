@@ -19,12 +19,13 @@ const defaultClass = "embla__slide flex-[0_0_100%] min-w-0 md:flex-[0_0_45%] lg:
 	class={wrapperClass ?? defaultClass}
 >
 	<div class="flex flex-col overflow-hidden h-full">
-		<div class="w-full aspect-square bg-gray-300 overflow-hidden">
+		<div class="relative w-full aspect-square bg-gray-300 overflow-hidden">
 			<img
 				src={image}
 				alt={imageAlt}
 				class="w-full h-full object-cover object-top grayscale transition-transform duration-500 group-hover:scale-105"
 			/>
+			<div class="absolute inset-0 bg-bronze/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 		</div>
 
 		<div class="flex flex-col gap-4 p-6 bg-light-gray">
@@ -36,7 +37,7 @@ const defaultClass = "embla__slide flex-[0_0_100%] min-w-0 md:flex-[0_0_45%] lg:
 					{position}
 				</p>
 			</div>
-			<div class="w-16 h-0.5 bg-bronze"></div>
+			<div class="w-16 h-0.75 bg-bronze"></div>
 			<div class="flex flex-col gap-1 text-dark-slate text-lg md:text-xl font-light">
 				<p>{phone}</p>
 				<p class="lowercase">{email}</p>
