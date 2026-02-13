@@ -10,7 +10,13 @@ order: 2
 languages:
   - "Español"
   - "Inglés"
-education: []
+education:
+  - institution: "Pontificia Universidad Católica Madre y Maestra"
+    location: "Santo Domingo, República Dominicana"
+    degree: "Maestría en Derecho Empresarial y Legislación Económica, 1994"
+  - institution: "Pontificia Universidad Católica Madre y Maestra"
+    location: "Santo Domingo, República Dominicana"
+    degree: "Licenciatura en Derecho, Cum Laude, 1992"
 ---
 
 Fernando P. Henríquez cuenta con más de treinta años de experiencia en la práctica del derecho, con una trayectoria destacada en resolución de controversias y en la estructuración y ejecución de asuntos transaccionales de alta complejidad.

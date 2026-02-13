@@ -25,10 +25,9 @@ const panels = gsap.utils.toArray(".dynamic-panel");
 if (panels.length > 1) {
 	const tl = gsap.timeline({
 		scrollTrigger: {
-			trigger: ".dynamic-section",
+			trigger: ".dynamic-section-trigger",
 			pin: true,
 			scrub: 0.1,
-			markers: true,
 			end: `+=${panels.length * 500}`,
 		},
 	});
