@@ -173,36 +173,36 @@ const teamMembers = allMembers
 				<div class="w-20 h-0.75 bg-bronze mt-2"></div>
 			</div>
 
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-				<div class="">
-						<div class="relative overflow-hidden group">
-							<img src="/assets/members/seibel.jpg" alt="John P. Seibel - Socio" class="aspect-square w-full object-cover max-h-160 object-top" />
-							<div class="absolute inset-0 bg-bronze/70 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-								<p class="text-white text-sm md:text-base font-light leading-relaxed">Uno de los abogados líderes en Derecho Deportivo en la República Dominicana, con amplia experiencia en litigios civiles, comerciales, penales, laborales y mecanismos de resolución alternativa de conflictos.</p>
-							</div>
-						</div>
-						<div class="flex items-center justify-between mt-6">
-							<h3 class="text-white text-xl md:text-3xl font-light tracking-wide">JOHN P. SEIBEL</h3>
-							<a href="/team/john-seibel" class="border border-white text-white px-6 py-2 text-sm hover:bg-white hover:text-dark-slate transition-colors duration-300">
-								Ver perfil
-							</a>
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-24 md:gap-12 xl:gap-36">
+				<div class="max-w-120">
+					<div class="relative overflow-hidden group">
+						<img src="/assets/members/seibel.jpg" alt="John P. Seibel - Socio" class="aspect-square w-full object-cover object-top" />
+						<div class="absolute inset-0 bg-bronze/70 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+							<p class="text-white text-sm md:text-base font-light leading-relaxed">Uno de los abogados líderes en Derecho Deportivo en la República Dominicana, con amplia experiencia en litigios civiles, comerciales, penales, laborales y mecanismos de resolución alternativa de conflictos.</p>
 						</div>
 					</div>
+					<div class="flex items-center justify-between mt-6">
+						<h3 class="text-white text-xl md:text-3xl font-light tracking-wide">JOHN P. SEIBEL</h3>
+						<a href="/team/john-seibel" class="border border-white text-white px-6 py-2 text-sm hover:bg-white hover:text-dark-slate transition-colors duration-300">
+							Ver perfil
+						</a>
+					</div>
+				</div>
 
-					<div class="">
-						<div class="relative overflow-hidden group">
-							<img src="/assets/members/fernando.jpg" alt="Fernando P. Henríquez - Socio" class="aspect-square w-full object-cover max-h-160 object-top" />
-							<div class="absolute inset-0 bg-bronze/70 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-								<p class="text-white text-sm md:text-base font-light leading-relaxed">Más de treinta años de experiencia en la práctica del derecho, con una trayectoria destacada en resolución de controversias y en la estructuración y ejecución de asuntos transaccionales de alta complejidad.</p>
-							</div>
-						</div>
-						<div class="flex items-center justify-between mt-6">
-							<h3 class="text-white text-xl md:text-3xl font-light tracking-wide">FERNANDO P. HENRÍQUEZ</h3>
-							<a href="/team/fernando-henriquez" class="border border-white text-white px-6 py-2 text-sm hover:bg-white hover:text-dark-slate transition-colors duration-300">
-								Ver perfil
-							</a>
+				<div class="max-w-120">
+					<div class="relative overflow-hidden group">
+						<img src="/assets/members/fernando.jpg" alt="Fernando P. Henríquez - Socio" class="aspect-square w-full object-cover max-h-160 object-top" />
+						<div class="absolute inset-0 bg-bronze/70 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+							<p class="text-white text-sm md:text-base font-light leading-relaxed">Más de treinta años de experiencia en la práctica del derecho, con una trayectoria destacada en resolución de controversias y en la estructuración y ejecución de asuntos transaccionales de alta complejidad.</p>
 						</div>
 					</div>
+					<div class="flex items-center justify-between mt-6">
+						<h3 class="text-white text-xl md:text-3xl font-light tracking-wide">FERNANDO P. HENRÍQUEZ</h3>
+						<a href="/team/fernando-henriquez" class="border border-white text-white px-6 py-2 text-sm hover:bg-white hover:text-dark-slate transition-colors duration-300">
+							Ver perfil
+						</a>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -260,37 +260,90 @@ const teamMembers = allMembers
 				<h2 class="text-dark-slate text-3xl md:text-4xl font-light tracking-widest">ALTO IMPACTO</h2>
 			</div>
 
-			<div class="embla relative" id="altoImpactoCarousel">
-				<div class="embla__viewport overflow-hidden">
-					<div class="embla__container flex gap-0">
-						{altoImpactoData.map((item) => (
-							<ImpactCard
-								title={item.title}
-								description={item.description}
-								image={item.image}
-								imageAlt={item.imageAlt}
-							/>
-						))}
+			<!-- MOBILE: Embla Carousel (below md) -->
+			<div class="md:hidden">
+				<div class="embla relative" id="altoImpactoCarousel">
+					<div class="embla__viewport overflow-hidden">
+						<div class="embla__container flex gap-0">
+							{altoImpactoData.map((item) => (
+								<ImpactCard
+									title={item.title}
+									description={item.description}
+									image={item.image}
+									imageAlt={item.imageAlt}
+								/>
+							))}
+						</div>
 					</div>
+
+					<button
+						class="embla__prev absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-12 h-12 rounded-full bg-bronze text-white flex items-center justify-center hover:bg-opacity-80 transition-all duration-300 z-10 cursor-pointer"
+						aria-label="Previous slide"
+					>
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+						</svg>
+					</button>
+
+					<button
+						class="embla__next absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-12 h-12 rounded-full bg-bronze text-white flex items-center justify-center hover:bg-opacity-80 transition-all duration-300 z-10 cursor-pointer"
+						aria-label="Next slide"
+					>
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+						</svg>
+					</button>
+				</div>
+			</div>
+
+			<!-- DESKTOP: Tabbed Layout (md and above) -->
+			<div class="hidden md:flex gap-12 lg:gap-16" id="altoImpactoTabs">
+				<!-- LEFT COLUMN: Title tabs -->
+				<div class="w-2/5 flex flex-col gap-2 justify-center">
+					{altoImpactoData.map((item, index) => (
+						<button
+							class:list={[
+								"impacto-tab text-left px-5 py-3 rounded transition-colors duration-300 uppercase tracking-wider text-sm lg:text-base font-light cursor-pointer",
+								index === 0
+									? "bg-bronze text-white"
+									: "bg-transparent text-dark-slate hover:bg-bronze/10"
+							]}
+							data-index={index}
+						>
+							{item.title}
+						</button>
+					))}
 				</div>
 
-				<button
-					class="embla__prev absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-8 w-12 h-12 rounded-full bg-bronze text-white flex items-center justify-center hover:bg-opacity-80 transition-all duration-300 z-10 cursor-pointer"
-					aria-label="Previous slide"
-				>
-					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
-						<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-					</svg>
-				</button>
+				<!-- RIGHT COLUMN: Stacked card display -->
+				<div class="w-3/5 relative">
+					<!-- Decorative stacked card layers -->
+					<div class="absolute top-4 left-4 w-full h-full bg-dark-slate/30 rounded-lg"></div>
+					<div class="absolute top-2 left-2 w-full h-full bg-dark-slate/50 rounded-lg"></div>
 
-				<button
-					class="embla__next absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-8 w-12 h-12 rounded-full bg-bronze text-white flex items-center justify-center hover:bg-opacity-80 transition-all duration-300 z-10 cursor-pointer"
-					aria-label="Next slide"
-				>
-					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
-						<path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-					</svg>
-				</button>
+					<!-- Content cards (only active one visible) -->
+					{altoImpactoData.map((item, index) => (
+						<div
+							class:list={[
+								"impacto-card w-full rounded-lg overflow-hidden shadow-lg",
+								index === 0 ? "relative" : "absolute inset-0 opacity-0"
+							]}
+							data-card-index={index}
+						>
+							<img
+								src={item.image}
+								alt={item.imageAlt}
+								class="w-full h-64 lg:h-80 xl:h-96 object-cover"
+							/>
+							<div class="bg-dark-slate p-6 lg:p-8">
+								<div class="w-20 h-0.75 bg-bronze mb-4"></div>
+								<p class="text-white text-sm lg:text-base font-light leading-relaxed">
+									{item.description}
+								</p>
+							</div>
+						</div>
+					))}
+				</div>
 			</div>
 		</div>
 	</section>
@@ -452,4 +505,5 @@ const teamMembers = allMembers
 <script>
 	import "../scripts/areas_gsap.js";
 	import "../scripts/anims.js";
+	import "../scripts/altoImpacto_tabs.js";
 </script>

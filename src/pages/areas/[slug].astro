@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import TeamLogos from '../../components/TeamLogos.astro';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -56,6 +57,10 @@ const otherAreas = allAreas
 			</div>
 		</div>
 	</section>
+
+	{data.logos && data.logos.length > 0 && (
+		<TeamLogos logos={data.logos} />
+	)}
 
 	<!-- Other Areas Section -->
 	<section class="bg-light-gray pb-16 md:pb-24 px-6 md:px-12 lg:px-20">

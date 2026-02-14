@@ -39,6 +39,14 @@ const areas = defineCollection({
 				descripcion: z.string(),
 			})
 		),
+		logos: z
+			.array(
+				z.object({
+					src: z.string(),
+					alt: z.string(),
+				})
+			)
+			.optional(),
 	}),
 });
 

@@ -11,6 +11,21 @@ servicios:
     descripcion: "Acompañamiento legal en el diseño y desarrollo de academias deportivas vinculadas a organizaciones internacionales, integrando componentes inmobiliarios, regulatorios y corporativos."
   - titulo: "Proyectos deportivos con impacto inmobiliario y transfronterizo"
     descripcion: "Asesoría en proyectos deportivos que combinan inversión extranjera, desarrollo inmobiliario y cumplimiento normativo local, alineados con estándares internacionales de la industria."
+logos:
+  - src: "/assets/logos/logo_rs.png"
+    alt: "Red Sox"
+  - src: "/assets/logos/logo_marlins.png"
+    alt: "Miami Marlins"
+  - src: "/assets/logos/logo_giants.png"
+    alt: "Giants"
+  - src: "/assets/logos/logo_angels.png"
+    alt: "Angels"
+  - src: "/assets/logos/logo_detroit.png"
+    alt: "Detroit Tigers"
+  - src: "/assets/logos/logo_diamond.png"
+    alt: "Diamond"
+  - src: "/assets/logos/logo_guardians.png"
+    alt: "Guardians"
 ---
 
 Nuestra práctica en derecho deportivo se ha consolidado como un referente en la República Dominicana, asesorando a ligas profesionales, organizaciones deportivas y actores estratégicos de la industria. Participamos de manera activa en la estructuración y gestión de asuntos legales complejos vinculados al deporte de alto nivel y a organizaciones relacionadas con Major League Baseball.
