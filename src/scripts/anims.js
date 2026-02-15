@@ -12,9 +12,9 @@ if (heroTitle) {
 
 	gsap.from(split.words, {
 		opacity: 0,
-		y: 40,
+		x: -40,
 		duration: 0.6,
-		stagger: 0.15,
+		stagger: 0.1,
 		ease: "power2.out",
 	});
 }
@@ -45,4 +45,3 @@ document.querySelectorAll(".textReveal").forEach((el) => {
 		},
 	});
 });
-
