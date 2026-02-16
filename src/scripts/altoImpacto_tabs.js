@@ -69,7 +69,7 @@ function initAltoImpactoScroll() {
 		ScrollTrigger.create({
 			trigger: section,
 			pin: true,
-			end: `+=${totalItems * 600}`,
+			end: `+=${totalItems * 200}`,
 			onUpdate: (self) => {
 				const activeIndex = Math.min(
 					Math.floor(self.progress * totalItems),

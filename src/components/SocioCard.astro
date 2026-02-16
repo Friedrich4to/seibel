@@ -12,14 +12,15 @@ const { name, phone, email, image, imageAlt, link } = Astro.props;
 ---
 
 <div class="flex flex-col">
-	<div class="w-full max-h-96 aspect-4/5 bg-gray-300 overflow-hidden">
+	<div class="relative w-full max-h-96 aspect-4/5 bg-gray-300 overflow-hidden group">
 		<a href={link}>
 			<img
 				src={image}
 				alt={imageAlt}
-				class="w-full h-full object-cover object-top grayscale"
+				class="w-full h-full object-cover object-top grayscale transition-transform duration-500 group-hover:scale-105"
 			/>
 		</a>
+		<div class="absolute inset-0 bg-bronze/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
 	</div>
 
 	<div class="mt-6 flex flex-col">
