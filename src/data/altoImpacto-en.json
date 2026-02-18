@@ -1,0 +1,38 @@
+[
+	{
+		"title": "Renegotiation of the Aerodom Contract",
+		"description": "Legal counsel to the Ministry of the Presidency of the Dominican Republic in the renegotiation of the concession contract for the country's main airport with Aeropuertos Dominicanos Siglo XXI (AERODOM).",
+		"image": "/assets/impacto/aerodom.jpg",
+		"imageAlt": "Aerial view of the airport"
+	},
+	{
+		"title": "Public Asset Recovery (ERPP)",
+		"description": "Appointment of Fernando P. Henríquez as General Coordinator of the Agreement Monitoring Team, for the regulation, organization, and legal coordination of Dominican State asset recovery processes.",
+		"image": "/assets/impacto/erpp.jpg",
+		"imageAlt": "Public asset recovery team"
+	},
+	{
+		"title": "Energy Contract Modification (PPA)",
+		"description": "Legal representation of Montecristi Solar 3 S.R.L. in the modification of its PPA (Power Purchase Agreement) in the context of a renewable energy investment.",
+		"image": "/assets/impacto/ppa.jpg",
+		"imageAlt": "Renewable energy project"
+	},
+	{
+		"title": "Syndicated Financing (Energas 4)",
+		"description": "Legal representation of Manzanillo Gas & Power, S.A.S. in the modification of its energy purchase agreement with EDEESTE, in the context of a strategic energy investment.",
+		"image": "/assets/impacto/deportiva.jpg",
+		"imageAlt": "Sports project"
+	},
+	{
+		"title": "Mass Transit Legal Audit",
+		"description": "Independent legal audit for the Trust for the Development of the Mass Transit System of the Dominican Republic (FITRAM) on public procurement processes linked to mass transit projects.",
+		"image": "/assets/impacto/transporte.jpg",
+		"imageAlt": "Transit audit"
+	},
+	{
+		"title": "International Sports Infrastructure Development",
+		"description": "Legal counsel to the San Pedro de Macorís Electricity Company (CESPM) in the structuring and closing of an international syndicated financing for the construction of a power generation plant.",
+		"image": "/assets/impacto/energas.jpg",
+		"imageAlt": "Legal counsel"
+	}
+]

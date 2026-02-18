@@ -4,6 +4,12 @@ description: "Gestión de activos inmobiliarios de alto valor y resolución estr
 order: 5
 image: "/assets/areas/inmobiliario.avif"
 imageAlt: "Proyecto inmobiliario comercial"
+certificate:
+  src: "/assets/logos/certificate_dark.png"
+  alt: "Certificado"
+  inner_src: "/assets/logos/certificate_dark.png"
+  title: "Leading Experts – Energy & Infrastructure M&A"
+  subtitle: "Chambers & Partners Global 2025"
 servicios:
   - titulo: "Proyectos inmobiliarios bajo regímenes especiales"
     descripcion: "Asesoría legal integral en el desarrollo de proyectos inmobiliarios y hoteleros acogidos a regímenes de incentivos fiscales, incluyendo estructuración legal y negociación contractual con operadores internacionales."

@@ -1,9 +1,9 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import SocioCard from '../components/SocioCard.astro';
-import TeamMemberCard from '../components/TeamMemberCard.astro';
+import Layout from '../../layouts/Layout.astro';
+import SocioCard from '../../components/SocioCard.astro';
+import TeamMemberCard from '../../components/TeamMemberCard.astro';
 import { getCollection } from 'astro:content';
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);

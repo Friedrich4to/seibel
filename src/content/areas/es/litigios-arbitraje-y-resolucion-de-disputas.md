@@ -4,6 +4,12 @@ description: "Representación en litigios complejos y arbitrajes bajo normas FID
 order: 6
 image: "/assets/areas/litigios.avif"
 imageAlt: "Litigios y arbitraje"
+certificate:
+  src: "/assets/logos/certificate_dark.png"
+  alt: "Certificado"
+  inner_src: "/assets/logos/certificate_dark.png"
+  title: "Leading Experts – Energy & Infrastructure M&A"
+  subtitle: "Chambers & Partners Global 2025"
 servicios:
   - titulo: ""
     descripcion: ""

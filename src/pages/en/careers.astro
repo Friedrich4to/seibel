@@ -1,6 +1,6 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import Layout from '../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -11,7 +11,7 @@ const t = useTranslations(lang);
 	description={t('careers.description')}
 >
 	<section class="relative w-full h-[40vh] md:h-[50vh] lg:h-[60vh] overflow-hidden">
-		<img src="/assets/carreras.jpg" alt="Compromiso Social" class="absolute inset-0 w-full h-full object-cover object-top" />
+		<img src="/assets/carreras.jpg" alt="Careers" class="absolute inset-0 w-full h-full object-cover object-top" />
 		<div class="absolute inset-0 bg-black/40"></div>
 		<div class="relative z-10 w-full h-full flex flex-col justify-end px-6 md:px-12 lg:px-20 pb-10 md:pb-14">
 			<div class="max-w-360 mx-auto w-full">
@@ -39,7 +39,7 @@ const t = useTranslations(lang);
 					<p class="text-dark-slate text-base md:text-xl lg:text-2xl font-light leading-relaxed">{t('careers.desarrollo.p2')}</p>
 				</div>
 				<div class="w-full lg:w-1/2">
-					<img src="/assets/members/placeholder.jpg" alt="Vocación Humana" class="w-full h-64 md:h-80 lg:h-96 object-cover" />
+					<img src="/assets/members/placeholder.jpg" alt="Development" class="w-full h-64 md:h-80 lg:h-96 object-cover" />
 				</div>
 			</div>
 		</div>
@@ -56,7 +56,7 @@ const t = useTranslations(lang);
 	</section>
 
 	<section class="relative w-full py-24 md:py-32 lg:py-40 overflow-hidden">
-		<img src="/assets/general/last_banner.avif" alt="Nuestro compromiso" class="absolute inset-0 w-full h-full object-cover" />
+		<img src="/assets/general/last_banner.avif" alt="Our commitment" class="absolute inset-0 w-full h-full object-cover" />
 		<div class="absolute inset-0 bg-black/30"></div>
 		<div class="relative z-10 px-6 md:px-12 lg:px-20 h-150 grid items-end justify-start">
 			<div class="max-w-360 mx-auto">

@@ -4,6 +4,12 @@ description: "Maestría jurídica en el desarrollo de infraestructuras de enverg
 order: 8
 image: "/assets/areas/infraestructura.avif"
 imageAlt: "Infraestructura"
+certificate:
+  src: "/assets/logos/certificate.png"
+  alt: "Certificado"
+  inner_src: "/assets/logos/certificate_dark.png"
+  title: "Leading Experts – Energy & Infrastructure M&A"
+  subtitle: "Chambers & Partners Global 2025"
 servicios:
   - titulo: "Infraestructura aeroportuaria estratégica"
     descripcion: "Asesoría legal al Estado dominicano en la renegociación de concesiones aeroportuarias vinculadas a la operación y desarrollo de infraestructura aeroportuaria estratégica."

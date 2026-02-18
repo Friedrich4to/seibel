@@ -1,18 +1,18 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import Layout from '../../../layouts/Layout.astro';
 import { getCollection, render } from 'astro:content';
-import { useTranslations } from '../../i18n/utils';
+import { useTranslations } from '../../../i18n/utils';
 
-const lang = 'es';
+const lang = 'en';
 const t = useTranslations(lang);
 const langPrefix = `${lang}/`;
 
 export async function getStaticPaths() {
 	const teamMembers = await getCollection('team');
 	return teamMembers
-		.filter((member) => member.id.startsWith('es/'))
+		.filter((member) => member.id.startsWith('en/'))
 		.map((member) => ({
-			params: { slug: member.id.replace('es/', '') },
+			params: { slug: member.id.replace('en/', '') },
 			props: { member },
 		}));
 }
@@ -25,7 +25,7 @@ const isSocio = data.role === 'socio';
 
 <Layout
 	title={data.name}
-	description={`${data.name} - ${data.position} en Seibel Henríquez`}
+	description={`${data.name} - ${data.position} at Seibel Henríquez`}
 	navbarDarkMode={true}
 >
 	<section class={isSocio ? 'bg-dark-slate' : 'bg-light-gray'}>

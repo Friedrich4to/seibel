@@ -1,12 +1,12 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import ImpactCard from '../components/ImpactCard.astro';
-import TeamMemberCard from '../components/TeamMemberCard.astro';
-import PracticeAreaCard from '../components/PracticeAreaCard.astro';
-import altoImpactoEs from '../data/altoImpacto.json';
-import altoImpactoEn from '../data/altoImpacto-en.json';
+import Layout from '../../layouts/Layout.astro';
+import ImpactCard from '../../components/ImpactCard.astro';
+import TeamMemberCard from '../../components/TeamMemberCard.astro';
+import PracticeAreaCard from '../../components/PracticeAreaCard.astro';
+import altoImpactoEs from '../../data/altoImpacto.json';
+import altoImpactoEn from '../../data/altoImpacto-en.json';
 import { getCollection } from 'astro:content';
-import { getLangFromUrl, useTranslations, useTranslatedPath } from '../i18n/utils';
+import { getLangFromUrl, useTranslations, useTranslatedPath } from '../../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -35,12 +35,10 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 >
 	<!-- Hero Section -->
 	<section class="relative h-svh w-full">
-		<!-- Placeholder for hero image -->
 		<video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline>
 			<source src="/hero_video.mp4" type="video/mp4" />
 		</video>
 
-		<!-- Dark overlay -->
 		<div class="absolute inset-0 bg-black/30"></div>
 
 		<div class="relative z-10 w-full h-full flex flex-col items-center justify-center">
@@ -52,9 +50,9 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 			<div class="absolute bottom-12 px-12 w-full text-light-gray text-xl md:text-2xl font-light flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
 				<p class="text-left! max-w-140">{t('home.hero.subtitle')}</p>
 				<div class="flex gap-2">
-					<img src="/assets/logos/certificate.png" alt="Certificado" class="h-30 w-auto">
-					<img src="/assets/logos/certificate.png" alt="Certificado" class="h-30 w-auto">
-					<img src="/assets/logos/certificate.png" alt="Certificado" class="h-30 w-auto">
+					<img src="/assets/logos/certificate.png" alt="Certificate" class="h-30 w-auto">
+					<img src="/assets/logos/certificate.png" alt="Certificate" class="h-30 w-auto">
+					<img src="/assets/logos/certificate.png" alt="Certificate" class="h-30 w-auto">
 				</div>
 			</div>
 		</div>
@@ -91,15 +89,14 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 	</section>
 
 	<script>
-		// Counter animation for stats
 		const statsSection = document.getElementById('statsSection');
 		const counters = document.querySelectorAll('.counter');
 		let hasAnimated = false;
 
 		const animateCounter = (counter: Element) => {
 			const target = parseInt(counter.getAttribute('data-target') || '0');
-			const duration = 5000; // 2 seconds
-			const increment = target / (duration / 16); // 60fps
+			const duration = 5000;
+			const increment = target / (duration / 16);
 			let current = 0;
 
 			const updateCounter = () => {
@@ -115,7 +112,6 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 			updateCounter();
 		};
 
-		// Intersection Observer to trigger animation when section is visible
 		const observer = new IntersectionObserver((entries) => {
 			entries.forEach((entry) => {
 				if (entry.isIntersecting && !hasAnimated) {
@@ -126,7 +122,7 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 				}
 			});
 		}, {
-			threshold: 0.5 // Trigger when 50% of the section is visible
+			threshold: 0.5
 		});
 
 		if (statsSection) {
@@ -134,9 +130,8 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 		}
 	</script>
 
-	<!-- LA FIRMA Section -->
+	<!-- THE FIRM Section -->
 	<section class="bg-light-gray py-16 md:py-24 px-6 md:px-12 lg:px-20">
-
 		<div class="max-w-360 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 			<div>
 				<h2 class="text-dark-slate text-3xl md:text-4xl font-light tracking-wide">{t('home.firma.title')}</h2>
@@ -163,16 +158,13 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 		</div>
 	</section>
 
-		<!-- Clients Section -->
+	<!-- Clients Section -->
 	<section class="bg-light-gray py-16 md:py-24 overflow-hidden">
 		<h2 class="text-dark-slate text-2xl md:text-2xl lg:text-3xl font-light italic tracking-wide text-center mb-12 md:mb-16">
 			{t('home.clients.title')}
 		</h2>
 
-		<div
-			class="clients-carousel"
-			style="--duration: 30s;"
-		>
+		<div class="clients-carousel" style="--duration: 30s;">
 			<div class="clients-track">
 				<img src="/assets/logos/logo_rs.png" alt="Red Sox" loading="lazy" />
 				<img src="/assets/logos/logo_iberica.png" alt="La Ibérica" loading="lazy" />
@@ -189,7 +181,6 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 				<img src="/assets/logos/logo_ccn.png" alt="CCN" loading="lazy" />
 				<img src="/assets/logos/logo_agora.png" alt="Ágora" loading="lazy" />
 
-				<!-- Duplicate for seamless loop -->
 				<img src="/assets/logos/logo_rs.png" alt="Red Sox" loading="lazy" aria-hidden="true" />
 				<img src="/assets/logos/logo_iberica.png" alt="La Ibérica" loading="lazy" aria-hidden="true" />
 				<img src="/assets/logos/logo_marlins.png" alt="Miami Marlins" loading="lazy" aria-hidden="true" />
@@ -208,32 +199,32 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 		</div>
 	</section>
 
-	<!-- ÁREAS DE PRÁCTICA Section -->
+	<!-- PRACTICE AREAS Section -->
 	<section class="pt-36 -mt-36 trigger">
-			<div class="px-6 md:px-12 lg:px-20">
-				<div class="mb-12 max-w-360 mx-auto  items-center">
-					<h2 class="text-dark-slate text-3xl md:text-4xl font-light tracking-wide">{t('home.areas.title')}</h2>
-					<div class="w-20 h-0.75 bg-bronze mt-2"></div>
-				</div>
+		<div class="px-6 md:px-12 lg:px-20">
+			<div class="mb-12 max-w-360 mx-auto items-center">
+				<h2 class="text-dark-slate text-3xl md:text-4xl font-light tracking-wide">{t('home.areas.title')}</h2>
+				<div class="w-20 h-0.75 bg-bronze mt-2"></div>
 			</div>
+		</div>
 
-			<div class="areas-container flex w-vw overflow-x-hidden">
-				{areasDePractica.map((area) => (
-					<section class="areas-section py-8 ml-12 flex items-start justify-center">
-						<PracticeAreaCard
-							title={area.data.title}
-							description={area.data.description}
-							image={area.data.image}
-							imageAlt={area.data.imageAlt}
-							url={`${areaBasePath}${stripLangPrefix(area.id)}`}
+		<div class="areas-container flex w-vw overflow-x-hidden">
+			{areasDePractica.map((area) => (
+				<section class="areas-section py-8 ml-12 flex items-start justify-center">
+					<PracticeAreaCard
+						title={area.data.title}
+						description={area.data.description}
+						image={area.data.image}
+						imageAlt={area.data.imageAlt}
+						url={`${areaBasePath}${stripLangPrefix(area.id)}`}
 						certificate={area.data.certificate}
-						/>
-					</section>
-				))}
-			</div>
+					/>
+				</section>
+			))}
+		</div>
 	</section>
 
-	<!-- SOCIOS Section -->
+	<!-- PARTNERS Section -->
 	<section class="bg-dark-slate pt-16 md:pt-24 px-6 md:px-12 lg:px-20">
 		<div class="max-w-360 mx-auto">
 			<div class="mb-12">
@@ -244,7 +235,7 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-24 md:gap-12 xl:gap-36">
 				<div class="max-w-120">
 					<div class="relative overflow-hidden group">
-						<img src="/assets/members/seibel.jpg" alt="John P. Seibel - Socio" class="aspect-square w-full object-cover object-top" />
+						<img src="/assets/members/seibel.jpg" alt="John P. Seibel - Partner" class="aspect-square w-full object-cover object-top" />
 						<div class="absolute inset-0 bg-bronze/70 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
 							<p class="text-white text-sm md:text-base font-light leading-relaxed">{t('home.socios.seibel-desc')}</p>
 						</div>
@@ -259,7 +250,7 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 
 				<div class="max-w-120 justify-self-end">
 					<div class="relative overflow-hidden group">
-						<img src="/assets/members/fernando.jpg" alt="Fernando P. Henríquez - Socio" class="aspect-square w-full object-cover max-h-160 object-top" />
+						<img src="/assets/members/fernando.jpg" alt="Fernando P. Henríquez - Partner" class="aspect-square w-full object-cover max-h-160 object-top" />
 						<div class="absolute inset-0 bg-bronze/70 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
 							<p class="text-white text-sm md:text-base font-light leading-relaxed">{t('home.socios.fernando-desc')}</p>
 						</div>
@@ -275,7 +266,7 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 		</div>
 	</section>
 
-	<!-- NUESTRO EQUIPO Section -->
+	<!-- OUR TEAM Section -->
 	<section class="bg-dark-slate py-16 md:py-24 px-6 md:px-12 lg:px-20">
 		<div class="max-w-360 mx-auto pt-16 md:pt-24">
 			<div class="mb-12">
@@ -301,30 +292,17 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 				</div>
 			</div>
 
-			<button
-				class="team-prev absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-bronze text-white flex items-center justify-center hover:bg-opacity-80 transition-all duration-300 z-10 cursor-pointer"
-				aria-label="Previous slide"
-			>
-				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
-					<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-				</svg>
+			<button class="team-prev absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-bronze text-white flex items-center justify-center hover:bg-opacity-80 transition-all duration-300 z-10 cursor-pointer" aria-label="Previous slide">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
 			</button>
-
-			<button
-				class="team-next absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-bronze text-white flex items-center justify-center hover:bg-opacity-80 transition-all duration-300 z-10 cursor-pointer"
-				aria-label="Next slide"
-			>
-				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
-					<path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-				</svg>
+			<button class="team-next absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-bronze text-white flex items-center justify-center hover:bg-opacity-80 transition-all duration-300 z-10 cursor-pointer" aria-label="Next slide">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
 			</button>
 		</div>
 
 		<div class="max-w-360 mx-auto">
 			<div class="mt-12">
-				<p class="text-white text-base md:text-xl font-light mt-4 max-w-3xl">
-					{t('home.team.desc')}
-				</p>
+				<p class="text-white text-base md:text-xl font-light mt-4 max-w-3xl">{t('home.team.desc')}</p>
 			</div>
 		</div>
 	</section>
@@ -334,16 +312,9 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 		if (teamCarousel && (window as any).EmblaCarousel) {
 			const emblaApi = (window as any).EmblaCarousel(
 				teamCarousel.querySelector('.embla__viewport'),
-				{
-					loop: true,
-					align: 'start',
-					skipSnaps: false,
-					dragFree: true,
-					draggable: true
-				}
+				{ loop: true, align: 'start', skipSnaps: false, dragFree: true, draggable: true }
 			);
 
-			// Trackpad horizontal scroll support
 			const viewport = teamCarousel.querySelector('.embla__viewport') as HTMLElement;
 			let wheelDelta = 0;
 			const WHEEL_THRESHOLD = 50;
@@ -362,7 +333,6 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 				}, { passive: false });
 			}
 
-			// Button handlers
 			const prevBtn = teamCarousel.querySelector('.team-prev');
 			const nextBtn = teamCarousel.querySelector('.team-next');
 			if (prevBtn && nextBtn) {
@@ -372,7 +342,7 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 		}
 	</script>
 
-	<!-- ALTO IMPACTO Section -->
+	<!-- HIGH IMPACT Section -->
 	<section class="bg-light-gray py-16 md:py-24 px-6 md:px-12 lg:px-20 alto-impacto-trigger">
 		<div class="max-w-360 mx-auto">
 			<div class="mb-12">
@@ -380,84 +350,45 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 				<div class="w-16 h-0.75 bg-bronze mb-8"></div>
 			</div>
 
-			<!-- MOBILE: Embla Carousel (below md) -->
+			<!-- MOBILE -->
 			<div class="md:hidden">
 				<div class="embla relative" id="altoImpactoCarousel">
 					<div class="embla__viewport overflow-hidden">
 						<div class="embla__container flex gap-0">
 							{altoImpactoData.map((item) => (
-								<ImpactCard
-									title={item.title}
-									description={item.description}
-									image={item.image}
-									imageAlt={item.imageAlt}
-								/>
+								<ImpactCard title={item.title} description={item.description} image={item.image} imageAlt={item.imageAlt} />
 							))}
 						</div>
 					</div>
-
-					<button
-						class="embla__prev absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-12 h-12 rounded-full bg-bronze text-white flex items-center justify-center hover:bg-opacity-80 transition-all duration-300 z-10 cursor-pointer"
-						aria-label="Previous slide"
-					>
-						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
-							<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-						</svg>
+					<button class="embla__prev absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-12 h-12 rounded-full bg-bronze text-white flex items-center justify-center hover:bg-opacity-80 transition-all duration-300 z-10 cursor-pointer" aria-label="Previous slide">
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
 					</button>
-
-					<button
-						class="embla__next absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-12 h-12 rounded-full bg-bronze text-white flex items-center justify-center hover:bg-opacity-80 transition-all duration-300 z-10 cursor-pointer"
-						aria-label="Next slide"
-					>
-						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
-							<path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-						</svg>
+					<button class="embla__next absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-12 h-12 rounded-full bg-bronze text-white flex items-center justify-center hover:bg-opacity-80 transition-all duration-300 z-10 cursor-pointer" aria-label="Next slide">
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
 					</button>
 				</div>
 			</div>
 
-			<!-- DESKTOP: Tabbed Layout (md and above) -->
+			<!-- DESKTOP -->
 			<div class="hidden md:flex gap-12 lg:gap-16" id="altoImpactoTabs">
-				<!-- LEFT COLUMN: Title tabs -->
 				<div class="w-2/5 flex flex-col gap-2 justify-center">
 					{altoImpactoData.map((item, index) => (
 						<button
-							class:list={[
-								"impacto-tab text-left px-5 py-3 transition-colors duration-300 uppercase tracking-wider text-sm lg:text-base font-light cursor-pointer",
-								index === 0
-									? "bg-bronze text-white"
-									: "bg-transparent text-dark-slate hover:bg-bronze/10"
-							]}
+							class:list={["impacto-tab text-left px-5 py-3 transition-colors duration-300 uppercase tracking-wider text-sm lg:text-base font-light cursor-pointer", index === 0 ? "bg-bronze text-white" : "bg-transparent text-dark-slate hover:bg-bronze/10"]}
 							data-index={index}
-						>
-							{item.title}
-						</button>
+						>{item.title}</button>
 					))}
 					<a href="#" class="hidden impacto-cta text-center px-5 py-3 mt-4 bg-bronze text-white uppercase tracking-wider text-sm lg:text-base font-light transition-colors duration-300 hover:bg-bronze/80">
 						{t('home.impacto.ver-proyectos')}
 					</a>
 				</div>
-
-				<!-- RIGHT COLUMN: Stacked card display -->
 				<div class="w-3/5 relative overflow-visible">
 					{altoImpactoData.map((item, index) => (
-						<div
-							class:list={[
-								"impacto-card w-full overflow-hidden",
-								index === 0 ? "relative" : "absolute inset-0"
-							]}
-							data-card-index={index}
-						>
-							<img
-								src={item.image}
-								alt={item.imageAlt}
-								class="w-full h-64 lg:h-80 xl:h-96 object-cover"
-							/>
+						<div class:list={["impacto-card w-full overflow-hidden", index === 0 ? "relative" : "absolute inset-0"]} data-card-index={index}>
+							<img src={item.image} alt={item.imageAlt} class="w-full h-64 lg:h-80 xl:h-96 object-cover" />
 							<div class="bg-dark-slate p-6 lg:p-8">
 								<div class="w-20 h-0.75 bg-bronze mb-4"></div>
-								<p class="text-white text-sm lg:text-base font-light leading-relaxed">
-									{item.description}
-								</p>
+								<p class="text-white text-sm lg:text-base font-light leading-relaxed">{item.description}</p>
 							</div>
 						</div>
 					))}
@@ -471,17 +402,10 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 		if (altoImpactoCarousel && (window as any).EmblaCarousel) {
 			const emblaApi = (window as any).EmblaCarousel(
 				altoImpactoCarousel.querySelector('.embla__viewport'),
-				{
-					loop: true,
-					align: 'start',
-					skipSnaps: false,
-					dragFree: false
-				}
+				{ loop: true, align: 'start', skipSnaps: false, dragFree: false }
 			);
-
 			const prevBtn = altoImpactoCarousel.querySelector('.embla__prev');
 			const nextBtn = altoImpactoCarousel.querySelector('.embla__next');
-
 			if (prevBtn && nextBtn) {
 				prevBtn.addEventListener('click', () => emblaApi.scrollPrev());
 				nextBtn.addEventListener('click', () => emblaApi.scrollNext());
@@ -489,20 +413,13 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 		}
 	</script>
 
-	<!-- PRÁCTICA RESPONSABLE Section -->
+	<!-- RESPONSIBLE PRACTICE Section -->
 	<section class="relative h-[80vh] w-full flex items-start">
-		<img
-			src="/assets/compromiso.avif"
-			alt="Práctica Responsable"
-			class="absolute inset-0 w-full h-full object-cover object-bottom lg:object-left"
-		/>
+		<img src="/assets/compromiso.avif" alt="Responsible Practice" class="absolute inset-0 w-full h-full object-cover object-bottom lg:object-left" />
 		<div class="absolute inset-0 bg-black/20"></div>
-
 		<div class="relative z-10 max-w-360 mx-auto px-6 md:px-12 lg:px-0 w-full flex justify-end py-12">
 			<div class="max-w-xl">
-				<h2 class="text-white text-base md:text-xl lg:text-4xl mb-8 font-light">
-					{t('home.practica.title')}
-				</h2>
+				<h2 class="text-white text-base md:text-xl lg:text-4xl mb-8 font-light">{t('home.practica.title')}</h2>
 				<a href={translatePath('/compromiso-social')} class="border-2 border-bronze text-bronze bg-white bg-opacity-90 px-8 py-3 hover:bg-bronze hover:text-white transition-colors duration-300 text-sm md:text-base tracking-wide uppercase">
 					{t('home.practica.cta')}
 				</a>
@@ -514,13 +431,9 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 	<section class="bg-light-gray py-16 md:py-24 px-6 md:px-12 lg:px-20">
 		<div class="max-w-360 mx-auto gap-12 items-center">
 			<div class="space-y-4">
-				<h2 class="text-dark-slate text-3xl md:text-4xl lg:text-5xl font-light tracking-wide">
-					{t('home.insights.title')}
-				</h2>
+				<h2 class="text-dark-slate text-3xl md:text-4xl lg:text-5xl font-light tracking-wide">{t('home.insights.title')}</h2>
 				<div class="w-20 h-0.75 bg-bronze mt-2"></div>
-				<p class="text-dark-slate text-base md:text-lg lg:text-xl font-light leading-relaxed">
-					{t('home.insights.desc')}
-				</p>
+				<p class="text-dark-slate text-base md:text-lg lg:text-xl font-light leading-relaxed">{t('home.insights.desc')}</p>
 				<button class="border-2 border-bronze text-bronze px-8 py-3 hover:bg-bronze hover:text-white transition-colors duration-300 text-sm md:text-base tracking-wide pointer-events-none opacity-30">
 					{t('home.insights.newsletter')}
 				</button>
@@ -535,7 +448,6 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 		mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 		-webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 	}
-
 	.clients-track {
 		display: flex;
 		align-items: center;
@@ -543,7 +455,6 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 		width: max-content;
 		animation: scroll var(--duration, 30s) linear infinite;
 	}
-
 	.clients-track img {
 		height: auto;
 		width: 120px;
@@ -553,30 +464,21 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 		opacity: 0.7;
 		transition: filter 0.3s, opacity 0.3s;
 	}
-
 	.clients-track img:hover {
 		filter: grayscale(0%);
 		opacity: 1;
 	}
-
 	@media (min-width: 768px) {
-		.clients-track {
-			gap: 4rem;
-		}
-		.clients-track img {
-			height: 80px;
-		}
+		.clients-track { gap: 4rem; }
+		.clients-track img { height: 80px; }
 	}
-
 	@keyframes scroll {
-		to {
-			transform: translateX(-50%);
-		}
+		to { transform: translateX(-50%); }
 	}
 </style>
 
 <script>
-	import "../scripts/areas_gsap.js";
-	import "../scripts/anims.js";
-	import "../scripts/altoImpacto_tabs.js";
+	import "../../scripts/areas_gsap.js";
+	import "../../scripts/anims.js";
+	import "../../scripts/altoImpacto_tabs.js";
 </script>

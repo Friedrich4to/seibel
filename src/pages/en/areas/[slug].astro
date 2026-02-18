@@ -1,19 +1,19 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import TeamLogos from '../../components/TeamLogos.astro';
+import Layout from '../../../layouts/Layout.astro';
+import TeamLogos from '../../../components/TeamLogos.astro';
 import { getCollection, render } from 'astro:content';
-import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import { useTranslations } from '../../../i18n/utils';
 
-const lang = 'es';
+const lang = 'en';
 const t = useTranslations(lang);
 const langPrefix = `${lang}/`;
 
 export async function getStaticPaths() {
 	const areas = await getCollection('areas');
 	return areas
-		.filter((area) => area.id.startsWith('es/'))
+		.filter((area) => area.id.startsWith('en/'))
 		.map((area) => ({
-			params: { slug: area.id.replace('es/', '') },
+			params: { slug: area.id.replace('en/', '') },
 			props: { area },
 		}));
 }
@@ -28,7 +28,7 @@ const otherAreas = allAreas
 	.sort((a, b) => a.data.order - b.data.order)
 	.slice(0, 3);
 
-const areaBasePath = '/areas/';
+const areaBasePath = '/en/areas/';
 const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 ---
 

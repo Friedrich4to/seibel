@@ -4,6 +4,12 @@ description: "Representación legal de las mayores generadoras y organismos regu
 order: 4
 image: "/assets/areas/energia.avif"
 imageAlt: "Torres de energía eléctrica"
+certificate:
+  src: "/assets/logos/certificate_dark.png"
+  alt: "Certificado"
+  inner_src: "/assets/logos/certificate_dark.png"
+  title: "Leading Experts – Energy & Infrastructure M&A"
+  subtitle: "Chambers & Partners Global 2025"
 servicios:
   - titulo: "Proyectos energéticos integrados de gran escala"
     descripcion: "Asesoría legal integral en la estructuración corporativa, regulatoria y contractual de proyectos energéticos complejos, incluyendo componentes de generación, suministro y logística energética"

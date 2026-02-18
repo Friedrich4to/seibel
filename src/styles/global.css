@@ -16,3 +16,7 @@
 body{
     background-color: var(--color-light-gray);
 }
+
+p {
+    text-align: justify;
+}

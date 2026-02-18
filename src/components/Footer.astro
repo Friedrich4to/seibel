@@ -1,14 +1,22 @@
 ---
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  lang?: 'es' | 'en';
+}
+
+const { lang = 'es' } = Astro.props;
+const t = useTranslations(lang);
 ---
 
-<footer class="bg-dark-slate text-light-gray py-12 md:py-16">
-  <div class="max-w-360 mx-auto px-4 sm:px-6 lg:px-0">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+<footer class="bg-dark-slate text-light-gray pt-12 md:pt-16">
+  <div class="max-w-360 mx-auto px-4 sm:px-6 lg:px-20">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
 
       <!-- Social Icons Section -->
-      <div class="lg:col-span-2 flex gap-6 lg:gap-3 justify-start items-center lg:items-start">
+      <div class=" flex gap-6 lg:gap-3 justify-start items-center lg:items-start">
         <a
-          href="https://instagram.com"
+          href="https://www.instagram.com/seibelhenriquez/"
           target="_blank"
           rel="noopener noreferrer"
           class="text-light-gray hover:text-bronze transition-colors duration-300"
@@ -35,25 +43,25 @@
       </div>
 
       <!-- Location Section -->
-      <div class="lg:col-span-5">
+      <div class="">
         <h3 class="text-lg font-light uppercase tracking-wide mb-4 pb-2">
-          Ubicación
+          {t('footer.ubicacion')}
         </h3>
         <address class="not-italic space-y-2">
-          <p class="text-base font-light">Piantini, Santo Domingo,</p>
-          <p class="text-base font-light">República Dominicana</p>
-          <p class="text-base font-light">Roberto Pastoriza</p>
-          <p class="text-base font-light">No.454 - Piso 6</p>
+          <p class="text-base font-light">{t('footer.piantini')}</p>
+          <p class="text-base font-light">{t('footer.pais')}</p>
+          <p class="text-base font-light">{t('footer.calle')}</p>
+          <p class="text-base font-light">{t('footer.numero')}</p>
         </address>
 
         <div class="mt-6 space-y-2">
           <p class="text-base font-light">
-            Tel: <a href="tel:8093382000" class="hover:text-bronze transition-colors">809.338.2000</a>
+            {t('footer.tel')} <a href="tel:8093382000" class="hover:text-bronze transition-colors">809.338.2000</a>
           </p>
         </div>
 
         <div class="mt-4">
-          <p class="text-base font-light">Email:</p>
+          <p class="text-base font-light">{t('footer.email')}</p>
           <a
             href="mailto:info@seibelhenriquez.com"
             class="text-base font-light hover:text-bronze transition-colors"
@@ -64,18 +72,29 @@
       </div>
 
       <!-- International Address Section -->
-      <div class="lg:col-span-5">
+      <div class="">
         <h3 class="text-lg font-light uppercase tracking-wide mb-4 pb-2">
-          Dirección Postal Internacional
+          {t('footer.direccion-postal')}
         </h3>
         <address class="not-italic space-y-2">
-          <p class="text-base font-light">Piantini, Santo 8374 NW 64th St</p>
-          <p class="text-base font-light">Jet Pack No. 200580</p>
-          <p class="text-base font-light">Miami, FL 33166-2624. EE.UU</p>
+          <p class="text-base font-light">{t('footer.miami-1')}</p>
+          <p class="text-base font-light">{t('footer.miami-2')}</p>
+          <p class="text-base font-light">{t('footer.miami-3')}</p>
         </address>
       </div>
 
     </div>
+  </div>
+  <div class="w-full mt-12 md:mt-16">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.367322596698!2d-69.93721567575133!3d18.46701358500898!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf89e19d4ac277%3A0xc8008cf0f8a878db!2sSeibel%20%26%20Henr%C3%ADquez!5e0!3m2!1ses-419!2sdo!4v1771369768197!5m2!1ses-419!2sdo"
+      width="100%"
+      height="450"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
   </div>
 </footer>
 

@@ -3,6 +3,7 @@ import '../styles/global.css';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import NavbarMobile from '../components/NavbarMobile.astro';
+import { getLangFromUrl } from '../i18n/utils';
 
 interface Props {
 	title: string;
@@ -22,11 +23,12 @@ const {
 	navbarDarkMode = false,
 } = Astro.props;
 
+const lang = getLangFromUrl(Astro.url);
 const siteTitle = `${title} | Seibel Henriquez`;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -62,9 +64,9 @@ const siteTitle = `${title} | Seibel Henriquez`;
 		<!-- <link rel="preload" href="/fonts/your-font.woff2" as="font" type="font/woff2" crossorigin /> -->
 	</head>
 	<body>
-		<Navbar darkMode={navbarDarkMode}/>
-		<NavbarMobile darkMode={navbarDarkMode}/>
+		<Navbar darkMode={navbarDarkMode} lang={lang}/>
+		<NavbarMobile darkMode={navbarDarkMode} lang={lang}/>
 		<slot />
-		<Footer/>
+		<Footer lang={lang}/>
 	</body>
 </html>

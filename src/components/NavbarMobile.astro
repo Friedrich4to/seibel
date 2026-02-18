@@ -1,16 +1,34 @@
 ---
+import { useTranslations, useTranslatedPath, getAlternateUrl } from '../i18n/utils';
+import { languages } from '../i18n/ui';
+
 interface Props {
   darkMode?: boolean;
+  lang?: 'es' | 'en';
 }
 
-const { darkMode = false } = Astro.props;
+const { darkMode = false, lang = 'es' } = Astro.props;
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+
+const navLinks = [
+  { href: translatePath('/la-firma'), label: t('nav.la-firma') },
+  { href: translatePath('/nuestro-equipo'), label: t('nav.nuestro-equipo') },
+  { href: translatePath('/areas-de-practica'), label: t('nav.areas-de-practica') },
+  { href: translatePath('/recursos'), label: t('nav.recursos') },
+  { href: translatePath('/carreras'), label: t('nav.carreras') },
+  { href: translatePath('/compromiso-social'), label: t('nav.compromiso-social') },
+];
+
+const alternateLang = lang === 'es' ? 'en' : 'es';
+const alternateUrl = getAlternateUrl(Astro.url, alternateLang);
 ---
 
 <nav id="navbar-mobile" class:list={["block lg:hidden fixed w-full z-50", { "dark-mode": darkMode }]}>
     <div class="flex flex-col">
       <!-- Top Bar with Logo and Burger -->
       <div class="py-8 px-6 flex items-center justify-between transition-all duration-300" id="top-bar">
-        <a href="/" class="flex items-center">
+        <a href={lang === 'es' ? '/' : '/en/'} class="flex items-center">
           <svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1002.74 199.36" class="h-8 w-auto">
             <defs>
               <style>
@@ -56,24 +74,26 @@ const { darkMode = false } = Astro.props;
 
       <!-- Mobile Menu -->
       <div class="flex flex-col px-6 pb-8 space-y-6 uppercase transition-all duration-300" id="menu">
-        <a href="/la-firma" class="nav-link text-base font-light hover:text-bronze transition-colors">
-          La Firma
-        </a>
-        <a href="/nuestro-equipo" class="nav-link text-base font-light hover:text-bronze transition-colors">
-          Nuestro Equipo
-        </a>
-        <a href="/areas-de-practica" class="nav-link text-base font-light hover:text-bronze transition-colors">
-          Áreas de Práctica
-        </a>
-        <a href="/recursos" class="nav-link text-base font-light hover:text-bronze transition-colors">
-          Recursos
-        </a>
-        <a href="/carreras" class="nav-link text-base font-light hover:text-bronze transition-colors">
-          Carreras
-        </a>
-        <a href="/compromiso-social" class="nav-link text-base font-light hover:text-bronze transition-colors">
-          Compromiso Social
-        </a>
+        {navLinks.map((link) => (
+          <a href={link.href} class="nav-link text-base font-light hover:text-bronze transition-colors">
+            {link.label}
+          </a>
+        ))}
+
+        <!-- Language Switcher -->
+        <div class="flex items-center gap-4 pt-2 border-t border-dark-slate/20">
+          {Object.entries(languages).map(([code, label]) => (
+            <a
+              href={code === lang ? '#' : alternateUrl}
+              class:list={[
+                "nav-link text-sm font-light hover:text-bronze transition-colors",
+                { "text-bronze font-medium": code === lang },
+              ]}
+            >
+              {label}
+            </a>
+          ))}
+        </div>
       </div>
     </div>
 </nav>

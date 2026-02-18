@@ -5,17 +5,30 @@ interface Props {
 	image: string;
 	imageAlt: string;
 	url: string;
+	certificate?: {
+		src: string;
+		alt: string;
+	};
 }
 
-const { title, description, image, imageAlt, url } = Astro.props;
+const { title, description, image, imageAlt, url, certificate } = Astro.props;
 ---
 
-<a href={url} class="w-77 md:w-137.5 flex flex-col overflow-hidden group bg-white">
-	<img
-		src={image}
-		alt={imageAlt}
-		class="w-full h-48 md:h-64 object-cover transition-transform duration-500 group-hover:scale-105"
-	/>
+<a href={url} class="w-77 h-full md:w-137.5 flex flex-col overflow-hidden group bg-white">
+	<div class="relative overflow-hidden">
+		<img
+			src={image}
+			alt={imageAlt}
+			class="w-full h-48 md:h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+		/>
+		{certificate && (
+			<img
+				src={certificate.src}
+				alt={certificate.alt}
+				class="absolute bottom-2 left-2 w-24 md:w-30 h-auto"
+			/>
+		)}
+	</div>
 	<div class="flex flex-col gap-4 p-6 md:p-8">
 		<h3 class="text-dark-slate text-lg md:text-xl font-light tracking-wider uppercase">
 			{title}

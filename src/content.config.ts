@@ -47,6 +47,15 @@ const areas = defineCollection({
 				})
 			)
 			.optional(),
+		certificate: z
+			.object({
+				src: z.string(),
+				alt: z.string(),
+				inner_src: z.string(),
+				title: z.string(),
+				subtitle: z.string(),
+			})
+			.optional(),
 	}),
 });
 
