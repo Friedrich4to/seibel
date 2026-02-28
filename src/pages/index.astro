@@ -1,8 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ClientsCarousel from '../components/ClientsCarousel.astro';
 import ImpactCard from '../components/ImpactCard.astro';
 import TeamMemberCard from '../components/TeamMemberCard.astro';
 import PracticeAreaCard from '../components/PracticeAreaCard.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
 import altoImpactoEs from '../data/altoImpacto.json';
 import altoImpactoEn from '../data/altoImpacto-en.json';
 import { getCollection } from 'astro:content';
@@ -41,7 +43,7 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 		</video>
 
 		<!-- Dark overlay -->
-		<div class="absolute inset-0 bg-black/30"></div>
+		<div class="absolute inset-0 bg-black/50"></div>
 
 		<div class="relative z-10 w-full h-full flex flex-col items-center justify-center">
 			<h1 id="hero-title" class="text-light-gray text-2xl md:text-3xl lg:text-4xl font-regular text-center uppercase" set:html={t('home.hero.title')} />
@@ -163,53 +165,11 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 		</div>
 	</section>
 
-		<!-- Clients Section -->
-	<section class="bg-light-gray py-16 md:py-24 overflow-hidden">
-		<h2 class="text-dark-slate text-2xl md:text-2xl lg:text-3xl font-light italic tracking-wide text-center mb-12 md:mb-16">
-			{t('home.clients.title')}
-		</h2>
-
-		<div
-			class="clients-carousel"
-			style="--duration: 30s;"
-		>
-			<div class="clients-track">
-				<img src="/assets/logos/logo_rs.png" alt="Red Sox" loading="lazy" />
-				<img src="/assets/logos/logo_iberica.png" alt="La Ibérica" loading="lazy" />
-				<img src="/assets/logos/logo_marlins.png" alt="Miami Marlins" loading="lazy" />
-				<img src="/assets/logos/logo_giants.png" alt="Giants" loading="lazy" />
-				<img src="/assets/logos/logo_angels.png" alt="Angels" loading="lazy" />
-				<img src="/assets/logos/logo_detroit.png" alt="Detroit Tigers" loading="lazy" />
-				<img src="/assets/logos/logo_diamond.png" alt="Diamond" loading="lazy" />
-				<img src="/assets/logos/logo_guardians.png" alt="Guardians" loading="lazy" />
-				<img src="/assets/logos/logo_alterra.png" alt="Alterra" loading="lazy" />
-				<img src="/assets/logos/logo_cepm.png" alt="CEPM" loading="lazy" />
-				<img src="/assets/logos/logo_manzanillo.png" alt="Manzanillo" loading="lazy" />
-				<img src="/assets/logos/logo_megacentro.png" alt="Megacentro" loading="lazy" />
-				<img src="/assets/logos/logo_ccn.png" alt="CCN" loading="lazy" />
-				<img src="/assets/logos/logo_agora.png" alt="Ágora" loading="lazy" />
-
-				<!-- Duplicate for seamless loop -->
-				<img src="/assets/logos/logo_rs.png" alt="Red Sox" loading="lazy" aria-hidden="true" />
-				<img src="/assets/logos/logo_iberica.png" alt="La Ibérica" loading="lazy" aria-hidden="true" />
-				<img src="/assets/logos/logo_marlins.png" alt="Miami Marlins" loading="lazy" aria-hidden="true" />
-				<img src="/assets/logos/logo_giants.png" alt="Giants" loading="lazy" aria-hidden="true" />
-				<img src="/assets/logos/logo_angels.png" alt="Angels" loading="lazy" aria-hidden="true" />
-				<img src="/assets/logos/logo_detroit.png" alt="Detroit Tigers" loading="lazy" aria-hidden="true" />
-				<img src="/assets/logos/logo_diamond.png" alt="Diamond" loading="lazy" aria-hidden="true" />
-				<img src="/assets/logos/logo_guardians.png" alt="Guardians" loading="lazy" aria-hidden="true" />
-				<img src="/assets/logos/logo_alterra.png" alt="Alterra" loading="lazy" aria-hidden="true" />
-				<img src="/assets/logos/logo_cepm.png" alt="CEPM" loading="lazy" aria-hidden="true" />
-				<img src="/assets/logos/logo_manzanillo.png" alt="Manzanillo" loading="lazy" aria-hidden="true" />
-				<img src="/assets/logos/logo_megacentro.png" alt="Megacentro" loading="lazy" aria-hidden="true" />
-				<img src="/assets/logos/logo_ccn.png" alt="CCN" loading="lazy" aria-hidden="true" />
-				<img src="/assets/logos/logo_agora.png" alt="Ágora" loading="lazy" aria-hidden="true" />
-			</div>
-		</div>
-	</section>
+	<!-- Clients Section -->
+	<ClientsCarousel title={t('home.clients.title')} />
 
 	<!-- ÁREAS DE PRÁCTICA Section -->
-	<section class="pt-36 -mt-36 trigger">
+	<section class="pt-36 -mt-12 trigger z-30">
 			<div class="px-6 md:px-12 lg:px-20">
 				<div class="mb-12 max-w-360 mx-auto  items-center">
 					<h2 class="text-dark-slate text-3xl md:text-4xl font-light tracking-wide">{t('home.areas.title')}</h2>
@@ -241,7 +201,7 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 				<div class="w-20 h-0.75 bg-bronze mt-2"></div>
 			</div>
 
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-24 md:gap-12 xl:gap-36">
+			<div class="flex flex-col md:flex-row md:gap-12 xl:gap-24">
 				<div class="max-w-120">
 					<div class="relative overflow-hidden group">
 						<img src="/assets/members/seibel.jpg" alt="John P. Seibel - Socio" class="aspect-square w-full object-cover object-top" />
@@ -490,11 +450,11 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 	</script>
 
 	<!-- PRÁCTICA RESPONSABLE Section -->
-	<section class="relative h-[80vh] w-full flex items-start">
+	<section class="relative h-[50vh] w-full flex items-center">
 		<img
 			src="/assets/compromiso.avif"
 			alt="Práctica Responsable"
-			class="absolute inset-0 w-full h-full object-cover object-bottom lg:object-left"
+			class="absolute inset-0 w-full h-full object-cover object-bottom lg:object-top"
 		/>
 		<div class="absolute inset-0 bg-black/20"></div>
 
@@ -512,68 +472,19 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 
 	<!-- INSIGHTS Section -->
 	<section class="bg-light-gray py-16 md:py-24 px-6 md:px-12 lg:px-20">
-		<div class="max-w-360 mx-auto gap-12 items-center">
+		<div class="max-w-360 mx-auto space-y-8 items-center">
 			<div class="space-y-4">
-				<h2 class="text-dark-slate text-3xl md:text-4xl lg:text-5xl font-light tracking-wide">
-					{t('home.insights.title')}
-				</h2>
+				<h2 class="text-dark-slate text-3xl md:text-4xl lg:text-5xl font-light tracking-wide">{t('home.insights.title')}</h2>
 				<div class="w-20 h-0.75 bg-bronze mt-2"></div>
-				<p class="text-dark-slate text-base md:text-lg lg:text-xl font-light leading-relaxed">
-					{t('home.insights.desc')}
-				</p>
-				<button class="border-2 border-bronze text-bronze px-8 py-3 hover:bg-bronze hover:text-white transition-colors duration-300 text-sm md:text-base tracking-wide pointer-events-none opacity-30">
-					{t('home.insights.newsletter')}
-				</button>
+				<p class="text-dark-slate text-base md:text-lg lg:text-xl font-light leading-relaxed">{t('home.insights.desc')}</p>
+			</div>
+			<div>
+				<NewsletterForm lang={lang} />
 			</div>
 		</div>
 	</section>
 </Layout>
 
-<style>
-	.clients-carousel {
-		width: 100%;
-		mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-		-webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-	}
-
-	.clients-track {
-		display: flex;
-		align-items: center;
-		gap: 3rem;
-		width: max-content;
-		animation: scroll var(--duration, 30s) linear infinite;
-	}
-
-	.clients-track img {
-		height: auto;
-		width: 120px;
-		object-fit: contain;
-		flex-shrink: 0;
-		filter: grayscale(100%);
-		opacity: 0.7;
-		transition: filter 0.3s, opacity 0.3s;
-	}
-
-	.clients-track img:hover {
-		filter: grayscale(0%);
-		opacity: 1;
-	}
-
-	@media (min-width: 768px) {
-		.clients-track {
-			gap: 4rem;
-		}
-		.clients-track img {
-			height: 80px;
-		}
-	}
-
-	@keyframes scroll {
-		to {
-			transform: translateX(-50%);
-		}
-	}
-</style>
 
 <script>
 	import "../scripts/areas_gsap.js";

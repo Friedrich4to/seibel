@@ -25,20 +25,20 @@ const defaultClass = "embla__slide flex-[0_0_100%] min-w-0 md:flex-[0_0_45%] lg:
 				alt={imageAlt}
 				class="w-full h-full object-cover object-top grayscale transition-transform duration-500 group-hover:scale-105"
 			/>
-			<div class="absolute inset-0 bg-bronze/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+			<div class="absolute inset-0 bg-bronze/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 		</div>
 
 		<div class="flex flex-col gap-4 p-6 bg-light-gray">
-			<div class="">
+			<div class="flex flex-col gap-2">
 				<h3 class="text-dark-slate text-lg md:text-2xl font-regular tracking-wide uppercase">
 					{name}
 				</h3>
+				<div class="w-16 h-0.75 bg-bronze"></div>
 				<p class="text-dark-slate text-lg md:text-2xl font-light">
 					{position}
 				</p>
 			</div>
-			<div class="w-16 h-0.75 bg-bronze"></div>
-			<div class="flex flex-col gap-1 text-dark-slate text-lg md:text-xl font-light">
+			<div class="hidden flex-col gap-1 text-dark-slate text-lg md:text-xl font-light">
 				<p>{phone}</p>
 				<p class="lowercase">{email}</p>
 			</div>

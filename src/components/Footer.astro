@@ -9,7 +9,7 @@ const { lang = 'es' } = Astro.props;
 const t = useTranslations(lang);
 ---
 
-<footer class="bg-dark-slate text-light-gray pt-12 md:pt-16">
+<footer class="bg-bronze text-light-gray pt-12 md:pt-16">
   <div class="max-w-360 mx-auto px-4 sm:px-6 lg:px-20">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
 
@@ -19,7 +19,7 @@ const t = useTranslations(lang);
           href="https://www.instagram.com/seibelhenriquez/"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-light-gray hover:text-bronze transition-colors duration-300"
+          class="text-light-gray hover:text-dark-slate transition-colors duration-300"
           aria-label="Instagram"
         >
           <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -33,7 +33,7 @@ const t = useTranslations(lang);
           href="https://linkedin.com"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-light-gray hover:text-bronze transition-colors duration-300"
+          class="text-light-gray hover:text-dark-slate transition-colors duration-300"
           aria-label="LinkedIn"
         >
           <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -56,7 +56,7 @@ const t = useTranslations(lang);
 
         <div class="mt-6 space-y-2">
           <p class="text-base font-light">
-            {t('footer.tel')} <a href="tel:8093382000" class="hover:text-bronze transition-colors">809.338.2000</a>
+            {t('footer.tel')} <a href="tel:8093382000" class="hover:text-dark-slate transition-colors">809.338.2000</a>
           </p>
         </div>
 
@@ -64,7 +64,7 @@ const t = useTranslations(lang);
           <p class="text-base font-light">{t('footer.email')}</p>
           <a
             href="mailto:info@seibelhenriquez.com"
-            class="text-base font-light hover:text-bronze transition-colors"
+            class="text-base font-light hover:text-dark-slate transition-colors"
           >
             info@seibelhenriquez.com
           </a>
@@ -98,8 +98,3 @@ const t = useTranslations(lang);
   </div>
 </footer>
 
-<style>
-  footer {
-    background-color: var(--color-dark-slate);
-  }
-</style>

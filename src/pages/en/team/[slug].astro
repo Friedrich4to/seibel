@@ -26,7 +26,7 @@ const isSocio = data.role === 'socio';
 <Layout
 	title={data.name}
 	description={`${data.name} - ${data.position} at Seibel Henríquez`}
-	navbarDarkMode={true}
+	navbarDarkMode={!isSocio}
 >
 	<section class={isSocio ? 'bg-dark-slate' : 'bg-light-gray'}>
 		<div class="max-w-360 pt-36 mx-auto grid grid-cols-1 lg:grid-cols-[2fr_3fr]">
@@ -41,7 +41,6 @@ const isSocio = data.role === 'socio';
 				</h1>
 
 				<div class:list={['flex flex-col gap-1 mt-6 text-sm md:text-base font-light', isSocio ? 'text-white' : 'text-dark-slate']}>
-					<p>{data.phone}</p>
 					<p class="lowercase">{data.email}</p>
 				</div>
 
@@ -79,7 +78,7 @@ const isSocio = data.role === 'socio';
 	</section>
 
 	<section class="bg-light-gray py-16 md:py-24 px-6 md:px-12 lg:px-20">
-		<div class="max-w-4xl mx-auto">
+		<div class="max-w-360 mx-auto space-y-6">
 			<div class="w-24 h-0.75 bg-dark-slate mb-8"></div>
 			<div class="member-content">
 				<Content />
@@ -115,7 +114,7 @@ const isSocio = data.role === 'socio';
 	.member-content :global(li) {
 		color: var(--color-dark-slate);
 		font-weight: 300;
-		font-size: 1rem;
+		font-size: 1.25rem;
 		line-height: 1.75;
 	}
 </style>

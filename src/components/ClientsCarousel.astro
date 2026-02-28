@@ -1,0 +1,68 @@
+---
+interface Props {
+	title: string;
+}
+const { title } = Astro.props;
+
+const logos = [
+	{ src: '/assets/logos/logo_rs.png', alt: 'Red Sox' },
+	{ src: '/assets/logos/logo_iberica.png', alt: 'La Ibérica' },
+	{ src: '/assets/logos/logo_marlins.png', alt: 'Miami Marlins' },
+	{ src: '/assets/logos/logo_giants.png', alt: 'Giants' },
+	{ src: '/assets/logos/logo_angels.png', alt: 'Angels' },
+	{ src: '/assets/logos/logo_detroit.png', alt: 'Detroit Tigers' },
+	{ src: '/assets/logos/logo_diamond.png', alt: 'Diamond' },
+	{ src: '/assets/logos/logo_guardians.png', alt: 'Guardians' },
+	{ src: '/assets/logos/logo_alterra.png', alt: 'Alterra' },
+	{ src: '/assets/logos/logo_cepm.png', alt: 'CEPM' },
+	{ src: '/assets/logos/logo_manzanillo.png', alt: 'Manzanillo' },
+	{ src: '/assets/logos/logo_megacentro.png', alt: 'Megacentro' },
+	{ src: '/assets/logos/logo_ccn.png', alt: 'CCN' },
+	{ src: '/assets/logos/logo_agora.png', alt: 'Ágora' },
+];
+---
+
+<section class="bg-light-gray py-16 md:py-24 overflow-hidden z-20">
+	<h2 class="text-dark-slate text-2xl md:text-2xl lg:text-3xl font-light italic tracking-wide text-center mb-12 md:mb-16">
+		{title}
+	</h2>
+
+	<div
+		class="w-full"
+		style="mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);"
+	>
+		<div
+			class="flex items-center gap-12 md:gap-16 w-max"
+			style="animation: scroll 30s linear infinite;"
+		>
+			{logos.map((logo) => (
+				<div class="group flex items-center justify-center shrink-0 w-[120px] h-[60px] md:h-[80px]">
+					<img
+						src={logo.src}
+						alt={logo.alt}
+						loading="lazy"
+						class="max-w-full max-h-full object-contain grayscale opacity-70 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100"
+					/>
+				</div>
+			))}
+
+			<!-- Duplicate for seamless loop -->
+			{logos.map((logo) => (
+				<div class="group flex items-center justify-center shrink-0 w-[120px] h-[60px] md:h-[80px]" aria-hidden="true">
+					<img
+						src={logo.src}
+						alt=""
+						loading="lazy"
+						class="max-w-full max-h-full object-contain grayscale opacity-70 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100"
+					/>
+				</div>
+			))}
+		</div>
+	</div>
+</section>
+
+<style>
+	@keyframes scroll {
+		to { transform: translateX(-50%); }
+	}
+</style>

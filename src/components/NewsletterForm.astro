@@ -1,0 +1,126 @@
+---
+import { newsletterI18n } from '../i18n/newsletter';
+import type { NewsletterLang } from '../i18n/newsletter';
+import countries from '../data/countries.json';
+
+interface Props {
+	lang?: NewsletterLang;
+}
+
+const { lang = 'es' } = Astro.props;
+const n = newsletterI18n[lang];
+---
+
+<form action="#" method="POST" class="flex flex-col gap-5">
+
+	<!-- Row 1: Name + Email -->
+	<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+		<div class="flex flex-col gap-1">
+			<label for="nf-name" class="text-dark-slate text-sm font-light tracking-wide uppercase text-left">
+				{n.fields.name.label}
+			</label>
+			<input
+				id="nf-name"
+				type="text"
+				name="name"
+				required
+				autocomplete="name"
+				placeholder={n.fields.name.placeholder}
+				class="nf-input"
+			/>
+		</div>
+
+		<div class="flex flex-col gap-1">
+			<label for="nf-email" class="text-dark-slate text-sm font-light tracking-wide uppercase text-left">
+				{n.fields.email.label}
+			</label>
+			<input
+				id="nf-email"
+				type="email"
+				name="email"
+				required
+				autocomplete="email"
+				placeholder={n.fields.email.placeholder}
+				class="nf-input"
+			/>
+		</div>
+	</div>
+
+	<!-- Row 2: Company + Position -->
+	<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+		<div class="flex flex-col gap-1">
+			<label for="nf-company" class="text-dark-slate text-sm font-light tracking-wide uppercase text-left">
+				{n.fields.company.label}
+			</label>
+			<input
+				id="nf-company"
+				type="text"
+				name="company"
+				autocomplete="organization"
+				placeholder={n.fields.company.placeholder}
+				class="nf-input"
+			/>
+		</div>
+
+		<div class="flex flex-col gap-1">
+			<label for="nf-position" class="text-dark-slate text-sm font-light tracking-wide uppercase text-left">
+				{n.fields.position.label}
+			</label>
+			<input
+				id="nf-position"
+				type="text"
+				name="position"
+				autocomplete="organization-title"
+				placeholder={n.fields.position.placeholder}
+				class="nf-input"
+			/>
+		</div>
+	</div>
+
+	<!-- Country select -->
+	<div class="flex flex-col gap-1">
+		<label for="nf-country" class="text-dark-slate text-sm font-light tracking-wide uppercase text-left">
+			{n.fields.country.label}
+		</label>
+		<select id="nf-country" name="country" class="nf-input nf-select">
+			<option value="" disabled selected>{n.fields.country.defaultOption}</option>
+			{countries.map((c) => (
+				<option value={c.value}>{lang === 'en' ? c.en : c.es}</option>
+			))}
+		</select>
+	</div>
+
+	<button
+		type="submit"
+		class="border-2 border-bronze text-bronze px-8 py-3 hover:bg-bronze hover:text-white transition-colors duration-300 text-sm md:text-base tracking-wide w-fit cursor-pointer"
+	>
+		{n.submit}
+	</button>
+
+</form>
+
+<style>
+	.nf-input {
+		background: white;
+		border: 1px solid color-mix(in srgb, var(--color-dark-slate) 20%, transparent);
+		color: var(--color-dark-slate);
+		font-size: 0.875rem;
+		font-weight: 300;
+		padding: 0.75rem 1rem;
+		outline: none;
+		transition: border-color 0.2s;
+	}
+	.nf-input::placeholder {
+		color: color-mix(in srgb, var(--color-dark-slate) 40%, transparent);
+	}
+	.nf-input:focus {
+		border-color: var(--color-bronze);
+	}
+	.nf-select {
+		appearance: none;
+		padding-right: 2.5rem;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23323b43' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+		background-repeat: no-repeat;
+		background-position: right 1rem center;
+	}
+</style>

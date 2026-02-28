@@ -21,6 +21,7 @@ if (sections.length) {
 
 // Dynamic panels fade animation (la-firma page)
 const panels = gsap.utils.toArray(".dynamic-panel");
+const images = gsap.utils.toArray(".dynamic-image");
 
 if (panels.length > 1) {
 	const tl = gsap.timeline({
@@ -45,6 +46,20 @@ if (panels.length > 1) {
 				{ opacity: 1, duration: 0.5 },
 				"<"
 			);
+			if (images.length) {
+				tl.fromTo(
+					images[i - 1],
+					{ opacity: 1 },
+					{ opacity: 0, duration: 0.5 },
+					"<"
+				);
+				tl.fromTo(
+					images[i],
+					{ opacity: 0 },
+					{ opacity: 1, duration: 0.5 },
+					"<"
+				);
+			}
 			if (i < panels.length - 1) {
 				tl.to({}, { duration: 0.5 });
 			}

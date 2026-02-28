@@ -20,7 +20,7 @@ const { name, phone, email, image, imageAlt, link } = Astro.props;
 				class="w-full h-full object-cover object-top grayscale transition-transform duration-500 group-hover:scale-105"
 			/>
 		</a>
-		<div class="absolute inset-0 bg-bronze/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+		<div class="absolute inset-0 bg-bronze/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
 	</div>
 
 	<div class="mt-6 flex flex-col">
@@ -32,7 +32,7 @@ const { name, phone, email, image, imageAlt, link } = Astro.props;
 			<slot />
 		</div>
 
-		<div class="flex flex-col gap-1 mt-4 text-dark-slate text-sm md:text-base font-light">
+		<div class="hidden flex-col gap-1 mt-4 text-dark-slate text-sm md:text-base font-light">
 			<p>{phone}</p>
 			<p class="lowercase">{email}</p>
 		</div>

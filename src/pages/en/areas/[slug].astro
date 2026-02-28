@@ -58,9 +58,11 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 			</div>
 
 			<div class="flex flex-col gap-12 md:gap-16">
+				<h2 class="text-dark-slate text-sm md:text-base font-medium tracking-wider uppercase">
+					{t('areas-page.servicios')}
+				</h2>
 				{data.servicios.map((servicio) => (
 					<div class="flex flex-col gap-4">
-						<div class="w-16 h-0.75 bg-bronze"></div>
 						<h2 class="text-dark-slate text-xl md:text-2xl font-medium leading-snug">
 							{servicio.titulo}
 						</h2>

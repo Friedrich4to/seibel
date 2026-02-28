@@ -13,7 +13,7 @@ interface Props {
 const { title, image, imageAlt, url, certificate } = Astro.props;
 ---
 
-<a href={url} class="flex flex-col overflow-hidden group">
+<a href={url} class="flex flex-col overflow-hidden group bg-white">
 	<div class="relative w-full aspect-4/3 overflow-hidden">
 		<img
 			src={image}
@@ -28,7 +28,7 @@ const { title, image, imageAlt, url, certificate } = Astro.props;
 			/>
 		)}
 	</div>
-	<div class="pt-5 pb-2">
+	<div class="flex flex-col gap-1 p-6 md:p-8">
 		<h3 class="text-dark-slate text-sm md:text-base font-medium tracking-wider uppercase">
 			{title}
 		</h3>

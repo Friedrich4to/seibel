@@ -122,6 +122,7 @@ export const ui = {
     'areas-page.title': 'Áreas de práctica',
     'areas-page.description': 'Conoce a fondo las áreas en las que ejerce Seibel Henríquez',
     'areas-page.heading': 'Áreas de Práctica',
+    'areas-page.servicios': 'SERVICIOS',
 
     // Carreras page
     'careers.title': 'Carreras',
@@ -258,6 +259,7 @@ export const ui = {
     'areas-page.title': 'Practice Areas',
     'areas-page.description': 'Explore in depth the practice areas of Seibel Henríquez',
     'areas-page.heading': 'Practice Areas',
+    'areas-page.servicios': 'SERVICES',
 
     // Carreras page
     'careers.title': 'Careers',
