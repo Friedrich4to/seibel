@@ -12,13 +12,13 @@ const t = useTranslations(lang);
 	navbarDarkMode={true}
 >
 	<div class="bg-light-gray px-6 md:px-12 lg:px-20 pt-16 md:pt-24">
-		<div class="max-w-3xl mx-auto">
+		<div class="max-w-360 mx-auto">
 			<video class="w-full mix-blend-multiply" autoplay muted playsinline src="/videos/logo_video.mp4"></video>
 		</div>
 	</div>
 
 	<section class="dynamic-section-trigger bg-light-gray">
-		<div class="h-svh flex flex-col md:flex-row pt-16 md:pt-48 md:pb-24">
+		<div class="max-w-360 mx-auto h-svh flex flex-col md:flex-row pt-16 md:pt-24 md:pb-24">
 
 			<div class="relative flex-1 order-2 md:order-1 md:w-1/2">
 				<div class="dynamic-panel absolute inset-0 flex flex-col justify-start space-y-4 px-6 md:px-12 lg:px-16 py-6 md:py-12">
@@ -46,16 +46,16 @@ const t = useTranslations(lang);
 			</div>
 
 			<div class="relative flex-none h-[20svh] md:flex-1 md:h-full order-1 md:order-2 md:w-1/2 overflow-hidden md:max-h-svh">
-				<div class="dynamic-image absolute inset-0">
+				<div class="dynamic-image absolute inset-0 py-12">
 					<img class="w-full h-full object-cover" src="/assets/impacto/aerodom.jpg" alt="" />
 				</div>
-				<div class="dynamic-image absolute inset-0 opacity-0">
-					<img class="w-full h-full object-cover" src="/assets/impacto/ppa.jpg" alt="" />
+				<div class="dynamic-image absolute inset-0 opacity-0 pt-36">
+					<img class="w-full h-auto object-cover" src="/assets/general/aicons.svg" alt="" />
 				</div>
-				<div class="dynamic-image absolute inset-0 opacity-0">
+				<div class="dynamic-image absolute inset-0 opacity-0 py-12">
 					<img class="w-full h-full object-cover" src="/assets/impacto/deportiva.jpg" alt="" />
 				</div>
-				<div class="dynamic-image absolute inset-0 opacity-0">
+				<div class="dynamic-image absolute inset-0 opacity-0 py-12">
 					<img class="w-full h-full object-cover" src="/assets/impacto/energas.jpg" alt="" />
 				</div>
 			</div>
