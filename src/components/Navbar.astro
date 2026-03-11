@@ -75,7 +75,7 @@ const alternateUrl = getAlternateUrl(Astro.url, alternateLang);
             class:list={[
               "nav-link text-base font-light hover:text-bronze transition-colors",
               { "active": !link.disabled && currentPath.startsWith(link.href) && link.href !== '' },
-              { "pointer-events-none cursor-default opacity-30": link.disabled },
+              { "pointer-events-none cursor-default opacity-30 hidden": link.disabled },
             ]}
           >
             {link.label}
