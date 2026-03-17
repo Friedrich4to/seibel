@@ -24,13 +24,11 @@ education:
     degree: "Licenciatura en Derecho, 2005"
 ---
 
-Es el Director del Departamento de Solución de Controversias de la Firma. Se formó y creció en los Tribunales de la República Dominicana y es la definición de un litigante nato. Maneja distintas áreas de litigios, con gran conocimiento y excelentes resultados. Cuenta con una amplia experiencia en el área penal, por ser la primera en la que incursionó en sus inicios como abogado, y en la que se mantiene practicando en importantes litigios.
+Abogado con dos décadas de ejercicio profesional, especializado en litigios complejos de diversa naturaleza, con una destacada trayectoria en las áreas civil, administrativa y penal. Posee, además, una sólida experiencia en arbitraje comercial, complementada por estudios de maestría que fortalecen su capacidad de análisis y abordaje de problemáticas jurídicas de alta sofisticación.
 
-Hoy en día su práctica también abarca conflictos civiles, comerciales y administrativos, representando a empresas líderes dominicanas en sus necesidades diarias y extraordinarias en esas materias.
+A lo largo de su carrera, ha representado a empresas nacionales e internacionales en sectores regulados de gran impacto, como telecomunicaciones, energía y banca. Su profunda comprensión del sistema judicial, adquirida tanto en el ejercicio privado como en su paso por el tren judicial, le permite diseñar estrategias legales integrales y efectivas. Se distingue especialmente en el ámbito penal, donde ha estructurado defensas sólidas para entidades bancarias y personas jurídicas en casos de gran complejidad, protegiendo tanto sus intereses patrimoniales como su reputación institucional ante escenarios de alto impacto jurídico y mediático.
 
-Ha manejado numerosos procesos de arbitraje, incluyendo algunos vinculados al derecho deportivo. Es un líder natural, lo que lo ha convertido en una fuente de constante consulta y referencia en todo el equipo. Su visión estratégica de los litigios le han permitido destacarse en la comunidad jurídica.
+## Educación
 
-## Asociaciones
-
-- Miembro del Colegio de Abogados de la República Dominicana
-- Miembro de la Asociación Nacional de Jóvenes Abogados, ANJA-RD.
+- Maestría en Derecho, con especializaciones que avalan su fortaleza técnica en litigios y derecho penal.
+- Trayectoria consolidada por veinte años de práctica jurídica continua y formación en el sistema judicial dominicano.

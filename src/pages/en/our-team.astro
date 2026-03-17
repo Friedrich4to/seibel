@@ -16,6 +16,8 @@ const socios = allMembers
 const teamMembers = allMembers
 	.filter((m) => m.data.role !== 'socio')
 	.sort((a, b) => a.data.order - b.data.order);
+const featuredMembers = teamMembers.slice(0, 2);
+const regularMembers = teamMembers.slice(2);
 
 const teamBasePath = lang === 'es' ? '/team/' : '/en/team/';
 const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
@@ -66,8 +68,23 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 				<div class="w-20 h-0.75 bg-bronze mt-2"></div>
 			</div>
 
-			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
-				{teamMembers.map((member) => (
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
+				{featuredMembers.map((member) => (
+					<SocioCard
+						name={member.data.name}
+						phone={member.data.phone}
+						email={member.data.email}
+						image={member.data.image}
+						imageAlt={member.data.imageAlt}
+						link={`${teamBasePath}${stripLangPrefix(member.id)}`}
+					>
+						<p>{member.data.position}</p>
+					</SocioCard>
+				))}
+			</div>
+
+			<div class="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+				{regularMembers.map((member) => (
 					<TeamMemberCard
 						name={member.data.name}
 						position={member.data.position}

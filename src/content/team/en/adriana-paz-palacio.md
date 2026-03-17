@@ -8,12 +8,15 @@ imageAlt: "Adriana I. Paz Palacio - Associate"
 role: "member"
 order: 8
 languages:
-  - "Spanish"
-  - "English"
+  - "Spanish (Native)"
+  - "English (Native)"
+  - "French (Reading)"
 education:
   - institution: "Pontificia Universidad Católica Madre y Maestra"
     location: "Santo Domingo, Dominican Republic"
     degree: "Law Degree, 2021"
 ---
 
-Her practice has focused primarily on business law, real estate, sports law, and nonprofit organizations. She also handles matters in the areas of civil, commercial, labor, and real estate law.
+Lawyer with a practice focused on corporate law, real estate, and business law. Her expertise stands out in leading complex corporate negotiations, restructuring and liquidation processes, as well as executing succession and estate planning processes. She has provided key legal assistance in regulated sectors such as telecommunications and energy, and has managed the procurement of trademarks and industrial property rights.
+
+She also has experience in foreign investment, handling processes for obtaining work and investment residencies, and advising companies on labor matters and national and international procurement processes. Her background includes a solid specialization in tax advisory, corporate law, and trusts.

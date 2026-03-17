@@ -8,12 +8,16 @@ imageAlt: "Adriana I. Paz Palacio - Asociada"
 role: "member"
 order: 8
 languages:
-  - "Español"
-  - "Inglés"
+  - "Español (Nativo)"
+  - "Inglés (Nativo)"
+  - "Francés (Lectura)"
 education:
   - institution: "Pontificia Universidad Católica Madre y Maestra"
     location: "Santo Domingo, República Dominicana"
     degree: "Licenciatura en Derecho, 2021"
 ---
 
-Su práctica se ha enfocado principalmente en derecho de los negocios, inmobiliario y derecho deportivo y asociaciones sin fines de lucro. Adicionalmente abarca asuntos en las áreas de derecho civil, comercial, laboral e inmobiliario.
+Abogada con una práctica enfocada en el derecho corporativo, inmobiliario y derecho de los negocios. Su experiencia destaca por liderar negociaciones societarias complejas, procesos de adecuación y liquidación, así como la ejecución de procesos sucesorales y de organización patrimonial. Ha brindado asistencia legal clave en sectores regulados como telecomunicaciones y energía, además de gestionar la obtención de signos distintivos y derechos de propiedad industrial.
+
+Asimismo, cuenta con experiencia en el ámbito de la inversión extranjera, manejando procesos para la obtención de residencias laborales y por inversión, y asesorando a sociedades en materia laboral y licitaciones nacionales e internacionales. Su formación incluye una sólida especialización en asesoría fiscal, derecho societario y fideicomisos.
+

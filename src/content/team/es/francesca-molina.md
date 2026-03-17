@@ -10,19 +10,17 @@ order: 5
 languages:
   - "Español"
   - "Inglés"
+  - "Francés (básico)"
 education:
   - institution: "Instituto OMG"
     location: "Santo Domingo, República Dominicana"
     degree: "Maestría en Derecho de Transacciones Legales, 2021"
-  - institution: "Universidad Iberoamericana"
+  - institution: "Universidad Iberoamericana (UNIBE)"
     location: "Santo Domingo, República Dominicana"
-    degree: "Licenciatura en Derecho, 2017"
+    degree: "Licenciatura en Derecho, Mención Cum Laude, 2017"
 ---
 
-Es una abogada especializada en derecho de los negocios e inversión extranjera. Con experiencia en las áreas de negocios, fideicomisos, transaccional, organización patrimonial, corporativo y resolución de conflictos. Ha diseñado la estrategia legal de casos de alto perfil, siendo siempre un activo importante para clientes en la estructuración y ejecución de dichas estrategias.
+Es una abogada especializada en derecho de los negocios e inversión extranjera. Su práctica profesional se destaca por el diseño y ejecución de estrategias legales en áreas de alta complejidad como fideicomisos, organización patrimonial, reestructuración empresarial y negocios internacionales. Ha sido un activo clave en la estructuración de transacciones corporativas y comerciales, así como en la consultoría para proyectos fotovoltaicos y derecho inmobiliario.
 
-Por otra parte, ha sido una pieza importante en diversos procedimientos litigiosos, judiciales y extrajudiciales, que abarcan varias materias del derecho, en especial, derecho civil, comercial, administrativo y arbitraje; logrando identificar oportunidades y consiguiendo buenos resultados.
+Cuenta con una sólida experiencia en la resolución de conflictos, participando en procedimientos litigiosos, judiciales y extrajudiciales en materia civil, comercial, administrativa y laboral. Asimismo, posee experiencia técnica en arbitraje comercial y en el cumplimiento normativo relacionado con la prevención de lavado de activos. Es miembro del Colegio de Abogados de la República Dominicana.
 
-## Asociaciones
-
-- Miembro del Colegio de Abogados de la República Dominicana

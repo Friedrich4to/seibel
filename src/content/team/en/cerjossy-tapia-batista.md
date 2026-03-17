@@ -17,8 +17,11 @@ education:
   - institution: "Universidad Autónoma de Santo Domingo"
     location: "Santo Domingo, Dominican Republic"
     degree: "Law Degree, 2017"
+  - institution: "Specialized Diplomas"
+    location: "Santo Domingo, Dominican Republic"
+    degree: "Administrative Law (2025), Real Estate and Registry Law (2025), Public Contracting, Civil Liability and Labor Law."
 ---
 
-She has focused her practice on dispute resolution and litigation, particularly in civil, commercial, labor, and real estate law. She also has significant experience in corporate matters and family law. Her cross-cutting practice includes representing multinational clients in litigation related to civil liability and debt recovery proceedings.
+Lawyer specialized in dispute resolution and litigation in the areas of civil, administrative, and real estate law. Her professional practice stands out for strategic judicial representation and the defense of rights in commercial and contentious proceedings, as well as extensive experience in the insurance sector, where she has managed contractual disputes and high-complexity claims.
 
-She is a member of the Bar Association of the Dominican Republic.
+She has a vast background in the public sector, providing legal assistance to the State in the negotiation of significant contracts and the drafting of amendments. Her practice includes technical consulting in public procurement, legal audits, and regulatory compliance and risk management assessments for both public and private entities. She also has prior experience in legislative support, participating in the analysis and drafting of bills and public policies.

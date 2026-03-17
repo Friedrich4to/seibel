@@ -24,11 +24,9 @@ education:
     degree: "Law Degree, 2005"
 ---
 
-He is the Director of the Firm's Dispute Resolution Department. He was trained and developed his career in the courts of the Dominican Republic and is the definition of a natural-born litigator. He handles various areas of litigation with great knowledge and excellent results. He has extensive experience in criminal law, as it was the first area he entered at the beginning of his career as an attorney, and in which he continues to practice in significant litigation matters.
+Lawyer with two decades of professional practice, specialized in complex litigation of various kinds, with a distinguished background in civil, administrative, and criminal law. He also has solid experience in commercial arbitration, complemented by graduate studies that strengthen his analytical capacity and approach to highly sophisticated legal issues.
 
-Today, his practice also encompasses civil, commercial, and administrative disputes, representing leading Dominican companies in their daily and extraordinary needs in these matters.
-
-He has handled numerous arbitration proceedings, including some related to sports law. He is a natural leader, which has made him a constant source of consultation and reference throughout the entire team. His strategic vision of litigation has allowed him to stand out in the legal community.
+Throughout his career, he has represented national and international companies in high-impact regulated sectors, such as telecommunications, energy, and banking. His deep understanding of the judicial system — acquired both in private practice and during his time in the judiciary — allows him to design comprehensive and effective legal strategies. He particularly stands out in criminal law, where he has built strong defenses for banking entities and legal persons in high-complexity cases, protecting both their economic interests and institutional reputation in scenarios of high legal and media impact.
 
 ## Associations
 

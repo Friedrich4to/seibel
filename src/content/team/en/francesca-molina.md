@@ -10,19 +10,16 @@ order: 5
 languages:
   - "Spanish"
   - "English"
+  - "French (basic)"
 education:
   - institution: "Instituto OMG"
     location: "Santo Domingo, Dominican Republic"
     degree: "Master's in Legal Transactions Law, 2021"
-  - institution: "Universidad Iberoamericana"
+  - institution: "Universidad Iberoamericana (UNIBE)"
     location: "Santo Domingo, Dominican Republic"
-    degree: "Law Degree, 2017"
+    degree: "Law Degree, Cum Laude, 2017"
 ---
 
-She is an attorney specialized in business law and foreign investment. With experience in business, trusts, transactional matters, estate planning, corporate law, and dispute resolution. She has designed the legal strategy for high-profile cases, consistently being an important asset for clients in the structuring and execution of said strategies.
+Lawyer specialized in business law and foreign investment. Her professional practice is distinguished by the design and execution of legal strategies in highly complex areas such as trusts, estate planning, corporate restructuring, and international business. She has been a key asset in the structuring of corporate and commercial transactions, as well as in consulting for photovoltaic projects and real estate law.
 
-Furthermore, she has been an important contributor in various litigation proceedings, both judicial and extrajudicial, spanning several areas of law, particularly civil, commercial, administrative law, and arbitration, identifying opportunities and achieving favorable results.
-
-## Associations
-
-- Member of the Bar Association of the Dominican Republic
+She has solid experience in conflict resolution, participating in litigation proceedings, both judicial and extrajudicial, in civil, commercial, administrative, and labor matters. She also has technical expertise in commercial arbitration and in regulatory compliance related to anti-money laundering. She is a member of the Bar Association of the Dominican Republic.
