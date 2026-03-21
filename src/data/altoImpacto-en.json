@@ -1,11 +1,5 @@
 [
 	{
-		"title": "Renegotiation of the Aerodom Contract",
-		"description": "Legal counsel to the Ministry of the Presidency of the Dominican Republic in the renegotiation of the concession contract for the country's main airport with Aeropuertos Dominicanos Siglo XXI (AERODOM).",
-		"image": "/assets/impacto/aerodom.jpg",
-		"imageAlt": "Aerial view of the airport"
-	},
-	{
 		"title": "Energy Contract Modification (PPA)",
 		"description": "Legal representation of Montecristi Solar 3 S.R.L. in the modification of its PPA (Power Purchase Agreement) in the context of a renewable energy investment.",
 		"image": "/assets/impacto/ppa.jpg",
@@ -14,7 +8,7 @@
 	{
 		"title": "Syndicated Financing (Energas 4)",
 		"description": "Legal representation of Manzanillo Gas & Power, S.A.S. in the modification of its energy purchase agreement with EDEESTE, in the context of a strategic energy investment.",
-		"image": "/assets/impacto/deportiva.jpg",
+		"image": "/assets/impacto/energas.jpg",
 		"imageAlt": "Sports project"
 	},
 	{
@@ -26,7 +20,7 @@
 	{
 		"title": "International Sports Infrastructure Development",
 		"description": "Legal counsel to the San Pedro de Macorís Electricity Company (CESPM) in the structuring and closing of an international syndicated financing for the construction of a power generation plant.",
-		"image": "/assets/impacto/energas.jpg",
+		"image": "/assets/impacto/deportiva.jpg",
 		"imageAlt": "Legal counsel"
 	}
 ]

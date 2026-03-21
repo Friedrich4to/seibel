@@ -1,11 +1,5 @@
 [
 	{
-		"title": "Renegociación del contrato de Aerodom",
-		"description": "Asesoría legal al Ministerio de la Presidencia de la República Dominicana en la renegociación del contrato de concesión del principal aeropuerto del país con Aerosuertos Dominicanos Siglo XXI (AERODOM).",
-		"image": "/assets/impacto/aerodom.jpg",
-		"imageAlt": "Vista aérea del aeropuerto"
-	},
-	{
 		"title": "Modificación de contrato de energía (FPA)",
 		"description": "Representación legal de Montecristi Solar 3 S.R.L. en la modificación de su contrato de PPA (Power Purchase Agreement) en el contexto de una inversión energética renovable.",
 		"image": "/assets/impacto/ppa.jpg",
@@ -14,7 +8,7 @@
 	{
 		"title": "Financiamiento sindicado (Energas 4)",
 		"description": "Representación legal de Manzanillo Gas & Power, S.A.S. en la modificación de su contrato de compraventa de energía con EDEESTE, en el contexto de una inversión energética estratégica.",
-		"image": "/assets/impacto/deportiva.jpg",
+		"image": "/assets/impacto/energas.jpg",
 		"imageAlt": "Proyecto deportivo"
 	},
 	{
@@ -26,7 +20,7 @@
 	{
 		"title": "Desarrollo de infraestructura deportiva internacional",
 		"description": "Asesoría legal a la Compañía de Electricidad de San Pedro de Macorís (CESPM) en la estructuración y cierre de un financiamiento sindicado internacional para la construcción de una planta de generación eléctrica..",
-		"image": "/assets/impacto/energas.jpg",
+		"image": "/assets/impacto/deportiva.jpg",
 		"imageAlt": "Asesoria legal"
 	}
 ]
