@@ -80,6 +80,7 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 						imageAlt={member.data.imageAlt}
 						link={`${teamBasePath}${stripLangPrefix(member.id)}`}
 						aspectClass="aspect-4/3"
+						objectPosition="object-[50%_-140px]"
 					>
 						<p>{member.data.position}</p>
 					</SocioCard>
