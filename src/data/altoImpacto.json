@@ -18,9 +18,15 @@
 		"imageAlt": "Auditoria de transporte"
 	},
 	{
-		"title": "Desarrollo de infraestructura deportiva internacional",
-		"description": "Asesoría legal a la Compañía de Electricidad de San Pedro de Macorís (CESPM) en la estructuración y cierre de un financiamiento sindicado internacional para la construcción de una planta de generación eléctrica..",
+		"title": "Academia Dominicana Oficial Open de los Arizona Diamondbacks",
+		"description": "Asesoría legal al equipo de las Grandes Ligas de Béisbol, los Arizona Diamondbacks, en la estructuración y el desarrollo de su complejo deportivo y academia de béisbol. Este proyecto representa una inversión clave en el fortalecimiento de la infraestructura deportiva del país para las nuevas generaciones de peloteros.",
 		"image": "/assets/impacto/deportiva.jpg",
-		"imageAlt": "Asesoria legal"
+		"imageAlt": "Legal counsel"
+	},
+	{
+		"title": "Academia Dominicana Oficial Open de los Arizona Diamondbacks",
+		"description": "Asesoría legal al equipo de las Grandes Ligas de Béisbol, los Detroit Tigers, en relación con la adquisición de su propiedad en la República Dominicana, destinada al desarrollo de lo que está llamado a convertirse en un ambicioso y moderno complejo deportivo en América Latina y el Caribe.",
+		"image": "/assets/impacto/tigers.avif",
+		"imageAlt": "Legal counsel_2"
 	}
 ]

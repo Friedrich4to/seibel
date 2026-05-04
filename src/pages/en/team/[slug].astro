@@ -31,7 +31,7 @@ const isSocio = data.role === 'socio';
 	<section class={isSocio ? 'bg-dark-slate' : 'bg-light-gray'}>
 		<div class="max-w-360 pt-36 mx-auto grid grid-cols-1 lg:grid-cols-[2fr_3fr]">
 			<div class="w-full aspect-3/4 overflow-hidden bg-gray-300">
-				<img src={data.image} alt={data.imageAlt} class="w-full h-full object-cover object-top" />
+				<img src={data.imageFb ?? data.image} alt={data.imageAlt} class="w-full h-full object-cover object-top" />
 			</div>
 
 			<div class="px-6 py-10 lg:px-16 lg:py-16 flex flex-col justify-start">

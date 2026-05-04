@@ -1,9 +1,10 @@
----
+﻿---
 name: "FERNANDO P. HENRÍQUEZ"
 position: "Partner"
 phone: "(809) 601-0956"
 email: "F.HENRIQUEZ@SEIBELHENRIQUEZ.COM"
-image: "/assets/members/fernando.jpg"
+image: "/assets/team/henriquez.avif"
+imageFb: "/assets/team/henriquez_fb.avif"
 imageAlt: "Fernando P. Henríquez - Partner"
 role: "socio"
 order: 2

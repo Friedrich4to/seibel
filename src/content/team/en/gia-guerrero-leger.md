@@ -1,12 +1,13 @@
----
+﻿---
 name: "GIA V. GUERRERO LEGER"
 position: "Associate"
 phone: "(809) 284-2320"
 email: "G.GUERRERO@SEIBELHENRIQUEZ.COM"
-image: "/assets/members/gia.jpg"
+image: "/assets/team/gia.avif"
+imageFb: "/assets/team/gia_fb.avif"
 imageAlt: "Gia V. Guerrero Leger - Associate"
 role: "member"
-order: 6
+order: 7
 languages:
   - "Spanish"
   - "English"

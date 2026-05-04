@@ -63,6 +63,18 @@ function initAltoImpactoScroll() {
 		// Set initial stack without animation
 		setStack(0, false);
 
+		// Ensure the container is tall enough for the card with the longest text
+		const cardsContainer = document.getElementById("impactoCards");
+		if (cardsContainer) {
+			let maxHeight = cardsContainer.offsetHeight;
+			cards.forEach((card, i) => {
+				if (i !== 0 && card.offsetHeight > maxHeight) {
+					maxHeight = card.offsetHeight;
+				}
+			});
+			cardsContainer.style.minHeight = maxHeight + "px";
+		}
+
 		let lastActiveIndex = 0;
 
 		// Pin section and drive transitions via scroll progress

@@ -1,12 +1,13 @@
----
+﻿---
 name: "YEISON HENRÍQUEZ"
 position: "Associate"
 phone: "(000) 000-000"
 email: "CONTACTO@SEIBELHENRIQUEZ.COM"
-image: "/assets/members/placeholder.jpg"
+image: "/assets/team/yeison.avif"
+imageFb: "/assets/team/yeison_fb.avif"
 imageAlt: "Yeison Henríquez - Associate"
 role: "member"
-order: 10
+order: 11
 languages:
   - "Spanish (Native)"
   - "English (Advanced)"

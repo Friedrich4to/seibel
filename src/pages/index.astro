@@ -204,7 +204,7 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 			<div class="flex flex-col md:flex-row md:gap-12 xl:gap-24">
 				<div class="max-w-120">
 					<div class="relative overflow-hidden group">
-						<img src="/assets/members/seibel.jpg" alt="John P. Seibel - Socio" class="aspect-square w-full object-cover object-top" />
+						<img src="/assets/team/seibel.avif" alt="John P. Seibel - Socio" class="aspect-4/3 w-full object-cover object-top" />
 						<div class="absolute inset-0 bg-bronze/70 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
 							<p class="text-white text-sm md:text-base font-light leading-relaxed">{t('home.socios.seibel-desc')}</p>
 						</div>
@@ -219,7 +219,7 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 
 				<div class="max-w-120 justify-self-end">
 					<div class="relative overflow-hidden group">
-						<img src="/assets/members/fernando.jpg" alt="Fernando P. Henríquez - Socio" class="aspect-square w-full object-cover max-h-160 object-top" />
+						<img src="/assets/team/henriquez.avif" alt="Fernando P. Henríquez - Socio" class="aspect-4/3 w-full object-cover object-top" />
 						<div class="absolute inset-0 bg-bronze/70 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
 							<p class="text-white text-sm md:text-base font-light leading-relaxed">{t('home.socios.fernando-desc')}</p>
 						</div>
@@ -399,12 +399,12 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 				</div>
 
 				<!-- RIGHT COLUMN: Stacked card display -->
-				<div class="w-3/5 relative overflow-visible">
+				<div class="w-3/5 relative overflow-visible" id="impactoCards">
 					{altoImpactoData.map((item, index) => (
 						<div
 							class:list={[
 								"impacto-card w-full overflow-hidden",
-								index === 0 ? "relative" : "absolute inset-0"
+								index === 0 ? "relative" : "absolute top-0 left-0 w-full"
 							]}
 							data-card-index={index}
 						>

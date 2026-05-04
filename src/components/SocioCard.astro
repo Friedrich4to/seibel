@@ -6,18 +6,20 @@ interface Props {
 	image: string;
 	imageAlt: string;
 	link: string;
+	aspectClass?: string;
+	objectPosition?: string;
 }
 
-const { name, phone, email, image, imageAlt, link } = Astro.props;
+const { name, phone, email, image, imageAlt, link, aspectClass = 'max-h-96 aspect-4/5', objectPosition = 'object-top' } = Astro.props;
 ---
 
 <div class="flex flex-col">
-	<div class="relative w-full max-h-96 aspect-4/5 bg-gray-300 overflow-hidden group">
+	<div class={`relative w-full bg-gray-300 overflow-hidden group ${aspectClass}`}>
 		<a href={link}>
 			<img
 				src={image}
 				alt={imageAlt}
-				class="w-full h-full object-cover object-top grayscale transition-transform duration-500 group-hover:scale-105"
+				class={`w-full h-full object-cover ${objectPosition} transition-transform duration-500 group-hover:scale-105`}
 			/>
 		</a>
 		<div class="absolute inset-0 bg-bronze/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>

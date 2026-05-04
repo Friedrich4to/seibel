@@ -1,12 +1,13 @@
----
+﻿---
 name: "BANAHÍ MÁRQUEZ"
 position: "Asociada"
 phone: "(000) 000-000"
 email: "CONTACTO@SEIBELHENRIQUEZ.COM"
-image: "/assets/members/placeholder.jpg"
+image: "/assets/team/banahi.avif"
+imageFb: "/assets/team/banahi_fb.avif"
 imageAlt: "Banahí Márquez - Asociada"
 role: "member"
-order: 9
+order: 10
 languages:
   - "Español (Nativo)"
   - "Inglés"

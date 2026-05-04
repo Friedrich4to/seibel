@@ -1,12 +1,13 @@
----
+﻿---
 name: "GABRIELLA GRULLÓN"
 position: "Asociada"
 phone: "(000) 000-000"
 email: "CONTACTO@SEIBELHENRIQUEZ.COM"
-image: "/assets/members/placeholder.jpg"
+image: "/assets/team/gabriela.avif"
+imageFb: "/assets/team/gabriela_fb.avif"
 imageAlt: "Gabriella Grullón - Asociada"
 role: "member"
-order: 11
+order: 9
 languages: 
     - "Español (Nativo)"
     - "Inglés (Avanzado)"

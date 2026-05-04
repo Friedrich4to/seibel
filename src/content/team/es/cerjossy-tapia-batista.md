@@ -1,12 +1,13 @@
----
+﻿---
 name: "CERJOSSY TAPIA BATISTA"
 position: "Asociada"
 phone: "(829) 753-3741"
 email: "C.TAPIA@SEIBELHENRIQUEZ.COM"
-image: "/assets/members/cerjossy.jpg"
+image: "/assets/team/cerjossy.avif"
+imageFb: "/assets/team/cerjossy_fb.avif"
 imageAlt: "Cerjossy Tapia Batista - Asociada"
 role: "member"
-order: 7
+order: 6
 languages:
   - "Español"
   - "Inglés"

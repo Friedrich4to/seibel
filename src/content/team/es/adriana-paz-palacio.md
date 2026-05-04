@@ -1,12 +1,13 @@
----
+﻿---
 name: "ADRIANA I. PAZ PALACIO"
 position: "Asociada"
 phone: "(809) 909-2531"
 email: "A.PAZ@SEIBELHENRIQUEZ.COM"
-image: "/assets/members/adriana.jpg"
+image: "/assets/team/adriana.avif"
+imageFb: "/assets/team/adriana_fb.avif"
 imageAlt: "Adriana I. Paz Palacio - Asociada"
 role: "member"
-order: 8
+order: 5
 languages:
   - "Español (Nativo)"
   - "Inglés (Nativo)"

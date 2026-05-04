@@ -50,7 +50,7 @@ export const ui = {
 
     // Homepage - Hero
     'home.hero.title': 'Transformamos el derecho <br class="md:hidden"> en desarrollo',
-    'home.hero.subtitle': 'Más de tres décadas asesorando operaciones corporativas y controversias de alto impacto.',
+    'home.hero.subtitle': 'Más de dos décadas asesorando operaciones corporativas y controversias de alto impacto.',
 
     // Homepage - Stats
     'home.stats.casos': 'Casos atendidos',
@@ -96,6 +96,11 @@ export const ui = {
     // La Firma page
     'firm.title': 'La Firma',
     'firm.description': 'Acerca de La Firma Seibel Henríquez',
+    'firm.hero.eyebrow': 'Quiénes somos',
+    'firm.hero.subtitle': 'Una firma legal de práctica general en Santo Domingo, comprometida con un servicio jurídico personalizado, ético y de alta calidad.',
+    'firm.cta.title': 'Conoce a nuestro equipo',
+    'firm.cta.desc': 'Una nueva generación de abogados con formación local e internacional, comprometidos con rigor técnico y soluciones prácticas.',
+    'firm.cta.btn': 'Ver el equipo',
     'firm.p1': '<strong class="font-semibold">Seibel Henríquez</strong> es una firma de abogados de práctica general establecida en Santo Domingo, República Dominicana, reconocida por su compromiso ético, la lealtad hacia sus clientes y un servicio legal personalizado de alta calidad.',
     'firm.p2': '<strong class="font-semibold">La firma</strong> brinda asesoría legal precisa y práctica, con un enfoque directo y eficiente. Asiste a clientes empresariales en sus necesidades ordinarias y en asuntos de alta complejidad, incluyendo transacciones nacionales e internacionales, fusiones y adquisiciones, comercio internacional y litigios complejos.',
     'firm.p3': 'Fundada en 2005, se ha consolidado como asesor legal de referencia para clientes empresariales e institucionales, locales e internacionales.',
@@ -116,7 +121,7 @@ export const ui = {
     'team-page.socios': 'SOCIOS',
     'team-page.equipo': 'NUESTRO EQUIPO',
     'team-page.seibel-desc': 'Líder en Derecho Deportivo, con experiencia en litigios y asesoría en derecho civil, comercial y laboral. Ofrece soluciones globales a clientes locales e internacionales, con énfasis en seguridad social y resolución de conflictos.',
-    'team-page.fernando-desc': 'Abogado con más de 30 años de experiencia en transacciones y resolución de controversias. Asesora a empresas líderes en sectores estratégicos y participa en asuntos de alto impacto institucional.',
+    'team-page.fernando-desc': 'Abogado con más de 20 años de experiencia en transacciones y resolución de controversias. Asesora a empresas líderes en sectores estratégicos y participa en asuntos de alto impacto institucional.',
 
     // Áreas de Práctica page
     'areas-page.title': 'Áreas de práctica',
@@ -143,7 +148,7 @@ export const ui = {
     'commitment.title': 'Compromiso social',
     'commitment.description': 'Aprende acerca de nuestro compromiso con una labor social constante',
     'commitment.heading': 'COMPROMISO SOCIAL',
-    'commitment.p1': '<strong class="font-semibold">SeibelHenríquez</strong> se identifica con los valores democráticos, la institucionalidad, la transparencia y la solidaridad humana. Fomentamos la participación activa de nuestros colaboradores en la construcción de una mejor Nación.',
+    'commitment.p1': '<strong class="font-semibold">Seibel Henríquez</strong> se identifica con los valores democráticos, la institucionalidad, la transparencia y la solidaridad humana. Fomentamos la participación activa de nuestros colaboradores en la construcción de una mejor Nación.',
     'commitment.p2': 'Es por eso que gran parte del equipo de Seibel & Henríquez participa activamente en diversas organizaciones sociales, comunitarias y empresariales; desde donde promueven acciones y reformas en ámbitos tan diversos como la actividad empresarial responsable, el fortalecimiento del sistema de justicia, la seguridad jurídica, el desarrollo humano y familiar, la salud pública, la educación, la protección del medioambiente, el fortalecimiento de las actividades deportivas tradicionales y por medios electrónicos, la tecnología, entre otros.',
     'commitment.vocacion': 'VOCACIÓN HUMANA',
     'commitment.vocacion.desc': 'Este compromiso social conecta a nuestros colaboradores con la realidad de su entorno lo cual se refleja en un ejercicio profesional más concreto y orientado hacia el valor supremo que lo constituye el ser humano.',
@@ -187,7 +192,7 @@ export const ui = {
 
     // Homepage - Hero
     'home.hero.title': 'We transform law <br class="md:hidden"> into development',
-    'home.hero.subtitle': 'Over three decades advising corporate operations and high-impact disputes.',
+    'home.hero.subtitle': 'Over two decades advising corporate operations and high-impact disputes.',
 
     // Homepage - Stats
     'home.stats.casos': 'Cases handled',
@@ -233,6 +238,11 @@ export const ui = {
     // La Firma page
     'firm.title': 'The Firm',
     'firm.description': 'About the Firm Seibel Henríquez',
+    'firm.hero.eyebrow': 'Who we are',
+    'firm.hero.subtitle': 'A full-service law firm in Santo Domingo, committed to personalized, ethical, and high-quality legal service.',
+    'firm.cta.title': 'Meet our team',
+    'firm.cta.desc': 'A new generation of attorneys with local and international training, committed to technical rigor and practical solutions.',
+    'firm.cta.btn': 'Meet the team',
     'firm.p1': '<strong class="font-semibold">Seibel Henríquez</strong> is a full-service law firm established in Santo Domingo, Dominican Republic, recognized for its ethical commitment, loyalty to its clients, and high-quality personalized legal service.',
     'firm.p2': '<strong class="font-semibold">The firm</strong> provides precise and practical legal counsel, with a direct and efficient approach. It assists corporate clients in their ordinary needs and in highly complex matters, including national and international transactions, mergers and acquisitions, international trade, and complex litigation.',
     'firm.p3': 'Founded in 2005, it has established itself as a benchmark legal advisor for corporate and institutional clients, both local and international.',
@@ -253,7 +263,7 @@ export const ui = {
     'team-page.socios': 'PARTNERS',
     'team-page.equipo': 'OUR TEAM',
     'team-page.seibel-desc': 'Leader in Sports Law, with experience in litigation and counsel in civil, commercial, and labor law. Provides global solutions to local and international clients, with emphasis on social security and dispute resolution.',
-    'team-page.fernando-desc': 'Attorney with over 30 years of experience in transactions and dispute resolution. Advises leading companies in strategic sectors and participates in matters of high institutional impact.',
+    'team-page.fernando-desc': 'Attorney with over 20 years of experience in transactions and dispute resolution. Advises leading companies in strategic sectors and participates in matters of high institutional impact.',
 
     // Áreas de Práctica page
     'areas-page.title': 'Practice Areas',
@@ -280,7 +290,7 @@ export const ui = {
     'commitment.title': 'Social Commitment',
     'commitment.description': 'Learn about our commitment to ongoing social responsibility',
     'commitment.heading': 'SOCIAL COMMITMENT',
-    'commitment.p1': '<strong class="font-semibold">SeibelHenríquez</strong> identifies with democratic values, institutionality, transparency, and human solidarity. We encourage the active participation of our team members in building a better Nation.',
+    'commitment.p1': '<strong class="font-semibold">Seibel Henríquez</strong> identifies with democratic values, institutionality, transparency, and human solidarity. We encourage the active participation of our team members in building a better Nation.',
     'commitment.p2': 'That is why a large part of the Seibel & Henríquez team actively participates in various social, community, and business organizations; from which they promote actions and reforms in areas as diverse as responsible business activity, strengthening the justice system, legal security, human and family development, public health, education, environmental protection, strengthening traditional and electronic sports activities, technology, among others.',
     'commitment.vocacion': 'HUMAN VOCATION',
     'commitment.vocacion.desc': 'This social commitment connects our team members with the reality of their environment, which is reflected in a more concrete professional practice oriented towards the supreme value that constitutes the human being.',

@@ -18,9 +18,15 @@
 		"imageAlt": "Transit audit"
 	},
 	{
-		"title": "International Sports Infrastructure Development",
-		"description": "Legal counsel to the San Pedro de Macorís Electricity Company (CESPM) in the structuring and closing of an international syndicated financing for the construction of a power generation plant.",
+		"title": "Arizona Diamondbacks Official Open Dominican Academy",
+		"description": "Legal counsel to the Major League Baseball Team, the Arizona Diamondbacks, in the structuring and development of their sport complex and baseball academy. This projects represents a key investment in strengthening the country´s sports infrastructure for new generations of players.",
 		"image": "/assets/impacto/deportiva.jpg",
 		"imageAlt": "Legal counsel"
+	},
+	{
+		"title": "Arizona Diamondbacks Official Open Dominican Academy",
+		"description": "Legal counsel to the Major League Baseball Team, the Detroit Tigers, in connection with the acquisition of their property in the Dominican Republic, designated for the development of what is set to become an ambitious and state-of-the-art sports complex in Latin America and the Caribbean.",
+		"image": "/assets/impacto/tigers.avif",
+		"imageAlt": "Legal counsel_2"
 	}
 ]

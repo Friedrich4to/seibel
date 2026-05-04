@@ -1,9 +1,10 @@
----
+﻿---
 name: "JOHN P. SEIBEL"
 position: "Socio"
 phone: "(809) 996-2000"
 email: "J.SEIBEL@SEIBELHENRIQUEZ.COM"
-image: "/assets/members/seibel.jpg"
+image: "/assets/team/seibel.avif"
+imageFb: "/assets/team/seibel_fb.avif"
 imageAlt: "John P. Seibel - Socio"
 role: "socio"
 order: 1

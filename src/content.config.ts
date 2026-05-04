@@ -10,6 +10,7 @@ const team = defineCollection({
 		email: z.string(),
 		image: z.string(),
 		imageAlt: z.string(),
+		imageFb: z.string().optional(),
 		role: z.enum(['socio', 'member']).default('member'),
 		order: z.number(),
 		languages: z.array(z.string()).default([]),
