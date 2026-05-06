@@ -43,7 +43,6 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 						image={area.data.image}
 						imageAlt={area.data.imageAlt}
 						url={`${areaBasePath}${stripLangPrefix(area.id)}`}
-						certificate={area.data.certificate}
 					/>
 				))}
 			</div>

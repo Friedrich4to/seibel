@@ -44,7 +44,7 @@ export const ui = {
     'footer.numero': 'No.454 - Piso 6',
     'footer.tel': 'Tel:',
     'footer.email': 'Email:',
-    'footer.miami-1': 'Piantini, Santo 8374 NW 64th St',
+    'footer.miami-1': '8374 NW 64th St',
     'footer.miami-2': 'Jet Pack No. 200580',
     'footer.miami-3': 'Miami, FL 33166-2624. EE.UU',
 
@@ -186,7 +186,7 @@ export const ui = {
     'footer.numero': 'No.454 - 6th Floor',
     'footer.tel': 'Phone:',
     'footer.email': 'Email:',
-    'footer.miami-1': 'Piantini, Santo 8374 NW 64th St',
+    'footer.miami-1': '8374 NW 64th St',
     'footer.miami-2': 'Jet Pack No. 200580',
     'footer.miami-3': 'Miami, FL 33166-2624. USA',
 

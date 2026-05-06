@@ -53,11 +53,6 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 
 			<div class="absolute bottom-12 px-12 w-full text-light-gray text-xl md:text-2xl font-light flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
 				<p class="text-left! max-w-140">{t('home.hero.subtitle')}</p>
-				<div class="flex gap-2">
-					<img src="/assets/logos/certificate.png" alt="Certificado" class="h-16 md:h-30 w-auto">
-					<img src="/assets/logos/certificate.png" alt="Certificado" class="h-16 md:h-30 w-auto">
-					<img src="/assets/logos/certificate.png" alt="Certificado" class="h-16 md:h-30 w-auto">
-				</div>
 			</div>
 		</div>
 	</section>
@@ -181,7 +176,6 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 							image={area.data.image}
 							imageAlt={area.data.imageAlt}
 							url={`${areaBasePath}${stripLangPrefix(area.id)}`}
-						certificate={area.data.certificate}
 						/>
 					</section>
 				))}
