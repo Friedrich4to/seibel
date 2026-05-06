@@ -28,11 +28,11 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 	description={t('team-page.description')}
 	navbarDarkMode={true}
 >
-	<section class="bg-light-gray py-16 md:py-24 px-6 md:px-12 lg:px-20">
+	<section class="bg-light-gray pt-28 md:pt-24 pb-16 md:pb-24 px-6 md:px-12 lg:px-20">
 		<div class="max-w-360 mx-auto">
 			<div class="mb-12">
 				<h2 class="text-dark-slate text-3xl md:text-4xl font-light tracking-wide">{t('team-page.socios')}</h2>
-				<div class="w-20 h-0.75 bg-bronze mt-2"></div>
+				<div class="w-14 h-0.75 bg-bronze mt-2"></div>
 			</div>
 
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
@@ -67,23 +67,21 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 		<div class="max-w-360 mx-auto">
 			<div class="mb-12">
 				<h2 class="text-dark-slate text-3xl md:text-4xl font-light tracking-wide">{t('team-page.equipo')}</h2>
-				<div class="w-20 h-0.75 bg-bronze mt-2"></div>
+				<div class="w-14 h-0.75 bg-bronze mt-2"></div>
 			</div>
 
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
 				{featuredMembers.map((member) => (
-					<SocioCard
+					<TeamMemberCard
 						name={member.data.name}
+						position={member.data.position}
 						phone={member.data.phone}
 						email={member.data.email}
 						image={member.data.image}
 						imageAlt={member.data.imageAlt}
 						link={`${teamBasePath}${stripLangPrefix(member.id)}`}
-						aspectClass="aspect-4/3"
-						objectPosition="object-[50%_-30px] lg:object-[50%_-70px]"
-					>
-						<p>{member.data.position}</p>
-					</SocioCard>
+						wrapperClass="group cursor-pointer"
+					/>
 				))}
 			</div>
 
