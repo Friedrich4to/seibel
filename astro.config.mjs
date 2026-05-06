@@ -12,10 +12,6 @@ export default defineConfig({
       prefixDefaultLocale: false,
     },
   },
-  base: './', 
-  build: {
-    format: 'file' // Genera archivos .html individuales en lugar de carpetas
-  },
   vite: {
     plugins: [tailwindcss()]
   }
