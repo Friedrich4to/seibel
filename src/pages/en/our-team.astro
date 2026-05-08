@@ -16,8 +16,11 @@ const socios = allMembers
 const teamMembers = allMembers
 	.filter((m) => m.data.role !== 'socio')
 	.sort((a, b) => a.data.order - b.data.order);
-const featuredMembers = teamMembers.slice(0, 2);
-const regularMembers = teamMembers.slice(2);
+const featuredSlugs = ['sebastian-romero', 'patricio-silvestre-mejia'];
+const featuredMembers = featuredSlugs
+	.map(slug => teamMembers.find(m => m.id.endsWith(slug)))
+	.filter(Boolean);
+const regularMembers = teamMembers.filter(m => !featuredSlugs.some(s => m.id.endsWith(s)));
 
 const teamBasePath = lang === 'es' ? '/team/' : '/en/team/';
 const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
@@ -28,37 +31,41 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 	description={t('team-page.description')}
 	navbarDarkMode={true}
 >
-	<section class="bg-light-gray py-16 md:py-24 px-6 md:px-12 lg:px-20">
+	<section class="bg-light-gray pt-28 md:pt-24 pb-16 md:pb-24 px-6 md:px-12 lg:px-20">
 		<div class="max-w-360 mx-auto">
-			<div class="mb-12">
+			<div class="mb-12 text-center">
 				<h2 class="text-dark-slate text-3xl md:text-4xl font-light tracking-wide">{t('team-page.socios')}</h2>
-				<div class="w-14 h-0.75 bg-bronze mt-2"></div>
+				<div class="w-14 h-0.75 bg-bronze mt-2 mx-auto"></div>
 			</div>
 
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
-				<SocioCard
-					name={socios[0].data.name}
-					phone={socios[0].data.phone}
-					email={socios[0].data.email}
-					image={socios[0].data.image}
-					imageAlt={socios[0].data.imageAlt}
-					link={`${teamBasePath}${stripLangPrefix(socios[0].id)}`}
-					aspectClass="aspect-3/4"
-				>
-					<p>{t('team-page.seibel-desc')}</p>
-				</SocioCard>
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-36">
+				<div class="max-w-120 mx-auto w-full">
+					<SocioCard
+						name={socios[0].data.name}
+						phone={socios[0].data.phone}
+						email={socios[0].data.email}
+						image={socios[0].data.image}
+						imageAlt={socios[0].data.imageAlt}
+						link={`${teamBasePath}${stripLangPrefix(socios[0].id)}`}
+						aspectClass="aspect-4/5"
+					>
+						<p>{t('team-page.seibel-desc')}</p>
+					</SocioCard>
+				</div>
 
-				<SocioCard
-					name={socios[1].data.name}
-					phone={socios[1].data.phone}
-					email={socios[1].data.email}
-					image={socios[1].data.image}
-					imageAlt={socios[1].data.imageAlt}
-					link={`${teamBasePath}${stripLangPrefix(socios[1].id)}`}
-					aspectClass="aspect-3/4"
-				>
-					<p>{t('team-page.fernando-desc')}</p>
-				</SocioCard>
+				<div class="max-w-120 mx-auto w-full">
+					<SocioCard
+						name={socios[1].data.name}
+						phone={socios[1].data.phone}
+						email={socios[1].data.email}
+						image={socios[1].data.image}
+						imageAlt={socios[1].data.imageAlt}
+						link={`${teamBasePath}${stripLangPrefix(socios[1].id)}`}
+						aspectClass="aspect-4/5"
+					>
+						<p>{t('team-page.fernando-desc')}</p>
+					</SocioCard>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -72,18 +79,16 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
 				{featuredMembers.map((member) => (
-					<SocioCard
+					<TeamMemberCard
 						name={member.data.name}
+						position={member.data.position}
 						phone={member.data.phone}
 						email={member.data.email}
 						image={member.data.image}
 						imageAlt={member.data.imageAlt}
 						link={`${teamBasePath}${stripLangPrefix(member.id)}`}
-						aspectClass="aspect-3/4"
-						objectPosition="object-[50%_-140px]"
-					>
-						<p>{member.data.position}</p>
-					</SocioCard>
+						wrapperClass="group cursor-pointer"
+					/>
 				))}
 			</div>
 

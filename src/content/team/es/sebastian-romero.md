@@ -7,7 +7,7 @@ image: "/assets/team/sebastian.avif"
 imageFb: "/assets/team/sebastian_fb.avif"
 imageAlt: "Sebastián Romero - Gerente General"
 role: "member"
-order: 3
+order: 9
 languages:
   - "Español (Nativo)"
   - "Inglés (Avanzado)"
@@ -31,6 +31,9 @@ continuingEducation:
 
   - institution: "Harvard Online"
     degree: "Exercising Leadership: Foundational Principles & Organizational Leadership (2023)"
+
+  - institution: "DeepLearning AI"
+    degree: "AI For Everyone (2023)"
 ---
 
 Estratega orientado a redefinir el modelo de gestión en la industria legal a través de la tecnología y la inteligencia de datos. Como Gerente General de Seibel & Henríquez, dirige la evolución de la firma integrando soluciones de LegalTech para optimizar procesos, elevar la eficiencia organizacional y sustentar cada decisión en datos.

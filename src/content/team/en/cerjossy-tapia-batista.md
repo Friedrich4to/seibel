@@ -7,7 +7,7 @@ image: "/assets/team/cerjossy.avif"
 imageFb: "/assets/team/cerjossy_fb.avif"
 imageAlt: "Cerjossy Tapia Batista - Associate"
 role: "member"
-order: 6
+order: 3
 languages:
   - "Spanish"
   - "English"

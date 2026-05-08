@@ -62,5 +62,3 @@ Representa a una empresa productora de Ron Dominicano en asuntos civiles, comerc
 
 Representa a una de las principales productoras dominicanas de series y reality shows en asuntos civiles, comerciales, corporativos y otras áreas.
 
-Lugar de nacimiento:
-Santo Domingo, República Dominicana

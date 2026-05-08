@@ -49,13 +49,8 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 				<polyline points="0,2 1000,2" stroke="#8a5f2a" stroke-width="4" fill="none" />
 			</svg>
 
-			<div class="absolute bottom-12 px-12 w-full text-light-gray text-xl md:text-2xl font-light flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-				<p class="text-left! max-w-140">{t('home.hero.subtitle')}</p>
-				<div class="flex gap-2">
-					<img src="/assets/logos/certificate.png" alt="Certificate" class="h-16 md:h-30 w-auto">
-					<img src="/assets/logos/certificate.png" alt="Certificate" class="h-16 md:h-30 w-auto">
-					<img src="/assets/logos/certificate.png" alt="Certificate" class="h-16 md:h-30 w-auto">
-				</div>
+			<div class="absolute bottom-24 px-12 w-full text-light-gray text-xl md:text-2xl font-light flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+				<p class="text-center! max-w-140 mx-auto">{t('home.hero.subtitle')}</p>
 			</div>
 		</div>
 	</section>
@@ -150,12 +145,7 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 				</div>
 			</div>
 			<div class="flex items-center justify-center">
-				<svg id="hero_svg" data-name="Capa 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 505.05 216.03" class="fill-none stroke-[20px] stroke-bronze w-4/5">
-					<g>
-						<polyline points="12 105.92 12 204.03 228.26 204.03"/>
-						<polyline points="493.05 114.07 493.05 12 118.78 12"/>
-					</g>
-				</svg>
+				<img src="/isotipo.svg" alt="Seibel Henríquez isotipo" class="w-2/5" />
 			</div>
 		</div>
 	</section>
@@ -263,11 +253,6 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 			</button>
 		</div>
 
-		<div class="max-w-360 mx-auto">
-			<div class="mt-12">
-				<p class="text-white text-base md:text-xl font-light mt-4 max-w-3xl">{t('home.team.desc')}</p>
-			</div>
-		</div>
 	</section>
 
 	<script>
@@ -306,7 +291,7 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 	</script>
 
 	<!-- HIGH IMPACT Section -->
-	<section class="bg-light-gray py-16 md:py-24 px-6 md:px-12 lg:px-20 alto-impacto-trigger">
+	<section class="hidden bg-light-gray py-16 md:py-24 px-6 md:px-12 lg:px-20 alto-impacto-trigger">
 		<div class="max-w-360 mx-auto">
 			<div class="mb-12">
 				<h2 class="text-dark-slate text-3xl md:text-4xl font-light tracking-widest">{t('home.impacto.title')}</h2>

@@ -1,6 +1,6 @@
 ---
-title: "Transactions and Corporate"
-description: "Two decades of mastery in designing complex corporate structures, managing large-scale operations, and cross-border mergers."
+title: "Corporate Law & Mergers and Acquisitions"
+description: "Full-service counsel on corporate formation, structuring, and governance. Two decades of experience in complex transactional structuring and cross-border mergers and acquisitions."
 order: 1
 image: "/assets/areas/transacciones.avif"
 imageAlt: "Modern corporate building"

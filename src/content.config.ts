@@ -23,6 +23,15 @@ const team = defineCollection({
 				})
 			)
 			.default([]),
+		continuingEducation: z
+			.array(
+				z.object({
+					institution: z.string(),
+					location: z.string().optional(),
+					degree: z.string(),
+				})
+			)
+			.optional(),
 	}),
 });
 

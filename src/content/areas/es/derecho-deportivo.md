@@ -1,6 +1,6 @@
 ---
-title: "DERECHO DEPORTIVO"
-description: "Firma líder en Derecho Deportivo, brindando asesoría estratégica a ligas élite y organizaciones de Major League Baseball en la República Dominicana."
+title: "Derecho Deportivo"
+description: "Firma de referencia en Derecho Deportivo en la República Dominicana. Asesoría legal a ligas de élite, agentes y organizaciones afiliadas a Major League Baseball."
 order: 3
 image: "/assets/areas/deporte.avif"
 imageAlt: "Deportes profesionales"

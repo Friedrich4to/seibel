@@ -1,6 +1,6 @@
 ---
-title: "Contratación Pública y Relaciones con el Estado"
-description: "Asesoría estratégica en contratación estatal y licitaciones nacionales e internacionales. Especialistas en impugnaciones administrativas y la recuperación de activos públicos de alta complejidad."
+title: "Derecho Administrativo y Contratación Pública"
+description: "Asesoría en licitaciones nacionales e internacionales, contratación estatal e impugnaciones administrativas. Experiencia acreditada en la recuperación de activos públicos de alta complejidad."
 order: 7
 image: "/assets/areas/contratacion.avif"
 imageAlt: "Contratación pública"

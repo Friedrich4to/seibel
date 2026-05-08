@@ -7,7 +7,7 @@ image: "/assets/team/adriana.avif"
 imageFb: "/assets/team/adriana_fb.avif"
 imageAlt: "Adriana I. Paz Palacio - Associate"
 role: "member"
-order: 5
+order: 2
 languages:
   - "Spanish (Native)"
   - "English (Native)"

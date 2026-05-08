@@ -1,6 +1,6 @@
 ---
-title: "Infraestructura"
-description: "Maestría jurídica en el desarrollo de infraestructuras de envergadura nacional. Gestión integral de proyectos estratégicos en los sectores energético, logístico y turístico."
+title: "Derecho de Infraestructura"
+description: "Asesoría jurídica integral en el desarrollo de proyectos de infraestructura de envergadura nacional en los sectores energético, logístico y turístico."
 order: 8
 image: "/assets/areas/infraestructura.avif"
 imageAlt: "Infraestructura"

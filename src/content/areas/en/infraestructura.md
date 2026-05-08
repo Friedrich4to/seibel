@@ -1,6 +1,6 @@
 ---
-title: "Infrastructure"
-description: "Legal mastery in the development of nationally significant infrastructure. Comprehensive management of strategic projects in the energy, logistics, and tourism sectors."
+title: "Infrastructure Law"
+description: "Comprehensive legal advisory on the development of large-scale national infrastructure projects across the energy, logistics, and tourism sectors."
 order: 8
 image: "/assets/areas/infraestructura.avif"
 imageAlt: "Infrastructure"

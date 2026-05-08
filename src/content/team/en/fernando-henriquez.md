@@ -1,4 +1,4 @@
-﻿---
+---
 name: "FERNANDO P. HENRÍQUEZ"
 position: "Partner"
 phone: "(809) 601-0956"
@@ -12,56 +12,67 @@ languages:
   - "Spanish"
   - "English"
 education:
+  - institution: "Instituto OMG"
+    location: ""
+    degree: "Certificate in Commercial Restructuring and Judicial Liquidation, 2017"
+  - institution: "Dispute Resolution Center of the Chamber of Commerce and Production of Santo Domingo / National School of the Judiciary"
+    location: ""
+    degree: "Certificate in Arbitration and the Judiciary – Legal Issues and Practical Scope, 2013"
   - institution: "Pontificia Universidad Católica Madre y Maestra"
     location: "Santo Domingo, Dominican Republic"
-    degree: "Master's in Business Law and Economic Legislation, 1994"
+    degree: "Master's in Business Law and Economic Legislation, 1994 (Thesis Pending)"
   - institution: "Pontificia Universidad Católica Madre y Maestra"
     location: "Santo Domingo, Dominican Republic"
     degree: "Law Degree, Cum Laude, 1992"
 ---
 
-Fernando P. Henríquez has over thirty years of experience in the practice of law, with a distinguished career in dispute resolution and in the structuring and execution of highly complex transactional matters.
+Fernando Paíno Henríquez Dájer has had an extensive and successful legal practice in the areas of dispute resolution and transactional law.
 
-Throughout his career, Fernando has continuously participated in complex mergers and acquisitions, investment projects, international and local financings, international public tenders for construction projects, securities offerings, and corporate matters, as well as in areas related to energy, telecommunications, tax planning, banking, and general contracting.
+For over 30 years he has been continuously involved in multiple complex mergers and acquisitions, investment projects, international and local financings, international public tenders for public works, securities contracts and issuances, corporate matters, energy, telecommunications, tax planning, banking, and general contracting. He has likewise participated in various litigation and arbitration proceedings across virtually all areas of law: civil and commercial, criminal, real estate, labor, administrative, and constitutional.
 
-His experience also includes extensive participation in litigation and arbitration proceedings across various areas of law, including civil, commercial, criminal, real estate, labor, administrative, and constitutional law.
+For decades he has represented several of the leading companies in the electricity, telecommunications, fuel distribution, banking, tourism, and construction sectors.
 
-For decades, Fernando has represented some of the leading companies in the electricity, telecommunications, fuel distribution, banking, tourism, and construction sectors, advising leading organizations in complex regulatory and commercial contexts.
+In many of the cases in which he has participated, he has worked in coordination with the leading law firms of the United States of America, Spain, England, Canada, and Latin America.
 
-His professional practice is distinguished by the depth of his experience, a solid analytical capacity, and a firm ethical commitment.
+## Affiliations
 
-In numerous matters, Fernando has worked in coordination with leading law firms in the United States of America, Spain, England, Canada, and Latin America, particularly in cross-border transactions and disputes.
+- Member of the Bar Association of the Dominican Republic
+- Member of the Dominican College of Notaries, Inc.
+- Arbitrator at the Alternative Dispute Resolution Center of the Chamber of Commerce and Production of Santo Domingo
+- Member of the Advisory Council of Investa Capital Partners
+- Vice President of the Executive Council of Centro Juan XXIII
+- General Coordinator of the Public Heritage Recovery Team (ERPP)
+- Founding Member and Secretary of the Board of Directors of the Dominican Capital Market Chamber (CADOMCA)
 
-In February 2021, the President of the Dominican Republic appointed Fernando P. Henríquez as co-coordinator of the legal team responsible for representing the Dominican State in public asset recovery proceedings.
+## Professional Experience
 
-## Associations
+- **2010–present** — Partner at the law firm Seibel & Henríquez
+- **1993–2010** — Managing Partner at the law firm Grisolía & Bobadilla
+- **1992–1993** — National Consultant for the Tax Reform Implementation Project UNDP–Secretary of State for Finance
 
-- Member, Bar Association of the Dominican Republic
-- Member, Dominican College of Notaries, Inc.
-- Arbitrator, Alternative Dispute Resolution Center of the Chamber of Commerce and Production of Santo Domingo
-- Member, Economic and Social Council (CES), representing the social sector
-- Member, Advisory Council of Investa Capital Partners
-- Vice President, Executive Council of Centro Juan XXIII
+## Relevant Transactions and Financings
 
-## Experience
+Represented the leading mobile telephone company in the Americas in the purchase of the country's leading telecommunications company, in the only transaction exceeding US$2 billion involving assets and/or companies of the Dominican Republic.
 
-## Major Transactions and Financings
+Currently representing one of the awarded companies in the international public tender for the largest and most significant electricity generation project in the Dominican Republic, currently under development in Manzanillo.
 
-Represented the leading mobile telephone company in the Americas in the purchase of the country's leading telecommunications company, in the only transaction exceeding US$2,000 million involving assets and/or companies of the Dominican Republic.
-
-Represented the company that built and operates the Caucedo-San Pedro de Macorís gas pipeline.
-
-Represented one of the country's leading private electricity generating companies in the process of amending the existing power purchase agreement with the CDEEE to facilitate conversion to natural gas generation.
+Represented the Dominican State and the Airport Commission as a member of the negotiating commission and lead counsel in the renegotiation of the concession contract for the Dominican Republic's public airports with Aeropuertos Dominicanos Siglo XXI, S.A. (AERODOM), affiliated with Vinci Airports.
 
 Represented one of the leading American-owned fuel distribution companies established in the country in the process of selling its shares.
 
 Represented the buyers of the majority interest in one of the country's leading private electricity generating companies.
 
+Represented one of the country's leading private electricity generating companies in the process of amending the existing power purchase agreement with the CDEEE to facilitate conversion to natural gas generation.
+
 Represented the company owning a gas pipeline located in the eastern part of the country in the company formation process, negotiation of construction agreements, and financing.
 
-Assisted the Dominican State in the amendment to the design and construction contract for the Monte Grande dam.
+Legal assistance to the Dominican State in the amendment to the design and construction contract for the Monte Grande dam.
 
-Assisted the Dominican State in the bidding process for Phase II of the Santo Domingo cable car system.
+Legal audit of all open tender processes conducted by the Mass Transportation System Development Trust of the Dominican Republic (FITRAM) during 2021–2022 related to the construction of the Santiago monorail.
+
+Legal assistance to the Dominican State in the bidding process for Phase III of the Santo Domingo cable car system.
+
+Legal assistance to the Dominican State in the bidding process for Phase II of the Santo Domingo cable car system.
 
 Represented a foreign banking entity in the purchase of assets from a financial entity under administrative liquidation.
 
@@ -91,14 +102,18 @@ Represented the developer of one of the country's leading shopping centers with 
 
 Advisory and assistance in various processes for applications for logistics center and logistics operator licenses.
 
-Provided ongoing assistance to the commercial and corporate departments of the leading foreign banking entity based in the Dominican Republic in financings granted to local clients.
+Provided ongoing assistance over 20 years to the commercial and corporate departments of the leading foreign banking entity based in the Dominican Republic in financings granted to local clients.
 
 Advised the consulting firm hired by the General Directorate of Public-Private Partnerships (APP) for the development of the country's first public-private partnership initiative.
 
 Representation of one of the leading brokerage firms in the local market in a corporate bond placement process with a total value exceeding US$200 million.
 
+Legal advisory to the Dominican State in the development of the Nueva Barquita social and urban development project.
 
-## Significant Litigation
+
+## Relevant Litigation
+
+Member of the Board of Coordinators of the Public Heritage Recovery Team. Group of attorneys contracted to represent the Dominican State in the recovery of public heritage pursuant to Decrees Nos. 22-21 dated January 13, 2021 and 579-24 dated October 4, 2024.
 
 Successfully represented a multinational company accused of being civilly liable in a case of forgery in a private document.
 
@@ -147,13 +162,15 @@ Has participated as arbitrator and as counsel in dozens of arbitration proceedin
 
 ## Teaching Experience
 
+Co-author of the "Manual of Dominican Administrative Law." A work sponsored by the Constitutional Court of the Dominican Republic and the Center for Constitutional Studies, with the participation of the University of Salamanca, the Center for Research on Administrative Justice, and Universidad Pedro Henríquez Ureña (UNPHU). 2024.
+
 Instructor in the Diploma Program on "Energy Law" organized by the National Association of Young Lawyers of the Dominican Republic, 2021.
 
 Instructor in the Diploma Program on "Introduction to Monetary and Financial Regulation" organized by the Association of Multiple Banks of the Dominican Republic (ABA) and the National School of the Judiciary (ENJ), 2018.
 
 Instructor in the "Workshop on the Legal Framework of Evidence in Banking Matters" organized by the Association of Multiple Banks of the Dominican Republic (ABA) and the National School of the Judiciary (ENJ), 2017.
 
-Professor of "Taxes", Pontificia Universidad Católica Madre y Maestra (PUCMM), 1995-1997
+Professor of "Taxes", Pontificia Universidad Católica Madre y Maestra (PUCMM), 1995-1997.
 
 Place of birth:
 Moca, Dominican Republic

@@ -1,6 +1,6 @@
 ---
-title: "Energy"
-description: "Legal representation of the country's largest generators and regulatory bodies, leading the legal framework of the most impactful state and private projects nationwide."
+title: "Energy Law"
+description: "Legal representation of the country's leading energy generators and regulatory bodies in high-impact public and private energy projects."
 order: 4
 image: "/assets/areas/energia.avif"
 imageAlt: "Electric power towers"

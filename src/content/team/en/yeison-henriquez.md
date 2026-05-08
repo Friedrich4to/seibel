@@ -7,7 +7,7 @@ image: "/assets/team/yeison.avif"
 imageFb: "/assets/team/yeison_fb.avif"
 imageAlt: "Yeison Henríquez - Associate"
 role: "member"
-order: 11
+order: 6
 languages:
   - "Spanish (Native)"
   - "English (Advanced)"

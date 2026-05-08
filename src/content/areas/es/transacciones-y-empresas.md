@@ -1,6 +1,6 @@
 ---
-title: "Transacciones y Empresas"
-description: "Dos décadas de maestría en el diseño de estructuras corporativas complejas, gestión de operaciones de gran escala y fusiones transfronterizas."
+title: "Derecho Corporativo y Fusiones & Adquisiciones"
+description: "Asesoría integral en constitución, estructuración y gobierno corporativo. Más de dos décadas de experiencia en fusiones y adquisiciones transfronterizas y due diligence."
 order: 1
 image: "/assets/areas/transacciones.avif"
 imageAlt: "Edificio corporativo moderno"

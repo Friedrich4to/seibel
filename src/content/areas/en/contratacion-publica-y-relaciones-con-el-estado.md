@@ -1,6 +1,6 @@
 ---
-title: "Public Procurement and Government Relations"
-description: "Strategic advisory in government contracting and national and international tenders. Specialists in administrative challenges and the recovery of highly complex public assets."
+title: "Administrative Law & Public Procurement"
+description: "Advisory on national and international tenders, public procurement, and administrative challenges. Proven experience in high-complexity public asset recovery matters."
 order: 7
 image: "/assets/areas/contratacion.avif"
 imageAlt: "Public procurement"

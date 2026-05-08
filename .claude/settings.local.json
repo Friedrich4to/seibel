@@ -3,7 +3,12 @@
     "allow": [
       "PowerShell(Get-ChildItem -Path \"c:\\\\Users\\\\frede\\\\Documents\\\\Clientes\\\\1_Websites\\\\SeibelHenriquez\\\\seibel\" -Force | Select-Object Name, @{Name=\"Type\";Expression={if\\($_.PSIsContainer\\){\"DIR\"}else{\"FILE\"}}} | Format-Table -AutoSize)",
       "Bash(Get-ChildItem \"c:\\\\Users\\\\frede\\\\Documents\\\\Clientes\\\\1_Websites\\\\SeibelHenriquez\\\\seibel\\\\src\\\\content\" -Filter \"config.*\")",
-      "PowerShell(Head -10)"
+      "PowerShell(Head -10)",
+      "Bash(Remove-Item \"c:\\\\Users\\\\frede\\\\Documents\\\\Clientes\\\\1_Websites\\\\SeibelHenriquez\\\\seibel\\\\src\\\\content\\\\team\\\\es\\\\gabriella-grullon.md\" -Force)",
+      "Bash(Remove-Item \"c:\\\\Users\\\\frede\\\\Documents\\\\Clientes\\\\1_Websites\\\\SeibelHenriquez\\\\seibel\\\\src\\\\content\\\\team\\\\en\\\\gabriella-grullon.md\" -Force)",
+      "Bash(Write-Output \"Eliminados.\")",
+      "PowerShell(\"Eliminados.\")",
+      "Bash(git checkout *)"
     ]
   }
 }

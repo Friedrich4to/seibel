@@ -7,7 +7,7 @@ image: "/assets/team/sebastian.avif"
 imageFb: "/assets/team/sebastian_fb.avif"
 imageAlt: "Sebastián Romero - General Manager"
 role: "member"
-order: 3
+order: 9
 languages:
   - "Spanish (Native)"
   - "English (Advanced)"
@@ -31,6 +31,9 @@ continuingEducation:
 
   - institution: "Harvard Online"
     degree: "Exercising Leadership: Foundational Principles & Organizational Leadership (2023)"
+
+  - institution: "DeepLearning AI"
+    degree: "AI For Everyone (2023)"
 ---
 
 Strategist focused on redefining the management model in the legal industry through technology and data intelligence. As General Manager of Seibel & Henríquez, he leads the firm's evolution by integrating LegalTech solutions to optimize processes, elevate organizational efficiency, and ground every decision in data.

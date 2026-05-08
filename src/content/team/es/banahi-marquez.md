@@ -7,7 +7,7 @@ image: "/assets/team/banahi.avif"
 imageFb: "/assets/team/banahi_fb.avif"
 imageAlt: "Banahí Márquez - Asociada"
 role: "member"
-order: 10
+order: 7
 languages:
   - "Español (Nativo)"
   - "Inglés"

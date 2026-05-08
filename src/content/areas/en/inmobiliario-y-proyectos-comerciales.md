@@ -1,6 +1,6 @@
 ---
-title: "Real Estate and Commercial Projects"
-description: "Management of high-value real estate assets and strategic resolution of large-scale mortgage foreclosures."
+title: "Real Estate Law"
+description: "Advisory on the acquisition, structuring, and management of high-value real estate assets, including mortgage financing and commercial development projects."
 order: 5
 image: "/assets/areas/inmobiliario.avif"
 imageAlt: "Commercial real estate project"

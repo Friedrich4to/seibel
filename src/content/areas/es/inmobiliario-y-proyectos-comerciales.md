@@ -1,6 +1,6 @@
 ---
-title: "Inmobiliario y Proyectos Comerciales"
-description: "Gestión de activos inmobiliarios de alto valor y resolución estratégica de ejecuciones hipotecarias de gran escala."
+title: "Derecho Inmobiliario"
+description: "Asesoría en adquisición, estructuración y gestión de activos inmobiliarios de alto valor, incluyendo financiamiento hipotecario y proyectos de desarrollo comercial."
 order: 5
 image: "/assets/areas/inmobiliario.avif"
 imageAlt: "Proyecto inmobiliario comercial"

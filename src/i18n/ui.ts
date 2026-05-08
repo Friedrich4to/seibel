@@ -41,7 +41,7 @@ export const ui = {
     'footer.piantini': 'Piantini, Santo Domingo,',
     'footer.pais': 'República Dominicana',
     'footer.calle': 'Roberto Pastoriza',
-    'footer.numero': 'No.454 - Piso 6',
+    'footer.numero': 'No. 454, Piso 6',
     'footer.tel': 'Tel:',
     'footer.email': 'Email:',
     'footer.miami-1': '8374 NW 64th St',
@@ -49,8 +49,8 @@ export const ui = {
     'footer.miami-3': 'Miami, FL 33166-2624. EE.UU',
 
     // Homepage - Hero
-    'home.hero.title': 'Transformamos el derecho <br class="md:hidden"> en desarrollo',
-    'home.hero.subtitle': 'Más de dos décadas asesorando operaciones corporativas y controversias de alto impacto.',
+    'home.hero.title': 'Conectando el derecho con el desarrollo',
+    'home.hero.subtitle': 'Más de dos décadas asesorando transacciones de alto impacto y controversias complejas.',
 
     // Homepage - Stats
     'home.stats.casos': 'Casos atendidos',
@@ -97,7 +97,7 @@ export const ui = {
     'firm.title': 'La Firma',
     'firm.description': 'Acerca de La Firma Seibel Henríquez',
     'firm.hero.eyebrow': 'Quiénes somos',
-    'firm.hero.subtitle': 'Una firma legal de práctica general en Santo Domingo, comprometida con un servicio jurídico personalizado, ético y de alta calidad.',
+    'firm.hero.subtitle': 'Una firma legal de práctica general comprometida con un servicio jurídico personalizado, ético y de alta calidad.',
     'firm.cta.title': 'Conoce a nuestro equipo',
     'firm.cta.desc': 'Una nueva generación de abogados con formación local e internacional, comprometidos con rigor técnico y soluciones prácticas.',
     'firm.cta.btn': 'Ver el equipo',
@@ -128,6 +128,7 @@ export const ui = {
     'areas-page.description': 'Conoce a fondo las áreas en las que ejerce Seibel Henríquez',
     'areas-page.heading': 'Áreas de Práctica',
     'areas-page.servicios': 'SERVICIOS',
+    'areas-page.team-logos': 'EQUIPOS QUE HAN CONFIADO EN NOSOTROS',
 
     // Carreras page
     'careers.title': 'Carreras',
@@ -162,6 +163,7 @@ export const ui = {
     // Team member detail
     'member.idiomas': 'IDIOMAS',
     'member.educacion': 'EDUCACION',
+    'member.educacion-continua': 'EDUCACION CONTINUA',
     'member.ver-perfil': 'Ver perfil',
 
     // Shared
@@ -183,7 +185,7 @@ export const ui = {
     'footer.piantini': 'Piantini, Santo Domingo,',
     'footer.pais': 'Dominican Republic',
     'footer.calle': 'Roberto Pastoriza',
-    'footer.numero': 'No.454 - 6th Floor',
+    'footer.numero': 'No. 454, 6th Floor',
     'footer.tel': 'Phone:',
     'footer.email': 'Email:',
     'footer.miami-1': '8374 NW 64th St',
@@ -191,8 +193,8 @@ export const ui = {
     'footer.miami-3': 'Miami, FL 33166-2624. USA',
 
     // Homepage - Hero
-    'home.hero.title': 'We transform law <br class="md:hidden"> into development',
-    'home.hero.subtitle': 'Over two decades advising corporate operations and high-impact disputes.',
+    'home.hero.title': 'Connecting law with development',
+    'home.hero.subtitle': 'Over two decades advising high-impact transactions and complex disputes.',
 
     // Homepage - Stats
     'home.stats.casos': 'Cases handled',
@@ -239,7 +241,7 @@ export const ui = {
     'firm.title': 'The Firm',
     'firm.description': 'About the Firm Seibel Henríquez',
     'firm.hero.eyebrow': 'Who we are',
-    'firm.hero.subtitle': 'A full-service law firm in Santo Domingo, committed to personalized, ethical, and high-quality legal service.',
+    'firm.hero.subtitle': 'A full-service law firm committed to personalized, ethical, and high-quality legal service.',
     'firm.cta.title': 'Meet our team',
     'firm.cta.desc': 'A new generation of attorneys with local and international training, committed to technical rigor and practical solutions.',
     'firm.cta.btn': 'Meet the team',
@@ -270,6 +272,7 @@ export const ui = {
     'areas-page.description': 'Explore in depth the practice areas of Seibel Henríquez',
     'areas-page.heading': 'Practice Areas',
     'areas-page.servicios': 'SERVICES',
+    'areas-page.team-logos': 'TEAMS THAT HAVE TRUSTED US',
 
     // Carreras page
     'careers.title': 'Careers',
@@ -304,6 +307,7 @@ export const ui = {
     // Team member detail
     'member.idiomas': 'LANGUAGES',
     'member.educacion': 'EDUCATION',
+    'member.educacion-continua': 'CONTINUING EDUCATION',
     'member.ver-perfil': 'View profile',
 
     // Shared

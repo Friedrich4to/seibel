@@ -71,6 +71,23 @@ const { Content } = await render(member);
 						)}
 					</div>
 				)}
+
+				{data.continuingEducation && data.continuingEducation.length > 0 && (
+					<div class="mt-6 text-sm md:text-base font-light text-dark-slate">
+						<h3 class="font-medium tracking-wide mb-2">{t('member.educacion-continua')}</h3>
+						<div class="flex flex-col gap-4">
+							{data.continuingEducation.map((edu) => (
+								<div>
+									<p class="font-light">
+										{edu.institution}
+										{edu.location && (<><br />{edu.location}</>)}
+									</p>
+									<p class="font-light">{edu.degree}</p>
+								</div>
+							))}
+						</div>
+					</div>
+				)}
 			</div>
 		</div>
 	</section>

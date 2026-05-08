@@ -1,13 +1,13 @@
 ﻿---
 name: "PATRICIO SILVESTRE MEJÍA"
-position: "Director legal"
+position: "Coordinador legal"
 phone: "(809) 981-0803"
 email: "P.SILVESTRE@SEIBELHENRIQUEZ.COM"
 image: "/assets/team/patricio.avif"
 imageFb: "/assets/team/patricio_fb.avif"
-imageAlt: "Patricio Silvestre Mejía - Director legal"
+imageAlt: "Patricio Silvestre Mejía - Coordinador legal"
 role: "member"
-order: 4
+order: 1
 languages:
   - "Español"
   - "Inglés"

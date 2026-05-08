@@ -1,6 +1,6 @@
 ---
-title: "Energía"
-description: "Representación legal de las mayores generadoras y organismos reguladores del país, liderando el marco jurídico de los proyectos estatales y privados de mayor impacto nacional."
+title: "Derecho Energético"
+description: "Representación legal de las principales generadoras y organismos reguladores del país en proyectos energéticos estatales y privados de alto impacto nacional."
 order: 4
 image: "/assets/areas/energia.avif"
 imageAlt: "Torres de energía eléctrica"

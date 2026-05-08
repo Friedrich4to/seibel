@@ -1,6 +1,6 @@
 ---
-title: "Litigios, Arbitraje y Resolución de Disputas"
-description: "Representación en litigios complejos y arbitrajes bajo normas FIDIC. Asesoría de alto nivel en disputas energéticas, financieras y de telecomunicaciones."
+title: "Resolución de Disputas"
+description: "Representación en litigios complejos y arbitrajes nacionales e internacionales, incluyendo disputas bajo normas FIDIC, en los sectores energético, financiero y de telecomunicaciones."
 order: 6
 image: "/assets/areas/litigios.avif"
 imageAlt: "Litigios y arbitraje"

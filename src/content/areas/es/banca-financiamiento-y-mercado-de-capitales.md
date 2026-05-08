@@ -1,6 +1,6 @@
 ---
-title: "BANCA, FINANCIAMIENTO Y MERCADO DE CAPITALES"
-description: "Estructuración de financiamientos sofisticados y mercado de capitales. Consultoría legal para la banca internacional en operaciones de gran escala."
+title: "Derecho Bancario, Financiero y Mercado de Capitales"
+description: "Estructuración de financiamientos sofisticados y asesoría legal a instituciones bancarias. Asesoría en emisiones de valores y operaciones en mercados de capitales locales e internacionales."
 order: 2
 image: "/assets/areas/banca.avif"
 imageAlt: "Centro financiero"

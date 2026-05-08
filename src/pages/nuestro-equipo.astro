@@ -16,8 +16,11 @@ const socios = allMembers
 const teamMembers = allMembers
 	.filter((m) => m.data.role !== 'socio')
 	.sort((a, b) => a.data.order - b.data.order);
-const featuredMembers = teamMembers.slice(0, 2);
-const regularMembers = teamMembers.slice(2);
+const featuredSlugs = ['sebastian-romero', 'patricio-silvestre-mejia'];
+const featuredMembers = featuredSlugs
+	.map(slug => teamMembers.find(m => m.id.endsWith(slug)))
+	.filter(Boolean);
+const regularMembers = teamMembers.filter(m => !featuredSlugs.some(s => m.id.endsWith(s)));
 
 const teamBasePath = lang === 'es' ? '/team/' : '/en/team/';
 const stripLangPrefix = (id: string) => id.replace(langPrefix, '');

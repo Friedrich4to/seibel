@@ -7,7 +7,7 @@ image: "/assets/team/gia.avif"
 imageFb: "/assets/team/gia_fb.avif"
 imageAlt: "Gia V. Guerrero Leger - Associate"
 role: "member"
-order: 7
+order: 4
 languages:
   - "Spanish"
   - "English"

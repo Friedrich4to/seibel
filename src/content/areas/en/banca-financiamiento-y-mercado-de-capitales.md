@@ -1,6 +1,6 @@
 ---
-title: "BANKING, FINANCE AND CAPITAL MARKETS"
-description: "Structuring of sophisticated financings and capital markets. Legal consulting for international banking in large-scale operations."
+title: "Banking, Finance & Capital Markets"
+description: "Structuring of sophisticated financing transactions and legal counsel to domestic and international banking institutions. Advisory on securities offerings and capital markets transactions."
 order: 2
 image: "/assets/areas/banca.avif"
 imageAlt: "Financial center"

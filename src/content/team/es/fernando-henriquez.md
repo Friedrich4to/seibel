@@ -1,4 +1,4 @@
-﻿---
+---
 name: "FERNANDO P. HENRÍQUEZ"
 position: "Socio"
 phone: "(809) 601-0956"
@@ -12,56 +12,67 @@ languages:
   - "Español"
   - "Inglés"
 education:
+  - institution: "Instituto OMG"
+    location: ""
+    degree: "Diplomado en Reestructuración Mercantil y Liquidación Judicial, 2017"
+  - institution: "Centro de Resolución de Controversias de la Cámara de Comercio y Producción de Santo Domingo / Escuela Nacional de la Judicatura"
+    location: ""
+    degree: "Diplomado en Arbitraje y Poder Judicial – Cuestiones Jurídicas y Alcances Prácticos, 2013"
   - institution: "Pontificia Universidad Católica Madre y Maestra"
     location: "Santo Domingo, República Dominicana"
-    degree: "Maestría en Derecho Empresarial y Legislación Económica, 1994"
+    degree: "Maestría en Derecho Empresarial y Legislación Económica, 1994 (Tesis Pendiente)"
   - institution: "Pontificia Universidad Católica Madre y Maestra"
     location: "Santo Domingo, República Dominicana"
     degree: "Licenciatura en Derecho, Cum Laude, 1992"
 ---
 
-Fernando P. Henríquez cuenta con más de treinta años de experiencia en la práctica del derecho, con una trayectoria destacada en resolución de controversias y en la estructuración y ejecución de asuntos transaccionales de alta complejidad.
+Fernando Paíno Henríquez Dájer ha tenido una extensa y exitosa práctica del derecho en las áreas de resolución de controversias y transaccional.
 
-A lo largo de su carrera, Fernando ha participado de manera continua en operaciones complejas de fusiones y adquisiciones, proyectos de inversión, financiamientos internacionales y locales, licitaciones públicas internacionales de obras, emisiones de valores y asuntos corporativos, así como en materias relacionadas con energía, telecomunicaciones, planificación tributaria, banca y contratación en general.
+Durante más de 30 años ha estado involucrado ininterrumpidamente en múltiples y complejas adquisiciones y fusiones, proyectos de inversión, financiamientos internacionales y locales, licitaciones internacionales de obras públicas, contratos emisiones de valores, temas corporativos, energía, telecomunicaciones, planificación tributaria, banca y contratos en general. Igualmente, ha participado en diversos litigios y procesos arbitrales en prácticamente todas las materias del derecho: civil y comercial, penal, inmobiliaria, laboral, administrativo y constitucional.
 
-Su experiencia incluye, además, una amplia participación en litigios y procesos arbitrales en diversas áreas del derecho, incluyendo derecho civil, comercial, penal, inmobiliario, laboral, administrativo y constitucional.
+Durante décadas ha representado a varias de las principales empresas del sector eléctrico, de telecomunicaciones, distribuidoras de combustibles, sector bancario, turismo y construcción.
 
-Durante décadas, Fernando ha representado a algunas de las principales empresas de los sectores eléctrico, telecomunicaciones, distribución de combustibles, banca, turismo y construcción, asesorando a organizaciones líderes en contextos regulatorios y comerciales complejos.
+En muchos de los casos en los que ha participado, le ha correspondido trabajar de manera coordinada con las principales firmas de abogados de los Estados Unidos de América, España, Inglaterra, Canadá y Latinoamérica.
 
-Su práctica profesional se distingue por la profundidad de su experiencia, una sólida capacidad de análisis y un firme compromiso ético.
+## Filiaciones
 
-En numerosos asuntos, Fernando ha trabajado de manera coordinada con firmas de abogados líderes en los Estados Unidos de América, España, Inglaterra, Canadá y Latinoamérica, particularmente en operaciones y controversias de alcance transnacional.
+- Miembro del Colegio de Abogados de la República Dominicana
+- Miembro del Colegio Dominicano de Notarios, Inc.
+- Árbitro del Centro de Resolución Alternativa de Controversias de la Cámara de Comercio y Producción de Santo Domingo
+- Miembro del Consejo Consultivo de Investa Capital Partners
+- Vicepresidente del Consejo Ejecutivo del Centro Juan XXIII
+- Coordinador General del Equipo de Recuperación del Patrimonio Público (ERPP)
+- Miembro fundador y Secretario de la Junta Directiva de la Cámara Dominicana del Mercado de Capitales (CADOMCA)
 
-En febrero de 2021, el Presidente de la República Dominicana designó a Fernando P. Henríquez como co-coordinador del equipo de abogados responsable de representar al Estado dominicano en los procesos de recuperación de activos públicos.
+## Experiencia Profesional
 
-## Asociaciones
+- **2010–actualidad** — Socio de la firma de abogados Seibel & Henríquez
+- **1993–2010** — Socio Gerente de la firma de abogados Grisolía & Bobadilla
+- **1992–1993** — Consultor Nacional del Proyecto de Implementación de la Reforma Tributaria PNUD-Secretaría de Estado de Finanzas
 
-- Miembro, Colegio de Abogados de la República Dominicana
-- Miembro, Colegio Dominicano de Notarios, Inc.
-- Árbitro, Centro de Resolución Alternativa de Controversias de la Cámara de Comercio y Producción de Santo Domingo
-- Miembro, Consejo Económico y Social (CES), en representación del sector social
-- Miembro, Consejo Consultivo de Investa Capital Partners
-- Vicepresidente, Consejo Ejecutivo del Centro Juan XXIII
-
-## Experiencia
-
-## Transacciones y financiamientos importantes
+## Transacciones y Financiamientos Relevantes
 
 Representó a la principal empresa de telefonía móvil del continente americano en la compra de la empresa líder en telecomunicaciones del país, en la única operación de más de US$2,000 millones relacionada con activos y/o empresas de la República Dominicana.
 
-Representó a la empresa que personifica la empresa que construyó y opera el gasoducto Caucedo-San Pedro de Macorís.
+Representando a una de las empresas adjudicatarias de la licitación pública internacional del proyecto de generación eléctrica más grande y trascendental de la República Dominicana que se está desarrollando en Manzanillo.
 
-Representó a una de las principales empresas generadoras privadas de electricidad del país en el proceso de enmienda del contrato de compraventa de energía vigente con la CDEEE para propiciar la conversión de la generación a gas natural.
+Representó al Estado dominicano y la Comisión Aeroportuaria como miembro de la comisión negociadora y abogado líder de la renegociación del contrato de concesión de los aeropuertos públicos de la República Dominicana con la empresa Aeropuertos Dominicanos Siglo XXI, S.A. (AERODOM) afiliada a Vinci Airports.
 
 Representó a una de las principales empresas distribuidoras de combustibles de capital norteamericano establecidas en el país en el proceso de venta de sus acciones.
 
 Representó a los compradores del capital mayoritario de una de las principales empresas generadoras privadas de electricidad del país.
 
+Representó a una de las principales empresas generadoras privadas de electricidad del país en el proceso de enmienda del contrato de compraventa de energía vigente con la CDEEE para propiciar la conversión de la generación a gas natural.
+
 Representó a la empresa propietaria de un gasoducto ubicado en el Este del país en el proceso de formación de la sociedad, negociación de los acuerdos de construcción y de financiamiento.
 
-Asistió al Estado dominicano en la enmienda al contrato de diseño y construcción de la presa de Monte Grande.
+Asistencia legal al Estado dominicano en la enmienda al contrato de diseño y construcción de la presa de Monte Grande.
 
-Asistió al Estado dominicano en el proceso de licitación de la fase II del teleférico de Santo Domingo.
+Auditoría legal de todos los procesos de licitación abiertas realizados por el Fideicomiso de Desarrollo de Sistema de Transporte Masivo en la República Dominicana (FITRAM) durante los años 2021-2022 relacionados con la construcción del monorriel de Santiago.
+
+Asistencia legal al Estado dominicano en el proceso de licitación de la fase III del teleférico de Santo Domingo.
+
+Asistencia legal al Estado dominicano en el proceso de licitación de la fase II del teleférico de Santo Domingo.
 
 Representó a una entidad bancaria extranjera en la compra de activos de una entidad financiera en liquidación administrativa.
 
@@ -91,14 +102,18 @@ Representó a la empresa desarrolladora de uno de los principales centros comerc
 
 Asesoría y asistencia en diversos procesos de solicitud de licencias de centros logísticos y de operadores logísticos.
 
-Asistió de manera permanente a los departamentos comercial y corporativo de la principal entidad bancaria extranjera radicada en la República Dominicana en los financiamientos otorgados a clientes locales.
+Asistió de manera permanente durante 20 años a los departamentos comercial y corporativo de la principal entidad bancaria extranjera radicada en la República Dominicana en los financiamientos otorgados a clientes locales.
 
-Asesoría a la empresa consultora contratada por la Dirección General de Alianzas Público Privadas (APP) para la elaboración de la primera iniciativa de alianza público privada del país.
+Asesoría a la empresa consultora contratada por la Dirección General de Alianzas Público-Privadas (APP) para la elaboración de la primera iniciativa de alianza público-privada del país.
 
 Representación de uno de los puestos de bolsa líderes del mercado local en el proceso de colocación de bonos corporativos por un valor total superior a los US$200 millones.
 
+Asesoría legal al Estado dominicano en el desarrollo del proyecto social y urbanístico de la Nueva Barquita.
+
 
 ## Litigios Relevantes
+
+Miembro de la Junta de Coordinadores del Equipo de Recuperación de Patrimonio Público. Grupo de abogados contratados para representar al Estado dominicano en la recuperación del patrimonio público en virtud de los Decretos Nos. 22-21 de fecha 13 de enero de 2021 y 579-24 de fecha 4 de octubre de 2024.
 
 Representó exitosamente a una empresa multinacional acusada de ser responsable civilmente en un caso de falsedad en escritura privada.
 
@@ -145,15 +160,15 @@ Ha participado en varios procesos contenciosos administrativos que disputan la v
 Ha participado como árbitro y como abogado de partes en decenas de procesos arbitrales ante el Centro de Resolución Alternativa de Controversias de la Cámara de Comercio y Producción del Distrito Nacional y de Santiago.
 
 
-## Experiencia docente
+## Experiencia Docente
 
-Docente en el Diplomado en “Derecho de la Energía” Organizado por la Asociación Nacional de Jóvenes Abogados República Dominicana, 2021.
+Coautor del "Manual de Derecho Administrativo Dominicano". Una obra auspiciada por el Tribunal Constitucional de la República Dominicana y el Centro de Estudios Constitucionales con la participación de la Universidad de Salamanca, el Centro de Investigación sobre Justicia Administrativa y la Universidad Pedro Henríquez Ureña (UNPHU). 2024.
 
-Docente en el Diplomado sobre “Introducción a la Regulación Monetaria y Financiera” Organizado por la Asociación de Bancos Múltiples de la República Dominicana (ABA) y la Escuela Nacional de la Judicatura (ENJ), 2018.
+Docente en el Diplomado en "Derecho de la Energía" organizado por la Asociación Nacional de Jóvenes Abogados República Dominicana, 2021.
 
-Docente en el “Taller Régimen Jurídico de la Prueba en Materia Bancaria” Organizado por la Asociación de Bancos Múltiples de la República Dominicana (ABA) y la Escuela Nacional de la Judicatura (ENJ), 2017.
+Docente en el Diplomado sobre "Introducción a la Regulación Monetaria y Financiera" organizado por la Asociación de Bancos Múltiples de la República Dominicana (ABA) y la Escuela Nacional de la Judicatura (ENJ), 2018.
 
-Catedrático de “Impuestos”, Pontificia Universidad Católica Madre y Maestra (PUCMM), 1995-1997
+Docente en el "Taller Régimen Jurídico de la Prueba en Materia Bancaria" organizado por la Asociación de Bancos Múltiples de la República Dominicana (ABA) y la Escuela Nacional de la Judicatura (ENJ), 2017.
 
-Lugar de nacimiento:
-Moca, República Dominicana
+Catedrático de "Impuestos", Pontificia Universidad Católica Madre y Maestra (PUCMM), 1995-1997.
+

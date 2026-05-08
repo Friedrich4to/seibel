@@ -1,6 +1,6 @@
 ---
-title: "SPORTS LAW"
-description: "Leading firm in Sports Law, providing strategic advisory to elite leagues and Major League Baseball organizations in the Dominican Republic."
+title: "Sports Law"
+description: "Leading Sports Law practice in the Dominican Republic, advising elite leagues, agents, and organizations affiliated with Major League Baseball."
 order: 3
 image: "/assets/areas/deporte.avif"
 imageAlt: "Professional sports"
