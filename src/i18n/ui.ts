@@ -49,7 +49,7 @@ export const ui = {
     'footer.miami-3': 'Miami, FL 33166-2624. EE.UU',
 
     // Homepage - Hero
-    'home.hero.title': 'Conectando el derecho con el desarrollo',
+    'home.hero.title': 'Conectando el derecho<br class="md:hidden" /> con el desarrollo',
     'home.hero.subtitle': 'Más de dos décadas asesorando transacciones de alto impacto y controversias complejas.',
 
     // Homepage - Stats
@@ -195,7 +195,7 @@ export const ui = {
     'footer.miami-3': 'Miami, FL 33166-2624. USA',
 
     // Homepage - Hero
-    'home.hero.title': 'Connecting law with development',
+    'home.hero.title': 'Connecting law<br class="md:hidden" /> with development',
     'home.hero.subtitle': 'Over two decades advising high-impact transactions and complex disputes.',
 
     // Homepage - Stats
