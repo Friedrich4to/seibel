@@ -9,7 +9,7 @@ const t = useTranslations(lang);
 export async function getStaticPaths() {
 	const teamMembers = await getCollection('team');
 	return teamMembers
-		.filter((member) => member.id.startsWith('es/'))
+		.filter((member) => member.id.startsWith('es/') && member.data.hasProfile !== false)
 		.map((member) => ({
 			params: { slug: member.id.replace('es/', '') },
 			props: { member },

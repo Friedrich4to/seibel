@@ -1,7 +1,7 @@
 ---
-title: "Derecho Bancario, Financiero y Mercado de Capitales"
-description: "Estructuración de financiamientos sofisticados y asesoría legal a instituciones bancarias. Asesoría en emisiones de valores y operaciones en mercados de capitales locales e internacionales."
-order: 2
+title: "Derecho Bancario y Financiero"
+description: "Estructuración de financiamientos sofisticados y asesoría legal a instituciones bancarias nacionales e internacionales en operaciones de gran escala."
+order: 3
 image: "/assets/areas/banca.avif"
 imageAlt: "Centro financiero"
 servicios:
@@ -11,17 +11,14 @@ servicios:
     descripcion: "Participación en operaciones de financiamiento para el desarrollo de infraestructura de generación eléctrica, contribuyendo al fortalecimiento del sistema energético nacional mediante estructuras financieras complejas."
   - titulo: "Estructuración financiera de proyectos inmobiliarios y turísticos"
     descripcion: "Diseño legal de esquemas de financiamiento y garantías para proyectos inmobiliarios y turísticos de uso mixto, integrando inversión privada, financiamiento bancario e incentivos fiscales aplicables."
-  - titulo: "Desarrollo institucional del mercado de valores"
-    descripcion: "Acompañamiento en procesos de organización y fortalecimiento institucional de entidades vinculadas al mercado de capitales, promoviendo buenas prácticas y estabilidad regulatoria."
 ---
 
-Diseñamos y estructuramos operaciones de financiamiento sofisticadas y transacciones del mercado de capitales para instituciones financieras, inversionistas y emisores locales e internacionales.Nuestra práctica combina un profundo conocimiento del marco regulatorio financiero con experiencia en operaciones de gran escala para la banca internacional y actores clave del sistema financiero.
+Diseñamos y estructuramos operaciones de financiamiento sofisticadas para instituciones financieras, inversionistas y emisores locales e internacionales. Nuestra práctica combina un profundo conocimiento del marco regulatorio financiero con experiencia en operaciones de gran escala para la banca nacional e internacional.
 
 Nuestra experiencia en esta área incluye, entre otros:
 
-- Operaciones de financiamiento en entornos regulados.
+- Financiamientos sindicados para infraestructura.
 - Estructuración de esquemas financieros complejos.
 - Transacciones con múltiples acreedores o inversionistas.
 - Diseño y negociación de garantías.
-- Asesoría regulatoria financiera y de mercado de valores.
-
+- Asesoría regulatoria financiera.

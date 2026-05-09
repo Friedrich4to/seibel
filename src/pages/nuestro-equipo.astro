@@ -13,14 +13,12 @@ const allMembers = (await getCollection('team')).filter((m) => m.id.startsWith(l
 const socios = allMembers
 	.filter((m) => m.data.role === 'socio')
 	.sort((a, b) => a.data.order - b.data.order);
-const teamMembers = allMembers
-	.filter((m) => m.data.role !== 'socio')
+const asociados = allMembers
+	.filter((m) => m.data.role === 'member')
 	.sort((a, b) => a.data.order - b.data.order);
-const featuredSlugs = ['sebastian-romero', 'patricio-silvestre-mejia'];
-const featuredMembers = featuredSlugs
-	.map(slug => teamMembers.find(m => m.id.endsWith(slug)))
-	.filter(Boolean);
-const regularMembers = teamMembers.filter(m => !featuredSlugs.some(s => m.id.endsWith(s)));
+const adminMembers = allMembers
+	.filter((m) => m.data.role === 'admin')
+	.sort((a, b) => a.data.order - b.data.order);
 
 const teamBasePath = lang === 'es' ? '/team/' : '/en/team/';
 const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
@@ -73,12 +71,12 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 	<section class="bg-light-gray pb-16 md:pb-24 px-6 md:px-12 lg:px-20">
 		<div class="max-w-360 mx-auto">
 			<div class="mb-12">
-				<h2 class="text-dark-slate text-3xl md:text-4xl font-light tracking-wide">{t('team-page.equipo')}</h2>
+				<h2 class="text-dark-slate text-3xl md:text-4xl font-light tracking-wide">{t('team-page.asociados')}</h2>
 				<div class="w-14 h-0.75 bg-bronze mt-2"></div>
 			</div>
 
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
-				{featuredMembers.map((member) => (
+			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+				{asociados.map((member) => (
 					<TeamMemberCard
 						name={member.data.name}
 						position={member.data.position}
@@ -91,9 +89,18 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 					/>
 				))}
 			</div>
+		</div>
+	</section>
 
-			<div class="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
-				{regularMembers.map((member) => (
+	<section class="bg-light-gray pb-16 md:pb-24 px-6 md:px-12 lg:px-20">
+		<div class="max-w-360 mx-auto">
+			<div class="mb-12">
+				<h2 class="text-dark-slate text-3xl md:text-4xl font-light tracking-wide">{t('team-page.administrativo')}</h2>
+				<div class="w-14 h-0.75 bg-bronze mt-2"></div>
+			</div>
+
+			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+				{adminMembers.map((member) => (
 					<TeamMemberCard
 						name={member.data.name}
 						position={member.data.position}
@@ -101,8 +108,8 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 						email={member.data.email}
 						image={member.data.image}
 						imageAlt={member.data.imageAlt}
-						link={`${teamBasePath}${stripLangPrefix(member.id)}`}
-						wrapperClass="group cursor-pointer"
+						link={member.data.hasProfile ? `${teamBasePath}${stripLangPrefix(member.id)}` : undefined}
+						wrapperClass={member.data.hasProfile ? "group cursor-pointer" : ""}
 					/>
 				))}
 			</div>

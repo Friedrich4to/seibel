@@ -1,7 +1,7 @@
 ---
 title: "Dispute Resolution"
 description: "Representation in complex litigation and domestic and international arbitration, including FIDIC-based disputes in the energy, financial, and telecommunications sectors."
-order: 6
+order: 8
 image: "/assets/areas/litigios.avif"
 imageAlt: "Litigation and arbitration"
 certificate:

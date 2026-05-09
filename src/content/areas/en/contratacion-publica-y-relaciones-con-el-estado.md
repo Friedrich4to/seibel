@@ -1,7 +1,7 @@
 ---
 title: "Administrative Law & Public Procurement"
 description: "Advisory on national and international tenders, public procurement, and administrative challenges. Proven experience in high-complexity public asset recovery matters."
-order: 7
+order: 9
 image: "/assets/areas/contratacion.avif"
 imageAlt: "Public procurement"
 servicios:

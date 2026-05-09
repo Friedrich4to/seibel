@@ -1,7 +1,7 @@
 ---
 title: "Real Estate Law"
 description: "Advisory on the acquisition, structuring, and management of high-value real estate assets, including mortgage financing and commercial development projects."
-order: 5
+order: 7
 image: "/assets/areas/inmobiliario.avif"
 imageAlt: "Commercial real estate project"
 certificate:

@@ -1,7 +1,7 @@
 ---
 title: "Derecho Administrativo y Contratación Pública"
 description: "Asesoría en licitaciones nacionales e internacionales, contratación estatal e impugnaciones administrativas. Experiencia acreditada en la recuperación de activos públicos de alta complejidad."
-order: 7
+order: 9
 image: "/assets/areas/contratacion.avif"
 imageAlt: "Contratación pública"
 servicios:

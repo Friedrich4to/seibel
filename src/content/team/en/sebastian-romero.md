@@ -6,8 +6,8 @@ email: "s.romero@seibelhenriquez.com"
 image: "/assets/team/sebastian.avif"
 imageFb: "/assets/team/sebastian_fb.avif"
 imageAlt: "Sebastián Romero - General Manager"
-role: "member"
-order: 9
+role: "admin"
+order: 1
 languages:
   - "Spanish (Native)"
   - "English (Advanced)"

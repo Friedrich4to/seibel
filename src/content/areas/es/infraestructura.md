@@ -1,7 +1,7 @@
 ---
 title: "Derecho de Infraestructura"
 description: "Asesoría jurídica integral en el desarrollo de proyectos de infraestructura de envergadura nacional en los sectores energético, logístico y turístico."
-order: 8
+order: 10
 image: "/assets/areas/infraestructura.avif"
 imageAlt: "Infraestructura"
 certificate:

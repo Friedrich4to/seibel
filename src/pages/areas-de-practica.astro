@@ -43,6 +43,7 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 						image={area.data.image}
 						imageAlt={area.data.imageAlt}
 						url={`${areaBasePath}${stripLangPrefix(area.id)}`}
+						clickable={false}
 					/>
 				))}
 			</div>

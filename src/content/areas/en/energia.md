@@ -1,7 +1,7 @@
 ---
 title: "Energy Law"
 description: "Legal representation of the country's leading energy generators and regulatory bodies in high-impact public and private energy projects."
-order: 4
+order: 6
 image: "/assets/areas/energia.avif"
 imageAlt: "Electric power towers"
 certificate:

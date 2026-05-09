@@ -1,7 +1,7 @@
 ---
 title: "Derecho Energético"
 description: "Representación legal de las principales generadoras y organismos reguladores del país en proyectos energéticos estatales y privados de alto impacto nacional."
-order: 4
+order: 6
 image: "/assets/areas/energia.avif"
 imageAlt: "Torres de energía eléctrica"
 certificate:

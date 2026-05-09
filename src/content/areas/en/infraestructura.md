@@ -1,7 +1,7 @@
 ---
 title: "Infrastructure Law"
 description: "Comprehensive legal advisory on the development of large-scale national infrastructure projects across the energy, logistics, and tourism sectors."
-order: 8
+order: 10
 image: "/assets/areas/infraestructura.avif"
 imageAlt: "Infrastructure"
 certificate:

@@ -8,7 +8,9 @@
       "Bash(Remove-Item \"c:\\\\Users\\\\frede\\\\Documents\\\\Clientes\\\\1_Websites\\\\SeibelHenriquez\\\\seibel\\\\src\\\\content\\\\team\\\\en\\\\gabriella-grullon.md\" -Force)",
       "Bash(Write-Output \"Eliminados.\")",
       "PowerShell(\"Eliminados.\")",
-      "Bash(git checkout *)"
+      "Bash(git checkout *)",
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\frede\\\\Documents\\\\Clientes\\\\1_Websites\\\\SeibelHenriquez\\\\seibel\\\\src\\\\content\" -Recurse -Directory)",
+      "Bash(Select-Object FullName)"
     ]
   }
 }

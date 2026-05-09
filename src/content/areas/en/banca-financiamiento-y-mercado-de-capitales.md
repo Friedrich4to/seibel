@@ -1,7 +1,7 @@
 ---
-title: "Banking, Finance & Capital Markets"
-description: "Structuring of sophisticated financing transactions and legal counsel to domestic and international banking institutions. Advisory on securities offerings and capital markets transactions."
-order: 2
+title: "Banking & Finance"
+description: "Structuring of sophisticated financing transactions and legal counsel to domestic and international banking institutions."
+order: 3
 image: "/assets/areas/banca.avif"
 imageAlt: "Financial center"
 servicios:
@@ -11,16 +11,14 @@ servicios:
     descripcion: "Participation in financing operations for the development of power generation infrastructure, contributing to the strengthening of the national energy system through complex financial structures."
   - titulo: "Financial structuring of real estate and tourism projects"
     descripcion: "Legal design of financing and collateral schemes for mixed-use real estate and tourism projects, integrating private investment, bank financing, and applicable tax incentives."
-  - titulo: "Institutional development of the securities market"
-    descripcion: "Support in the organization and institutional strengthening processes of entities linked to the capital market, promoting best practices and regulatory stability."
 ---
 
-We design and structure sophisticated financing operations and capital market transactions for financial institutions, investors, and local and international issuers. Our practice combines deep knowledge of the financial regulatory framework with experience in large-scale operations for international banking and key players in the financial system.
+We design and structure sophisticated financing operations for financial institutions, investors, and local and international issuers. Our practice combines deep knowledge of the financial regulatory framework with experience in large-scale operations for domestic and international banking.
 
 Our experience in this area includes, among others:
 
-- Financing operations in regulated environments.
+- Syndicated financings for infrastructure.
 - Structuring of complex financial schemes.
 - Transactions with multiple creditors or investors.
 - Design and negotiation of collateral.
-- Financial and securities market regulatory advisory.
+- Financial regulatory advisory.

@@ -6,12 +6,13 @@ const team = defineCollection({
 	schema: z.object({
 		name: z.string(),
 		position: z.string(),
-		phone: z.string(),
-		email: z.string(),
+		phone: z.string().default(''),
+		email: z.string().default(''),
 		image: z.string(),
 		imageAlt: z.string(),
 		imageFb: z.string().optional(),
-		role: z.enum(['socio', 'member']).default('member'),
+		role: z.enum(['socio', 'member', 'admin']).default('member'),
+		hasProfile: z.boolean().default(true),
 		order: z.number(),
 		languages: z.array(z.string()).default([]),
 		education: z

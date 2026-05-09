@@ -2,11 +2,11 @@
 interface Props {
 	name: string;
 	position: string;
-	phone: string;
-	email: string;
+	phone?: string;
+	email?: string;
 	image: string;
 	imageAlt: string;
-	link: string;
+	link?: string;
 	wrapperClass?: string;
 }
 
@@ -14,34 +14,60 @@ const { name, position, phone, email, image, imageAlt, link, wrapperClass } = As
 const defaultClass = "embla__slide flex-[0_0_100%] min-w-0 md:flex-[0_0_45%] lg:flex-[0_0_32%] px-3 group cursor-pointer max-w-[320px] md:max-w-115";
 ---
 
-<a
-	href={link}
-	class={wrapperClass ?? defaultClass}
->
-	<div class="flex flex-col overflow-hidden h-full">
-		<div class="relative w-full aspect-square bg-gray-300 overflow-hidden">
-			<img
-				src={image}
-				alt={imageAlt}
-				class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-			/>
-			<div class="absolute inset-0 bg-bronze/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-		</div>
-
-		<div class="flex flex-col gap-4 p-6 bg-light-gray">
-			<div class="flex flex-col gap-2">
-				<h3 class="text-dark-slate text-lg md:text-2xl font-regular tracking-wide uppercase">
-					{name}
-				</h3>
-				<div class="w-14 h-0.75 bg-bronze"></div>
-				<p class="text-dark-slate text-lg md:text-2xl font-light">
-					{position}
-				</p>
+{link ? (
+	<a
+		href={link}
+		class={wrapperClass ?? defaultClass}
+	>
+		<div class="flex flex-col overflow-hidden h-full">
+			<div class="relative w-full aspect-square bg-gray-300 overflow-hidden">
+				<img
+					src={image}
+					alt={imageAlt}
+					class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+				/>
+				<div class="absolute inset-0 bg-bronze/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 			</div>
-			<div class="hidden flex-col gap-1 text-dark-slate text-lg md:text-xl font-light">
-				<p>{phone}</p>
-				<p class="lowercase">{email}</p>
+			<div class="flex flex-col gap-4 p-6 bg-light-gray">
+				<div class="flex flex-col gap-2">
+					<h3 class="text-dark-slate text-lg md:text-2xl font-regular tracking-wide uppercase">
+						{name}
+					</h3>
+					<div class="w-14 h-0.75 bg-bronze"></div>
+					<p class="text-dark-slate text-lg md:text-2xl font-light">
+						{position}
+					</p>
+				</div>
+				{(phone || email) && (
+					<div class="hidden flex-col gap-1 text-dark-slate text-lg md:text-xl font-light">
+						{phone && <p>{phone}</p>}
+						{email && <p class="lowercase">{email}</p>}
+					</div>
+				)}
+			</div>
+		</div>
+	</a>
+) : (
+	<div class={wrapperClass || ""}>
+		<div class="flex flex-col overflow-hidden h-full">
+			<div class="relative w-full aspect-square bg-gray-300 overflow-hidden">
+				<img
+					src={image}
+					alt={imageAlt}
+					class="w-full h-full object-cover object-top"
+				/>
+			</div>
+			<div class="flex flex-col gap-4 p-6 bg-light-gray">
+				<div class="flex flex-col gap-2">
+					<h3 class="text-dark-slate text-lg md:text-2xl font-regular tracking-wide uppercase">
+						{name}
+					</h3>
+					<div class="w-14 h-0.75 bg-bronze"></div>
+					<p class="text-dark-slate text-lg md:text-2xl font-light">
+						{position}
+					</p>
+				</div>
 			</div>
 		</div>
 	</div>
-</a>
+)}
