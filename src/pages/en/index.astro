@@ -22,8 +22,8 @@ const areasDePractica = (await getCollection('areas'))
 	.filter((a) => a.id.startsWith(langPrefix))
 	.sort((a, b) => a.data.order - b.data.order);
 const teamMembers = allMembers
-	.filter((m) => m.data.role !== 'socio')
-	.sort((a, b) => a.data.order - b.data.order);
+	.filter((m) => m.data.carousel === true)
+	.sort((a, b) => (a.data.carouselOrder ?? 99) - (b.data.carouselOrder ?? 99));
 
 const areaBasePath = lang === 'es' ? '/areas/' : '/en/areas/';
 const teamBasePath = lang === 'es' ? '/team/' : '/en/team/';
@@ -171,6 +171,7 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 							image={area.data.image}
 							imageAlt={area.data.imageAlt}
 							url={`${areaBasePath}${stripLangPrefix(area.id)}`}
+							clickable={false}
 						/>
 					</section>
 				))}
@@ -188,7 +189,7 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 			<div class="flex flex-col md:flex-row md:gap-12 xl:gap-24">
 				<div class="max-w-120">
 					<div class="relative overflow-hidden group">
-						<img src="/assets/members/seibel.jpg" alt="John P. Seibel - Partner" class="aspect-4/5 w-full object-cover object-top" />
+						<img src="/assets/team/seibel.avif" alt="John P. Seibel - Partner" class="aspect-4/5 w-full object-cover object-top" />
 						<div class="absolute inset-0 bg-bronze/70 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
 							<p class="text-white text-sm md:text-base font-light leading-relaxed">{t('home.socios.seibel-desc')}</p>
 						</div>
@@ -203,7 +204,7 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 
 				<div class="max-w-120 justify-self-end">
 					<div class="relative overflow-hidden group">
-						<img src="/assets/members/fernando.jpg" alt="Fernando P. Henríquez - Partner" class="aspect-4/5 w-full object-cover object-top" />
+						<img src="/assets/team/henriquez.avif" alt="Fernando P. Henríquez - Partner" class="aspect-4/5 w-full object-cover object-top" />
 						<div class="absolute inset-0 bg-bronze/70 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
 							<p class="text-white text-sm md:text-base font-light leading-relaxed">{t('home.socios.fernando-desc')}</p>
 						</div>

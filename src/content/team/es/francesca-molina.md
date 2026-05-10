@@ -7,6 +7,8 @@ image: "/assets/team/francesca.avif"
 imageFb: "/assets/team/francesca_fb.avif"
 imageAlt: "Francesca M. Molina - Asociada"
 role: "member"
+carousel: true
+carouselOrder: 5
 order: 5
 languages:
   - "Español"

@@ -7,14 +7,26 @@ gsap.registerPlugin(ScrollTrigger);
 const sections = gsap.utils.toArray(".areas-container section");
 
 if (sections.length) {
+	const container = document.querySelector('.areas-container');
+	const viewportWidth = container ? container.offsetWidth : window.innerWidth;
+
+	let totalWidth = 0;
+	sections.forEach(s => {
+		const marginLeft = parseFloat(window.getComputedStyle(s).marginLeft) || 0;
+		totalWidth += s.offsetWidth + marginLeft;
+	});
+
+	const trailingMargin = 48;
+	const scrollDistance = Math.max(0, totalWidth - viewportWidth + trailingMargin);
+
 	gsap.to(sections, {
-		xPercent: -100 * (sections.length - 1),
+		x: -scrollDistance,
 		ease: "none",
 		scrollTrigger: {
 			trigger: ".trigger",
 			pin: true,
 			scrub: 1,
-			end: "+=2000",
+			end: `+=${scrollDistance + 100}`,
 		},
 	});
 }

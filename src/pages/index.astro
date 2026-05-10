@@ -22,8 +22,8 @@ const areasDePractica = (await getCollection('areas'))
 	.filter((a) => a.id.startsWith(langPrefix))
 	.sort((a, b) => a.data.order - b.data.order);
 const teamMembers = allMembers
-	.filter((m) => m.data.role !== 'socio')
-	.sort((a, b) => a.data.order - b.data.order);
+	.filter((m) => m.data.carousel === true)
+	.sort((a, b) => (a.data.carouselOrder ?? 99) - (b.data.carouselOrder ?? 99));
 
 const areaBasePath = lang === 'es' ? '/areas/' : '/en/areas/';
 const teamBasePath = lang === 'es' ? '/team/' : '/en/team/';
@@ -176,6 +176,7 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 							image={area.data.image}
 							imageAlt={area.data.imageAlt}
 							url={`${areaBasePath}${stripLangPrefix(area.id)}`}
+							clickable={false}
 						/>
 					</section>
 				))}

@@ -4,6 +4,7 @@ position: "Concierge"
 image: "/assets/team/braudilia_montero.avif"
 imageAlt: "Braudilia Montero - Concierge"
 role: "admin"
+carousel: false
 hasProfile: false
 order: 7
 ---

@@ -7,6 +7,8 @@ image: "/assets/team/patricio.avif"
 imageFb: "/assets/team/patricio_fb.avif"
 imageAlt: "Patricio Silvestre Mejía - Legal Coordinator"
 role: "member"
+carousel: true
+carouselOrder: 1
 order: 1
 languages:
   - "Spanish"

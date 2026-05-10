@@ -13,7 +13,9 @@ const team = defineCollection({
 		imageFb: z.string().optional(),
 		role: z.enum(['socio', 'member', 'admin']).default('member'),
 		hasProfile: z.boolean().default(true),
+		carousel: z.boolean().default(false),
 		order: z.number(),
+		carouselOrder: z.number().optional(),
 		languages: z.array(z.string()).default([]),
 		education: z
 			.array(

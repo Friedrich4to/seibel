@@ -7,6 +7,8 @@ image: "/assets/team/sebastian.avif"
 imageFb: "/assets/team/sebastian_fb.avif"
 imageAlt: "Sebastián Romero - General Manager"
 role: "admin"
+carousel: true
+carouselOrder: 9
 order: 1
 languages:
   - "Spanish (Native)"

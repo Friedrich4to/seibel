@@ -7,6 +7,8 @@ image: "/assets/team/cerjossy.avif"
 imageFb: "/assets/team/cerjossy_fb.avif"
 imageAlt: "Cerjossy Tapia Batista - Asociada"
 role: "member"
+carousel: true
+carouselOrder: 3
 order: 3
 languages:
   - "Español"

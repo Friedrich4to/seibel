@@ -9,11 +9,13 @@ interface Props {
 		src: string;
 		alt: string;
 	};
+	clickable?: boolean;
 }
 
-const { title, description, image, imageAlt, url, certificate } = Astro.props;
+const { title, description, image, imageAlt, url, certificate, clickable = true } = Astro.props;
 ---
 
+{clickable ? (
 <a href={url} class="w-77 h-full md:w-137.5 flex flex-col overflow-hidden group bg-white">
 	<div class="relative overflow-hidden">
 		<img
@@ -39,3 +41,30 @@ const { title, description, image, imageAlt, url, certificate } = Astro.props;
 		</p>
 	</div>
 </a>
+) : (
+<div class="w-77 h-full md:w-137.5 flex flex-col overflow-hidden bg-white">
+	<div class="relative overflow-hidden">
+		<img
+			src={image}
+			alt={imageAlt}
+			class="w-full h-48 md:h-64 object-cover"
+		/>
+		{certificate && (
+			<img
+				src={certificate.src}
+				alt={certificate.alt}
+				class="absolute bottom-2 left-2 w-24 md:w-30 h-auto"
+			/>
+		)}
+	</div>
+	<div class="flex flex-col gap-4 p-6 md:p-8">
+		<h3 class="text-dark-slate text-lg md:text-xl font-light tracking-wider uppercase">
+			{title}
+		</h3>
+		<div class="w-14 h-0.75 bg-bronze"></div>
+		<p class="text-dark-slate text-sm md:text-base font-light leading-relaxed">
+			{description}
+		</p>
+	</div>
+</div>
+)}
