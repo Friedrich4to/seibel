@@ -2,7 +2,7 @@
 title: "Mergers & Acquisitions (M&A)"
 description: "Two decades of experience in complex transactional structuring, due diligence, and cross-border mergers and acquisitions."
 order: 2
-image: "/assets/members/placeholder.jpg"
+image: "/assets/areas/fusiones.avif"
 imageAlt: "Mergers and acquisitions"
 servicios:
   - titulo: "Institutional strengthening of the capital market"

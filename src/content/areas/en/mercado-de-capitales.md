@@ -2,7 +2,7 @@
 title: "Capital Markets"
 description: "Advisory on securities offerings, debt instruments, and transactions in domestic and international capital markets."
 order: 4
-image: "/assets/members/placeholder.jpg"
+image: "/assets/areas/mercado.avif"
 imageAlt: "Capital markets"
 servicios:
   - titulo: "Institutional development of the securities market"

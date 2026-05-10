@@ -2,7 +2,7 @@
 title: "Fusiones y Adquisiciones"
 description: "Más de dos décadas de experiencia en el diseño de estructuras transaccionales complejas, due diligence y fusiones y adquisiciones transfronterizas."
 order: 2
-image: "/assets/members/placeholder.jpg"
+image: "/assets/areas/fusiones.avif"
 imageAlt: "Fusiones y adquisiciones"
 servicios:
   - titulo: "Fortalecimiento institucional del mercado de capitales"

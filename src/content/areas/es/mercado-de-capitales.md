@@ -2,7 +2,7 @@
 title: "Mercado de Capitales"
 description: "Asesoría en emisiones de valores, instrumentos de deuda y operaciones en mercados de capitales locales e internacionales."
 order: 4
-image: "/assets/members/placeholder.jpg"
+image: "/assets/areas/mercado.avif"
 imageAlt: "Mercado de capitales"
 servicios:
   - titulo: "Desarrollo institucional del mercado de valores"
