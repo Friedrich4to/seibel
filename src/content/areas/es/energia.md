@@ -1,5 +1,5 @@
 ---
-title: "Derecho Energético"
+title: "Derecho de la Energía"
 description: "Representación legal de las principales generadoras y organismos reguladores del país en proyectos energéticos estatales y privados de alto impacto nacional."
 order: 6
 image: "/assets/areas/energia.avif"

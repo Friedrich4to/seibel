@@ -6,5 +6,5 @@ imageAlt: "Deybis Corporán - Management & Logistics"
 role: "admin"
 carousel: false
 hasProfile: false
-order: 5
+order: 6
 ---

@@ -15,10 +15,12 @@ languages:
   - "English"
   - "French (basic)"
 education:
-  - institution: "Pontificia Universidad Católica Madre y Maestra (PUCMM)"
-    degree: "Master's in Corporate Law, 2023 – 2025"
-  - institution: "Pontificia Universidad Católica Madre y Maestra (PUCMM)"
-    degree: "Law Degree, 2021"
+  - institution: "Universidad Carlos III de Madrid"
+    location: "Madrid, Spain"
+    degree: "Master's in Criminal Justice, 2020"
+  - institution: "Universidad Iberoamericana"
+    location: "Santo Domingo, Dominican Republic"
+    degree: "Law Degree, 2019"
 ---
 
 Her legal practice focuses on sports law, where she provides comprehensive advisory and operational oversight to several Major League Baseball (MLB) teams in the Dominican Republic. Her experience ranges from dispute management and risk assessment to the legal supervision of sports infrastructure construction and renovation projects.

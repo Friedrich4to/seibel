@@ -35,6 +35,7 @@ His cross-cultural background, combined with his professional competence, places
 
 - Member, Bar Association of the Dominican Republic.
 - Founding Member and Vice President, Dominican Esports Federation.
+- Member, Sports Lawyers Association (SLA).
 
 ## EXPERIENCE
 

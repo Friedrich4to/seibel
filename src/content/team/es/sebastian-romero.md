@@ -38,8 +38,6 @@ continuingEducation:
     degree: "AI For Everyone (2023)"
 ---
 
-Estratega orientado a redefinir el modelo de gestión en la industria legal a través de la tecnología y la inteligencia de datos. Como Gerente General de Seibel & Henríquez, dirige la evolución de la firma integrando soluciones de LegalTech para optimizar procesos, elevar la eficiencia organizacional y sustentar cada decisión en datos.
+Convencido de que la gestión empresarial, la tecnología y la inteligencia de datos pueden transformar una industria tan compleja como la legal — no como tendencia, sino como forma de trabajar. Con criterio, con rigor y con un ojo siempre puesto en el resultado.
 
-Su enfoque fusiona la visión analítica del Management contemporáneo con una ejecución ágil y orientada a resultados en una industria que atraviesa una transformación sin precedentes.
-
-Cuenta con una trayectoria consolidada en la dirección de proyectos de alta complejidad bajo estándares internacionales, desarrollando una capacidad de gestión forjada en entornos de alta exigencia, plazos críticos y equipos de gran escala.
+Como Gerente General de Seibel Henríquez, lidera la evolución operativa de la firma con un enfoque tan analítico como práctico: equipos que ejecutan, decisiones sustentadas en datos y tecnología que trabaja a favor del cliente.

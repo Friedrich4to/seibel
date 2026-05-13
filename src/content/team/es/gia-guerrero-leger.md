@@ -15,10 +15,12 @@ languages:
   - "Inglés"
   - "Francés (básico)"
 education:
-  - institution: "Pontificia Universidad Católica Madre y Maestra (PUCMM)"
-    degree: "Maestría en Derecho Corporativo, 2023 – 2025"
-  - institution: "Pontificia Universidad Católica Madre y Maestra (PUCMM)"
-    degree: "Licenciatura en Derecho, 2021"
+  - institution: "Universidad Carlos III de Madrid"
+    location: "Madrid, España"
+    degree: "Maestría en Justicia Criminal, 2020"
+  - institution: "Universidad Iberoamericana"
+    location: "Santo Domingo, República Dominicana"
+    degree: "Licenciatura en Derecho, 2019"
 ---
 
 Su práctica legal se centra en el derecho deportivo, donde ofrece asesoría integral y supervisión operativa a varios equipos de Major League Baseball (MLB) en la República Dominicana. Su experiencia abarca desde la gestión de disputas y evaluación de riesgos hasta la supervisión legal de proyectos de construcción y renovación de infraestructuras deportivas.

@@ -102,7 +102,7 @@ Represented the developer of one of the country's leading shopping centers with 
 
 Advisory and assistance in various processes for applications for logistics center and logistics operator licenses.
 
-Provided ongoing assistance over 20 years to the commercial and corporate departments of the leading foreign banking entity based in the Dominican Republic in financings granted to local clients.
+Provided ongoing assistance over 30 years to the commercial and corporate departments of the leading foreign banking entity based in the Dominican Republic in financings granted to local clients.
 
 Advised the consulting firm hired by the General Directorate of Public-Private Partnerships (APP) for the development of the country's first public-private partnership initiative.
 

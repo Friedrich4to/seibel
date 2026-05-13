@@ -6,5 +6,5 @@ imageAlt: "José D. Rosario - Management & Logistics"
 role: "admin"
 carousel: false
 hasProfile: false
-order: 6
+order: 7
 ---

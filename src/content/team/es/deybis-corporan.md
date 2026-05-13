@@ -6,5 +6,5 @@ imageAlt: "Deybis Corporán - Gestión y Logística"
 role: "admin"
 carousel: false
 hasProfile: false
-order: 5
+order: 6
 ---

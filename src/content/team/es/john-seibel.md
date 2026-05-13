@@ -35,6 +35,7 @@ Su formación transcultural, sumada a su competencia profesional, lo coloca en u
 
 - Miembro, Colegio de Abogados de la República Dominicana.
 - Miembro Fundador y Vicepresidente, Federación Dominicana de Esports.
+- Miembro del Sports Lawyers Association (SLA).
 
 ## EXPERIENCIA
 

@@ -38,8 +38,6 @@ continuingEducation:
     degree: "AI For Everyone (2023)"
 ---
 
-Strategist focused on redefining the management model in the legal industry through technology and data intelligence. As General Manager of Seibel & Henríquez, he leads the firm's evolution by integrating LegalTech solutions to optimize processes, elevate organizational efficiency, and ground every decision in data.
+Convinced that business management, technology, and data intelligence can transform an industry as complex as the legal sector — not as a trend, but as a way of working. With judgment, rigor, and an eye always on results.
 
-His approach merges the analytical vision of contemporary Management with agile, results-driven execution in an industry undergoing unprecedented transformation.
-
-He has a consolidated background in directing high-complexity projects under international standards, developing management capabilities forged in high-demand environments, critical deadlines, and large-scale teams.
+As General Manager of Seibel Henríquez, he leads the firm's operational evolution with an approach as analytical as it is practical: teams that execute, decisions grounded in data, and technology that works in the client's favor.

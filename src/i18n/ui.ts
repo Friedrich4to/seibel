@@ -123,7 +123,7 @@ export const ui = {
     'team-page.asociados': 'ASOCIADOS',
     'team-page.administrativo': 'ADMINISTRATIVO',
     'team-page.seibel-desc': 'Líder en Derecho Deportivo, con experiencia en litigios y asesoría en derecho civil, comercial y laboral. Ofrece soluciones globales a clientes locales e internacionales, con énfasis en seguridad social y resolución de conflictos.',
-    'team-page.fernando-desc': 'Abogado con más de 20 años de experiencia en transacciones y resolución de controversias. Asesora a empresas líderes en sectores estratégicos y participa en asuntos de alto impacto institucional.',
+    'team-page.fernando-desc': 'Abogado con más de 30 años de experiencia en transacciones y resolución de controversias. Asesora a empresas líderes en sectores estratégicos y participa en asuntos de alto impacto institucional.',
 
     // Áreas de Práctica page
     'areas-page.title': 'Áreas de práctica',
@@ -269,7 +269,7 @@ export const ui = {
     'team-page.asociados': 'ASSOCIATES',
     'team-page.administrativo': 'ADMINISTRATIVE',
     'team-page.seibel-desc': 'Leader in Sports Law, with experience in litigation and counsel in civil, commercial, and labor law. Provides global solutions to local and international clients, with emphasis on social security and dispute resolution.',
-    'team-page.fernando-desc': 'Attorney with over 20 years of experience in transactions and dispute resolution. Advises leading companies in strategic sectors and participates in matters of high institutional impact.',
+    'team-page.fernando-desc': 'Attorney with over 30 years of experience in transactions and dispute resolution. Advises leading companies in strategic sectors and participates in matters of high institutional impact.',
 
     // Áreas de Práctica page
     'areas-page.title': 'Practice Areas',

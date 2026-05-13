@@ -102,7 +102,7 @@ Representó a la empresa desarrolladora de uno de los principales centros comerc
 
 Asesoría y asistencia en diversos procesos de solicitud de licencias de centros logísticos y de operadores logísticos.
 
-Asistió de manera permanente durante 20 años a los departamentos comercial y corporativo de la principal entidad bancaria extranjera radicada en la República Dominicana en los financiamientos otorgados a clientes locales.
+Asistió de manera permanente durante 30 años a los departamentos comercial y corporativo de la principal entidad bancaria extranjera radicada en la República Dominicana en los financiamientos otorgados a clientes locales.
 
 Asesoría a la empresa consultora contratada por la Dirección General de Alianzas Público-Privadas (APP) para la elaboración de la primera iniciativa de alianza público-privada del país.
 
