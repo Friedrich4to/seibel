@@ -14,10 +14,16 @@ languages:
   - "Spanish (Native)"
   - "English (Advanced)"
 education:
+  - institution: "Pontificia Universidad Católica Madre y Maestra"
+    degree: "Bachelor's Degree in Law, Santo Domingo, Distrito Nacional (2018)"
   - institution: "Escuela Nacional de la Judicatura / SCJ"
     degree: "Technical Specialization in Civil and Commercial Cassation, 2024"
-  - institution: "Diplomas"
-    degree: "Analysis of Law 2-23 on Cassation Appeals, Real Estate Law, and Litigation Techniques."
+  - institution: "Gaceta Judicial"
+    degree: "Diploma: Analysis of Law 2-23 on Cassation Appeals, Santo Domingo, Distrito Nacional (2023)"
+  - institution: "Gaceta Judicial"
+    degree: "Diploma: Real Estate Law Practices, Santo Domingo, Distrito Nacional (2022)"
+  - institution: "Gaceta Judicial"
+    degree: "Diploma: Litigation Techniques, Santo Domingo, Distrito Nacional (2021)"
 ---
 
 Lawyer with a solid background in civil, commercial, and corporate law. His professional practice is distinguished by a deep mastery of extraordinary appellate technique, having specialized in structuring jurisdictional criteria and drafting cassation judgments before the country's highest court. This experience grants him a privileged insight into the application of jurisprudential precedents and the technical analysis required to design complex, final-instance litigation strategies.

@@ -14,10 +14,16 @@ languages:
   - "Español (Nativo)"
   - "Inglés (Avanzado)"
 education:
+  - institution: "Pontificia Universidad Católica Madre y Maestra"
+    degree: "Licenciatura en Derecho, Santo Domingo, Distrito Nacional (2018)"
   - institution: "Escuela Nacional de la Judicatura / SCJ"
     degree: "Especialización técnica en Casación Civil y Comercial, 2024"
-  - institution: "Diplomados"
-    degree: "Análisis de la Ley 2-23 sobre Recurso de Casación, Derecho Inmobiliario y Técnicas de Litigación."
+  - institution: "Gaceta Judicial"
+    degree: "Diplomado: Análisis Ley 2-23 sobre Recurso de Casación, Santo Domingo, Distrito Nacional (2023)"
+  - institution: "Gaceta Judicial"
+    degree: "Diplomado: Prácticas en el Derecho Inmobiliario, Santo Domingo, Distrito Nacional (2022)"
+  - institution: "Gaceta Judicial"
+    degree: "Diplomado: Técnicas de litigación, Santo Domingo, Distrito Nacional (2021)"
 ---
 
 Abogado con una sólida trayectoria en derecho civil, comercial y corporativo. Su práctica profesional se distingue por un dominio profundo de la técnica recursiva extraordinaria, tras haberse especializado en la estructuración de criterios jurisdiccionales y proyectos de sentencias de casación ante el más alto tribunal del país. Esta experiencia le otorga una visión privilegiada sobre la aplicación de precedentes jurisprudenciales y el análisis técnico necesario para el diseño de estrategias litigiosas complejas y de última instancia.
