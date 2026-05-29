@@ -25,7 +25,22 @@
       "Bash(Get-Content \"c:\\\\Users\\\\frede\\\\Documents\\\\Clientes\\\\1_Websites\\\\SeibelHenriquez\\\\seibel\\\\src\\\\content\\\\team\\\\es\\\\sebastian-romero.md\")",
       "Bash(Get-Content \"c:\\\\Users\\\\frede\\\\Documents\\\\Clientes\\\\1_Websites\\\\SeibelHenriquez\\\\seibel\\\\src\\\\content\\\\team\\\\es\\\\yeimi-cuevas.md\")",
       "Bash(python3 -c ' *)",
-      "Bash(node -e ' *)"
+      "Bash(node -e ' *)",
+      "PowerShell(Get-ChildItem -Path \"c:\\\\Users\\\\frede\\\\Documents\\\\Clientes\\\\1_Websites\\\\SeibelHenriquez\\\\seibel\" -Force | Select-Object Name, @{Name=\"Type\";Expression={if\\($_.PSIsContainer\\){\"DIR\"}else{\"FILE\"}}} | Sort-Object Type, Name)",
+      "Bash(ls -la \"c:\\\\\\\\Users\\\\\\\\frede\\\\\\\\Documents\\\\\\\\Clientes\\\\\\\\1_Websites\\\\\\\\SeibelHenriquez\\\\\\\\seibel\")",
+      "Bash(ls -la \"c:\\\\\\\\Users\\\\\\\\frede\\\\\\\\Documents\\\\\\\\Clientes\\\\\\\\1_Websites\\\\\\\\SeibelHenriquez\\\\\\\\seibel\\\\\\\\functions\")",
+      "Bash(ls -la \"c:\\\\\\\\Users\\\\\\\\frede\\\\\\\\Documents\\\\\\\\Clientes\\\\\\\\1_Websites\\\\\\\\SeibelHenriquez\\\\\\\\seibel\\\\\\\\dist\")",
+      "Bash(ls -la \"c:\\\\\\\\Users\\\\\\\\frede\\\\\\\\Documents\\\\\\\\Clientes\\\\\\\\1_Websites\\\\\\\\SeibelHenriquez\\\\\\\\seibel\\\\\\\\public\")",
+      "Bash(ls -la \"c:\\\\\\\\Users\\\\\\\\frede\\\\\\\\Documents\\\\\\\\Clientes\\\\\\\\1_Websites\\\\\\\\SeibelHenriquez\\\\\\\\seibel\\\\\\\\dist\\\\\\\\en\")",
+      "Bash(ls -la \"c:\\\\\\\\Users\\\\\\\\frede\\\\\\\\Documents\\\\\\\\Clientes\\\\\\\\1_Websites\\\\\\\\SeibelHenriquez\\\\\\\\seibel\\\\\\\\dist\\\\\\\\_astro\")",
+      "Bash(find \"c:\\\\\\\\Users\\\\\\\\frede\\\\\\\\Documents\\\\\\\\Clientes\\\\\\\\1_Websites\\\\\\\\SeibelHenriquez\\\\\\\\seibel\" -maxdepth 2 -name \"wrangler.*\" -o -name \"_routes.json\")",
+      "Bash(ls -la \"c:\\\\\\\\Users\\\\\\\\frede\\\\\\\\Documents\\\\\\\\Clientes\\\\\\\\1_Websites\\\\\\\\SeibelHenriquez\\\\\\\\seibel\\\\\\\\src\")",
+      "Bash(find \"c:\\\\\\\\Users\\\\\\\\frede\\\\\\\\Documents\\\\\\\\Clientes\\\\\\\\1_Websites\\\\\\\\SeibelHenriquez\\\\\\\\seibel\\\\\\\\src\\\\\\\\pages\" -type f)",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(json.dumps\\({**d.get\\('dependencies',{}\\), **d.get\\('devDependencies',{}\\)}, indent=2\\)\\)\")",
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\frede\\\\Documents\\\\Clientes\\\\1_Websites\\\\SeibelHenriquez\\\\seibel\" -Directory)",
+      "Bash(Select-Object Name)",
+      "PowerShell(Get-ChildItem -Path \"c:\\\\Users\\\\frede\\\\Documents\\\\Clientes\\\\1_Websites\\\\SeibelHenriquez\\\\seibel\\\\public\" | Where-Object { $_.Name -match \"robots|sitemap\" })",
+      "Bash(npm run *)"
     ]
   }
 }

@@ -48,6 +48,9 @@ export const ui = {
     'footer.miami-2': 'Jet Pack No. 200580',
     'footer.miami-3': 'Miami, FL 33166-2624. EE.UU',
 
+    // Homepage - Meta
+    'home.description': 'Firma legal de práctica general establecida en Santo Domingo desde 2005. Asesoramos transacciones corporativas, litigios complejos, derecho deportivo y más.',
+
     // Homepage - Hero
     'home.hero.title': 'Conectando el derecho<br class="md:hidden" /> con el desarrollo',
     'home.hero.subtitle': 'Más de dos décadas asesorando transacciones de alto impacto y controversias complejas.',
@@ -95,7 +98,7 @@ export const ui = {
 
     // La Firma page
     'firm.title': 'La Firma',
-    'firm.description': 'Acerca de La Firma Seibel Henríquez',
+    'firm.description': 'Seibel Henríquez es una firma de abogados establecida en Santo Domingo, reconocida por su rigor ético y asesoría directa en transacciones, litigios y derecho corporativo.',
     'firm.hero.eyebrow': 'Quiénes somos',
     'firm.hero.subtitle': 'Una firma legal de práctica general comprometida con un servicio jurídico personalizado, ético y de alta calidad.',
     'firm.cta.title': 'Conoce a nuestro equipo',
@@ -127,14 +130,14 @@ export const ui = {
 
     // Áreas de Práctica page
     'areas-page.title': 'Áreas de práctica',
-    'areas-page.description': 'Conoce a fondo las áreas en las que ejerce Seibel Henríquez',
+    'areas-page.description': 'Derecho corporativo, fusiones y adquisiciones, litigios, derecho deportivo y más. Conoce todas las áreas en que ejerce Seibel Henríquez.',
     'areas-page.heading': 'Áreas de Práctica',
     'areas-page.servicios': 'SERVICIOS',
     'areas-page.team-logos': 'EQUIPOS QUE HAN CONFIADO EN NOSOTROS',
 
     // Carreras page
     'careers.title': 'Carreras',
-    'careers.description': 'Descubre como es trabajar en nuestra firma.',
+    'careers.description': 'Únete a Seibel Henríquez, firma legal de práctica general en Santo Domingo. Formación directa con socios en asuntos complejos de alcance local e internacional.',
     'careers.heading': 'Carreras',
     'careers.p1': 'En <strong class="font-semibold">Seibel Henríquez</strong> formamos abogados que participan activamente en asuntos complejos, con una práctica orientada al rigor técnico, el criterio jurídico y la responsabilidad profesional.',
     'careers.p2': 'Nuestro trabajo se caracteriza por la cercanía con los socios, la participación directa en los asuntos y un alto nivel de exigencia profesional. Valoramos el análisis profundo, la claridad en los criterios y una relación de confianza construida sobre la seriedad y la ética.',
@@ -152,7 +155,7 @@ export const ui = {
     'commitment.description': 'Aprende acerca de nuestro compromiso con una labor social constante',
     'commitment.heading': 'COMPROMISO SOCIAL',
     'commitment.p1': '<strong class="font-semibold">Seibel Henríquez</strong> se identifica con los valores democráticos, la institucionalidad, la transparencia y la solidaridad humana. Fomentamos la participación activa de nuestros colaboradores en la construcción de una mejor Nación.',
-    'commitment.p2': 'Es por eso que gran parte del equipo de Seibel & Henríquez participa activamente en diversas organizaciones sociales, comunitarias y empresariales; desde donde promueven acciones y reformas en ámbitos tan diversos como la actividad empresarial responsable, el fortalecimiento del sistema de justicia, la seguridad jurídica, el desarrollo humano y familiar, la salud pública, la educación, la protección del medioambiente, el fortalecimiento de las actividades deportivas tradicionales y por medios electrónicos, la tecnología, entre otros.',
+    'commitment.p2': 'Es por eso que gran parte del equipo de Seibel Henríquez participa activamente en diversas organizaciones sociales, comunitarias y empresariales; desde donde promueven acciones y reformas en ámbitos tan diversos como la actividad empresarial responsable, el fortalecimiento del sistema de justicia, la seguridad jurídica, el desarrollo humano y familiar, la salud pública, la educación, la protección del medioambiente, el fortalecimiento de las actividades deportivas tradicionales y por medios electrónicos, la tecnología, entre otros.',
     'commitment.vocacion': 'VOCACIÓN HUMANA',
     'commitment.vocacion.desc': 'Este compromiso social conecta a nuestros colaboradores con la realidad de su entorno lo cual se refleja en un ejercicio profesional más concreto y orientado hacia el valor supremo que lo constituye el ser humano.',
     'commitment.banner': 'NUESTRO COMPROMISO VA MÁS ALLÁ',
@@ -160,7 +163,7 @@ export const ui = {
 
     // Recursos page
     'resources.title': 'Recursos',
-    'resources.description': 'Explora nuestros casos de alto impacto',
+    'resources.description': 'Casos de alto impacto y proyectos destacados de Seibel Henríquez, firma legal de práctica general en la República Dominicana.',
 
     // Team member detail
     'member.idiomas': 'IDIOMAS',
@@ -193,6 +196,9 @@ export const ui = {
     'footer.miami-1': '8374 NW 64th St',
     'footer.miami-2': 'Jet Pack No. 200580',
     'footer.miami-3': 'Miami, FL 33166-2624. USA',
+
+    // Homepage - Meta
+    'home.description': 'Full-service law firm established in Santo Domingo since 2005. We advise corporate clients on transactions, complex litigation, sports law, and more.',
 
     // Homepage - Hero
     'home.hero.title': 'Connecting law<br class="md:hidden" /> with development',
@@ -241,7 +247,7 @@ export const ui = {
 
     // La Firma page
     'firm.title': 'The Firm',
-    'firm.description': 'About the Firm Seibel Henríquez',
+    'firm.description': 'Seibel Henríquez is a full-service law firm in Santo Domingo, recognized for its ethical commitment and direct counsel on transactions, litigation, and corporate law.',
     'firm.hero.eyebrow': 'Who we are',
     'firm.hero.subtitle': 'A full-service law firm committed to personalized, ethical, and high-quality legal service.',
     'firm.cta.title': 'Meet our team',
@@ -273,14 +279,14 @@ export const ui = {
 
     // Áreas de Práctica page
     'areas-page.title': 'Practice Areas',
-    'areas-page.description': 'Explore in depth the practice areas of Seibel Henríquez',
+    'areas-page.description': 'Corporate law, M&A, litigation, sports law, and more. Explore all practice areas of Seibel Henríquez, a full-service firm in the Dominican Republic.',
     'areas-page.heading': 'Practice Areas',
     'areas-page.servicios': 'SERVICES',
     'areas-page.team-logos': 'TEAMS THAT HAVE TRUSTED US',
 
     // Carreras page
     'careers.title': 'Careers',
-    'careers.description': 'Discover what it\'s like to work at our firm.',
+    'careers.description': 'Join Seibel Henríquez, a full-service law firm in Santo Domingo. Work directly with partners on complex local and international matters from early stages.',
     'careers.heading': 'Careers',
     'careers.p1': 'At <strong class="font-semibold">Seibel Henríquez</strong> we train attorneys who actively participate in complex matters, with a practice oriented towards technical rigor, legal judgment, and professional responsibility.',
     'careers.p2': 'Our work is characterized by closeness with the partners, direct participation in matters, and a high level of professional standards. We value deep analysis, clarity in criteria, and a relationship of trust built on seriousness and ethics.',
@@ -298,7 +304,7 @@ export const ui = {
     'commitment.description': 'Learn about our commitment to ongoing social responsibility',
     'commitment.heading': 'SOCIAL COMMITMENT',
     'commitment.p1': '<strong class="font-semibold">Seibel Henríquez</strong> identifies with democratic values, institutionality, transparency, and human solidarity. We encourage the active participation of our team members in building a better Nation.',
-    'commitment.p2': 'That is why a large part of the Seibel & Henríquez team actively participates in various social, community, and business organizations; from which they promote actions and reforms in areas as diverse as responsible business activity, strengthening the justice system, legal security, human and family development, public health, education, environmental protection, strengthening traditional and electronic sports activities, technology, among others.',
+    'commitment.p2': 'That is why a large part of the Seibel Henríquez team actively participates in various social, community, and business organizations; from which they promote actions and reforms in areas as diverse as responsible business activity, strengthening the justice system, legal security, human and family development, public health, education, environmental protection, strengthening traditional and electronic sports activities, technology, among others.',
     'commitment.vocacion': 'HUMAN VOCATION',
     'commitment.vocacion.desc': 'This social commitment connects our team members with the reality of their environment, which is reflected in a more concrete professional practice oriented towards the supreme value that constitutes the human being.',
     'commitment.banner': 'OUR COMMITMENT GOES BEYOND',
@@ -306,7 +312,7 @@ export const ui = {
 
     // Recursos page
     'resources.title': 'Resources',
-    'resources.description': 'Explore our high-impact cases',
+    'resources.description': 'High-impact cases and landmark matters handled by Seibel Henríquez, a full-service law firm in the Dominican Republic.',
 
     // Team member detail
     'member.idiomas': 'LANGUAGES',
