@@ -9,6 +9,12 @@ interface NewsletterTranslations {
 		country:  { label: string; defaultOption: string };
 	};
 	submit: string;
+	submitting: string;
+	success: string;
+	errors: {
+		already_subscribed: string;
+		generic: string;
+	};
 }
 
 export const newsletterI18n: Record<NewsletterLang, NewsletterTranslations> = {
@@ -21,6 +27,12 @@ export const newsletterI18n: Record<NewsletterLang, NewsletterTranslations> = {
 			country:  { label: 'País',    defaultOption: 'Selecciona tu país' },
 		},
 		submit: 'Suscribirme',
+		submitting: 'Enviando...',
+		success: '¡Gracias! Te has suscrito correctamente.',
+		errors: {
+			already_subscribed: 'Este correo ya está suscrito a nuestra lista.',
+			generic: 'Ocurrió un error. Por favor, inténtalo de nuevo.',
+		},
 	},
 	en: {
 		fields: {
@@ -31,5 +43,11 @@ export const newsletterI18n: Record<NewsletterLang, NewsletterTranslations> = {
 			country:  { label: 'Country',  defaultOption: 'Select your country' },
 		},
 		submit: 'Subscribe',
+		submitting: 'Sending...',
+		success: 'Thank you! You have been successfully subscribed.',
+		errors: {
+			already_subscribed: 'This email is already subscribed to our list.',
+			generic: 'An error occurred. Please try again.',
+		},
 	},
 } as const;

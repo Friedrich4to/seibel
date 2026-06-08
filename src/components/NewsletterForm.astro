@@ -11,7 +11,7 @@ const { lang = 'es' } = Astro.props;
 const n = newsletterI18n[lang];
 ---
 
-<form action="#" method="POST" class="flex flex-col gap-5">
+<form id="newsletter-form" novalidate class="flex flex-col gap-5">
 
 	<!-- Row 1: Name + Email -->
 	<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -90,14 +90,72 @@ const n = newsletterI18n[lang];
 		</select>
 	</div>
 
+	<div id="nf-message" class="nf-message hidden" aria-live="polite"></div>
+
 	<button
+		id="nf-submit"
 		type="submit"
-		class="bg-bronze text-white px-8 py-3 hover:scale-105 transition-transform duration-300 text-sm md:text-base tracking-wide w-fit cursor-pointer"
+		class="bg-bronze text-white px-8 py-3 hover:scale-105 transition-transform duration-300 text-sm md:text-base tracking-wide w-fit cursor-pointer disabled:opacity-60 disabled:scale-100 disabled:cursor-not-allowed"
 	>
 		{n.submit}
 	</button>
 
 </form>
+
+<script is:inline define:vars={{ n }}>
+	const form = document.getElementById('newsletter-form');
+	const submitBtn = document.getElementById('nf-submit');
+	const messageEl = document.getElementById('nf-message');
+
+	form?.addEventListener('submit', async (e) => {
+		e.preventDefault();
+
+		if (!form.checkValidity()) {
+			form.reportValidity();
+			return;
+		}
+
+		submitBtn.disabled = true;
+		submitBtn.textContent = n.submitting;
+		messageEl.className = 'nf-message hidden';
+		messageEl.textContent = '';
+
+		const data = {
+			name: form.querySelector('[name="name"]').value,
+			email: form.querySelector('[name="email"]').value,
+			company: form.querySelector('[name="company"]').value,
+			position: form.querySelector('[name="position"]').value,
+			country: form.querySelector('[name="country"]').value,
+		};
+
+		try {
+			const res = await fetch('/api/newsletter', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify(data),
+			});
+
+			const json = await res.json();
+
+			if (json.success) {
+				messageEl.className = 'nf-message nf-message--success';
+				messageEl.textContent = n.success;
+				form.reset();
+			} else {
+				const errorKey = json.error;
+				const msg = n.errors[errorKey] ?? n.errors.generic;
+				messageEl.className = 'nf-message nf-message--error';
+				messageEl.textContent = msg;
+			}
+		} catch {
+			messageEl.className = 'nf-message nf-message--error';
+			messageEl.textContent = n.errors.generic;
+		} finally {
+			submitBtn.disabled = false;
+			submitBtn.textContent = n.submit;
+		}
+	});
+</script>
 
 <style>
 	.nf-input {
@@ -122,5 +180,23 @@ const n = newsletterI18n[lang];
 		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23323b43' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
 		background-repeat: no-repeat;
 		background-position: right 1rem center;
+	}
+	.nf-message {
+		font-size: 0.875rem;
+		font-weight: 300;
+		padding: 0.75rem 1rem;
+	}
+	.nf-message.hidden {
+		display: none;
+	}
+	.nf-message--success {
+		background: color-mix(in srgb, var(--color-bronze) 10%, transparent);
+		border: 1px solid color-mix(in srgb, var(--color-bronze) 40%, transparent);
+		color: var(--color-dark-slate);
+	}
+	.nf-message--error {
+		background: color-mix(in srgb, #dc2626 8%, transparent);
+		border: 1px solid color-mix(in srgb, #dc2626 30%, transparent);
+		color: #dc2626;
 	}
 </style>
