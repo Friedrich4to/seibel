@@ -40,7 +40,11 @@
       "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\frede\\\\Documents\\\\Clientes\\\\1_Websites\\\\SeibelHenriquez\\\\seibel\" -Directory)",
       "Bash(Select-Object Name)",
       "PowerShell(Get-ChildItem -Path \"c:\\\\Users\\\\frede\\\\Documents\\\\Clientes\\\\1_Websites\\\\SeibelHenriquez\\\\seibel\\\\public\" | Where-Object { $_.Name -match \"robots|sitemap\" })",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Bash(Get-ChildItem -Path . -Force)",
+      "Bash(npm install *)",
+      "Bash(npx wrangler *)",
+      "Bash(python3 -c \"import json; d=json.load\\(open\\('src/data/countries.json'\\)\\); print\\(len\\(d\\)\\)\")"
     ]
   }
 }

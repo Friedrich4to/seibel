@@ -164,6 +164,15 @@ export const ui = {
     // Recursos page
     'resources.title': 'Recursos',
     'resources.description': 'Casos de alto impacto y proyectos destacados de Seibel Henríquez, firma legal de práctica general en la República Dominicana.',
+    'resources.heading': 'Recursos',
+    'resources.download.title': 'Descargar documento',
+    'resources.download.name': 'Nombre completo',
+    'resources.download.email': 'Correo electrónico',
+    'resources.download.btn': 'Descargar',
+    'resources.download.submitting': 'Procesando...',
+    'resources.download.success': '¡Descarga iniciada!',
+    'resources.download.error': 'Error al procesar. Inténtalo de nuevo.',
+    'resources.download.required': 'Por favor completa los campos requeridos.',
 
     // Team member detail
     'member.idiomas': 'IDIOMAS',
@@ -313,6 +322,15 @@ export const ui = {
     // Recursos page
     'resources.title': 'Resources',
     'resources.description': 'High-impact cases and landmark matters handled by Seibel Henríquez, a full-service law firm in the Dominican Republic.',
+    'resources.heading': 'Resources',
+    'resources.download.title': 'Download document',
+    'resources.download.name': 'Full name',
+    'resources.download.email': 'Email address',
+    'resources.download.btn': 'Download',
+    'resources.download.submitting': 'Processing...',
+    'resources.download.success': 'Download started!',
+    'resources.download.error': 'Error processing. Please try again.',
+    'resources.download.required': 'Please complete the required fields.',
 
     // Team member detail
     'member.idiomas': 'LANGUAGES',

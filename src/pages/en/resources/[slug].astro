@@ -1,0 +1,291 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import { useTranslations } from '../../../i18n/utils';
+import { newsletterI18n } from '../../../i18n/newsletter';
+import countries from '../../../data/countries.json';
+
+const lang = 'en';
+const t = useTranslations(lang);
+const n = newsletterI18n[lang];
+
+export async function getStaticPaths() {
+	const recursos = await getCollection('recursos');
+	return recursos
+		.filter((r) => r.id.startsWith('en/'))
+		.map((r) => ({
+			params: { slug: r.id.replace('en/', '') },
+			props: { recurso: r },
+		}));
+}
+
+const { recurso } = Astro.props;
+const { data } = recurso;
+
+const i18n = {
+	btn: t('resources.download.btn'),
+	submitting: t('resources.download.submitting'),
+	success: t('resources.download.success'),
+	error: t('resources.download.error'),
+	required: t('resources.download.required'),
+};
+---
+
+<Layout
+	title={data.title}
+	description={data.description}
+	navbarDarkMode={true}
+>
+	<section class="bg-light-gray pt-28 md:pt-36 pb-16 md:pb-24 px-6 md:px-12 lg:px-20">
+		<div class="max-w-360 mx-auto">
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+
+				<!-- Image -->
+				<div class="w-full">
+					<img
+						src={data.image}
+						alt={data.imageAlt}
+						class="w-full h-auto"
+					/>
+				</div>
+
+				<!-- Info + Download Form -->
+				<div class="flex flex-col gap-8">
+					<div>
+						<h1 class="text-dark-slate text-3xl md:text-4xl font-light tracking-wide uppercase leading-tight">
+							{data.title}
+						</h1>
+						<div class="w-14 h-0.75 bg-bronze mt-4 mb-6"></div>
+						<div class="flex flex-col gap-4">
+							{data.description.split('\n\n').filter((p: string) => p.trim()).map((paragraph: string) => (
+								<p class="text-dark-slate text-sm md:text-base font-light leading-relaxed">{paragraph.trim()}</p>
+							))}
+						</div>
+					</div>
+
+					<div class="bg-white p-6 md:p-8">
+						<h2 class="text-dark-slate text-sm font-medium tracking-wider uppercase mb-6">
+							{t('resources.download.title')}
+						</h2>
+
+						<form id="download-form" novalidate class="flex flex-col gap-5">
+
+							<!-- Name + Email -->
+							<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+								<div class="flex flex-col gap-1">
+									<label for="df-name" class="text-dark-slate text-sm font-light tracking-wide uppercase">
+										{n.fields.name.label}
+									</label>
+									<input
+										id="df-name"
+										type="text"
+										name="name"
+										required
+										autocomplete="name"
+										placeholder={n.fields.name.placeholder}
+										class="df-input"
+									/>
+								</div>
+								<div class="flex flex-col gap-1">
+									<label for="df-email" class="text-dark-slate text-sm font-light tracking-wide uppercase">
+										{n.fields.email.label}
+									</label>
+									<input
+										id="df-email"
+										type="email"
+										name="email"
+										required
+										autocomplete="email"
+										placeholder={n.fields.email.placeholder}
+										class="df-input"
+									/>
+								</div>
+							</div>
+
+							<!-- Company + Position -->
+							<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+								<div class="flex flex-col gap-1">
+									<label for="df-company" class="text-dark-slate text-sm font-light tracking-wide uppercase">
+										{n.fields.company.label}
+									</label>
+									<input
+										id="df-company"
+										type="text"
+										name="company"
+										autocomplete="organization"
+										placeholder={n.fields.company.placeholder}
+										class="df-input"
+									/>
+								</div>
+								<div class="flex flex-col gap-1">
+									<label for="df-position" class="text-dark-slate text-sm font-light tracking-wide uppercase">
+										{n.fields.position.label}
+									</label>
+									<input
+										id="df-position"
+										type="text"
+										name="position"
+										autocomplete="organization-title"
+										placeholder={n.fields.position.placeholder}
+										class="df-input"
+									/>
+								</div>
+							</div>
+
+							<!-- Country -->
+							<div class="flex flex-col gap-1">
+								<label for="df-country" class="text-dark-slate text-sm font-light tracking-wide uppercase">
+									{n.fields.country.label}
+								</label>
+								<select id="df-country" name="country" class="df-input df-select">
+									<option value="" disabled selected>{n.fields.country.defaultOption}</option>
+									{countries.map((c) => (
+										<option value={c.value}>{c.en}</option>
+									))}
+								</select>
+							</div>
+
+							<div id="df-message" class="df-message hidden" aria-live="polite"></div>
+
+							<button
+								id="df-submit"
+								type="submit"
+								disabled
+								class="bg-bronze text-white px-8 py-3 hover:scale-105 transition-transform duration-300 text-sm md:text-base tracking-wide w-fit cursor-pointer disabled:opacity-60 disabled:scale-100 disabled:cursor-not-allowed"
+							>
+								{t('resources.download.btn')}
+							</button>
+						</form>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.df-input {
+		background: white;
+		border: 1px solid color-mix(in srgb, var(--color-dark-slate) 20%, transparent);
+		color: var(--color-dark-slate);
+		font-size: 0.875rem;
+		font-weight: 300;
+		padding: 0.75rem 1rem;
+		outline: none;
+		transition: border-color 0.2s;
+	}
+	.df-input::placeholder {
+		color: color-mix(in srgb, var(--color-dark-slate) 40%, transparent);
+	}
+	.df-input:focus {
+		border-color: var(--color-bronze);
+	}
+	.df-select {
+		appearance: none;
+		padding-right: 2.5rem;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23323b43' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+		background-repeat: no-repeat;
+		background-position: right 1rem center;
+	}
+	.df-message {
+		font-size: 0.875rem;
+		font-weight: 300;
+		padding: 0.75rem 1rem;
+	}
+	.df-message.hidden { display: none; }
+	.df-message--success {
+		background: color-mix(in srgb, var(--color-bronze) 10%, transparent);
+		border: 1px solid color-mix(in srgb, var(--color-bronze) 40%, transparent);
+		color: var(--color-dark-slate);
+	}
+	.df-message--error {
+		background: color-mix(in srgb, #dc2626 8%, transparent);
+		border: 1px solid color-mix(in srgb, #dc2626 30%, transparent);
+		color: #dc2626;
+	}
+</style>
+
+<script is:inline define:vars={{ i18n, pdfFile: data.pdfFile }}>
+	const form = document.getElementById('download-form');
+	const submitBtn = document.getElementById('df-submit');
+	const messageEl = document.getElementById('df-message');
+	const nameInput = document.getElementById('df-name');
+	const emailInput = document.getElementById('df-email');
+
+	function isValidEmail(val) {
+		return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+	}
+
+	function triggerDownload(url) {
+		const a = document.createElement('a');
+		a.href = url;
+		a.download = '';
+		document.body.appendChild(a);
+		a.click();
+		document.body.removeChild(a);
+	}
+
+	function checkFields() {
+		const hasName = nameInput.value.trim().length > 0;
+		const hasEmail = isValidEmail(emailInput.value.trim());
+		submitBtn.disabled = !(hasName && hasEmail);
+	}
+
+	nameInput.addEventListener('input', checkFields);
+	emailInput.addEventListener('input', checkFields);
+
+	form.addEventListener('submit', async (e) => {
+		e.preventDefault();
+
+		const name = nameInput.value.trim();
+		const email = emailInput.value.trim();
+
+		if (!name || !email) {
+			messageEl.className = 'df-message df-message--error';
+			messageEl.textContent = i18n.required;
+			return;
+		}
+
+		submitBtn.disabled = true;
+		submitBtn.textContent = i18n.submitting;
+		messageEl.className = 'df-message hidden';
+		messageEl.textContent = '';
+
+		let blockDownload = false;
+
+		try {
+			const res = await fetch('/api/newsletter', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({
+					name,
+					email,
+					company: document.getElementById('df-company').value,
+					position: document.getElementById('df-position').value,
+					country: document.getElementById('df-country').value,
+				}),
+			});
+
+			let json = {};
+			try { json = await res.json(); } catch { /* non-JSON response, proceed */ }
+
+			if (json.error === 'generic') {
+				blockDownload = true;
+			}
+		} catch {
+			// Network error or API unavailable (e.g. local dev) — proceed with download
+		}
+
+		if (blockDownload) {
+			messageEl.className = 'df-message df-message--error';
+			messageEl.textContent = i18n.error;
+			submitBtn.disabled = false;
+			submitBtn.textContent = i18n.btn;
+		} else {
+			messageEl.className = 'df-message df-message--success';
+			messageEl.textContent = i18n.success;
+			triggerDownload(pdfFile);
+		}
+	});
+</script>

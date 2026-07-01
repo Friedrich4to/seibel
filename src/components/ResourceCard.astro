@@ -1,0 +1,32 @@
+---
+interface Props {
+	title: string;
+	description: string;
+	image: string;
+	imageAlt: string;
+	url: string;
+}
+
+const { title, description, image, imageAlt, url } = Astro.props;
+---
+
+<a href={url} class="w-full h-full flex flex-col overflow-hidden group bg-white">
+	<div class="relative overflow-hidden">
+		<img
+			src={image}
+			alt={imageAlt}
+			class="w-full h-48 md:h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+		/>
+	</div>
+	<div class="flex flex-col gap-4 p-6 md:p-8">
+		<h3 class="text-dark-slate text-lg md:text-xl font-light tracking-wider uppercase">
+			{title}
+		</h3>
+		<div class="w-14 h-0.75 bg-bronze"></div>
+		<div class="text-dark-slate text-sm md:text-base font-light leading-relaxed line-clamp-3">
+			{description.split('\n\n').filter((p: string) => p.trim()).map((paragraph: string) => (
+				<p>{paragraph.trim()}</p>
+			))}
+		</div>
+	</div>
+</a>

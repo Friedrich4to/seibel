@@ -78,7 +78,7 @@ async function onRequest({ request, next }) {
 }
 __name(onRequest, "onRequest");
 
-// ../.wrangler/tmp/pages-oceYLn/functionsRoutes-0.9692418278605125.mjs
+// ../.wrangler/tmp/pages-A3b5cH/functionsRoutes-0.006044196325938778.mjs
 var routes = [
   {
     routePath: "/api/newsletter",
@@ -583,7 +583,7 @@ var jsonError = /* @__PURE__ */ __name(async (request, env, _ctx, middlewareCtx)
 }, "jsonError");
 var middleware_miniflare3_json_error_default = jsonError;
 
-// ../.wrangler/tmp/bundle-08kn1b/middleware-insertion-facade.js
+// ../.wrangler/tmp/bundle-c8jPpa/middleware-insertion-facade.js
 var __INTERNAL_WRANGLER_MIDDLEWARE__ = [
   middleware_ensure_req_body_drained_default,
   middleware_miniflare3_json_error_default
@@ -615,13 +615,15 @@ function __facade_invoke__(request, env, ctx, dispatch, finalMiddleware) {
 }
 __name(__facade_invoke__, "__facade_invoke__");
 
-// ../.wrangler/tmp/bundle-08kn1b/middleware-loader.entry.ts
+// ../.wrangler/tmp/bundle-c8jPpa/middleware-loader.entry.ts
 var __Facade_ScheduledController__ = class ___Facade_ScheduledController__ {
   constructor(scheduledTime, cron, noRetry) {
     this.scheduledTime = scheduledTime;
     this.cron = cron;
     this.#noRetry = noRetry;
   }
+  scheduledTime;
+  cron;
   static {
     __name(this, "__Facade_ScheduledController__");
   }
@@ -715,4 +717,4 @@ export {
   __INTERNAL_WRANGLER_MIDDLEWARE__,
   middleware_loader_entry_default as default
 };
-//# sourceMappingURL=functionsWorker-0.3524078692208188.mjs.map
+//# sourceMappingURL=functionsWorker-0.7034656443238203.mjs.map
