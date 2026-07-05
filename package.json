@@ -5,11 +5,13 @@
   "scripts": {
     "dev": "astro dev",
     "pages:dev": "wrangler pages dev --proxy 4321",
+    "dev:cf": "concurrently --kill-others-on-fail \"astro dev\" \"wrangler pages dev --proxy 4321\"",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^12.6.13",
     "@astrojs/sitemap": "^3.7.2",
     "@tailwindcss/vite": "^4.1.18",
     "astro": "^5.17.1",
@@ -17,6 +19,7 @@
     "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
+    "concurrently": "^10.0.3",
     "wrangler": "^4.102.0"
   }
 }

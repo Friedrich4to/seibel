@@ -1,2 +1,11 @@
 name = "seibel"
 compatibility_date = "2026-06-10"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "seibel-recursos"
+database_id = "45e5692d-ac6c-4fa2-95cd-da81620e62d2"
+
+[[r2_buckets]]
+binding = "BUCKET"
+bucket_name = "seibel-recursos"

@@ -1,0 +1,229 @@
+---
+export const prerender = false;
+
+import { getArticleById, updateArticle } from '../../../lib/db';
+import { uploadFile, deleteFile, imageKey, pdfKey, getMediaUrl } from '../../../lib/r2';
+
+const { DB, BUCKET } = Astro.locals.runtime.env;
+const { id } = Astro.params;
+
+const article = id ? await getArticleById(DB, id) : null;
+if (!article) return Astro.redirect('/admin');
+
+let error = '';
+
+if (Astro.request.method === 'POST') {
+	const formData = await Astro.request.formData();
+
+	const order_num = parseInt(formData.get('order_num') as string) || 0;
+	const title_es = (formData.get('title_es') as string)?.trim() ?? '';
+	const title_en = (formData.get('title_en') as string)?.trim() || null;
+	const description_es = (formData.get('description_es') as string)?.trim() ?? '';
+	const description_en = (formData.get('description_en') as string)?.trim() || null;
+	const image_alt_es = (formData.get('image_alt_es') as string)?.trim() ?? '';
+	const image_alt_en = (formData.get('image_alt_en') as string)?.trim() || null;
+	const newImageFile = formData.get('image') as File | null;
+	const newPdfFile = formData.get('pdf') as File | null;
+
+	if (!title_es || !description_es || !image_alt_es) {
+		error = 'Completa todos los campos requeridos.';
+	} else {
+		let img_key = article.image_key;
+		let pdf_key = article.pdf_key;
+
+		if (newImageFile && newImageFile.size > 0) {
+			if (img_key !== imageKey(article.slug, newImageFile.name)) {
+				await deleteFile(BUCKET, img_key);
+			}
+			img_key = imageKey(article.slug, newImageFile.name);
+			await uploadFile(BUCKET, img_key, newImageFile);
+		}
+
+		if (newPdfFile && newPdfFile.size > 0) {
+			await deleteFile(BUCKET, pdf_key);
+			pdf_key = pdfKey(article.slug);
+			await uploadFile(BUCKET, pdf_key, newPdfFile);
+		}
+
+		await updateArticle(DB, article.id, {
+			order_num, title_es, title_en,
+			description_es, description_en,
+			image_key: img_key, image_alt_es, image_alt_en,
+			pdf_key,
+		});
+
+		return Astro.redirect('/admin');
+	}
+}
+---
+
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Editar artículo — Admin</title>
+	<style>
+		*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+		body { font-family: system-ui, sans-serif; background: #1a2028; color: #e8e4df; min-height: 100vh; }
+		.topbar {
+			background: #242c36;
+			border-bottom: 1px solid #2e3844;
+			padding: 1rem 2rem;
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+		}
+		.back { font-size: 0.8rem; color: #8a9099; text-decoration: none; }
+		.back:hover { color: #b8956a; }
+		h1 { font-size: 1rem; font-weight: 300; letter-spacing: 0.08em; text-transform: uppercase; }
+		main { padding: 2rem; max-width: 760px; margin: 0 auto; }
+		.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+		.field { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.25rem; }
+		label { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: #8a9099; }
+		label span { color: #e57373; margin-left: 0.2rem; }
+		input, textarea {
+			background: #242c36;
+			border: 1px solid #3a4452;
+			color: #e8e4df;
+			padding: 0.65rem 0.9rem;
+			font-size: 0.875rem;
+			outline: none;
+			font-family: inherit;
+			transition: border-color 0.2s;
+			width: 100%;
+		}
+		input:focus, textarea:focus { border-color: #b8956a; }
+		input[type="file"] { padding: 0.5rem 0.9rem; }
+		textarea { min-height: 120px; resize: vertical; }
+		.section-title {
+			font-size: 0.7rem;
+			letter-spacing: 0.12em;
+			text-transform: uppercase;
+			color: #b8956a;
+			border-bottom: 1px solid #2e3844;
+			padding-bottom: 0.5rem;
+			margin-bottom: 1.25rem;
+			margin-top: 1.5rem;
+		}
+		.error { color: #e57373; font-size: 0.85rem; background: #3d2020; padding: 0.75rem 1rem; margin-bottom: 1.5rem; }
+		.actions { display: flex; gap: 1rem; margin-top: 2rem; }
+		.btn {
+			padding: 0.65rem 1.75rem;
+			font-size: 0.8rem;
+			letter-spacing: 0.08em;
+			text-transform: uppercase;
+			cursor: pointer;
+			text-decoration: none;
+			border: none;
+			transition: opacity 0.2s;
+		}
+		.btn-primary { background: #b8956a; color: white; }
+		.btn-ghost { background: transparent; color: #8a9099; border: 1px solid #3a4452; }
+		.btn:hover { opacity: 0.8; }
+		.note { font-size: 0.75rem; color: #5a6470; margin-top: 0.3rem; }
+		.current-file {
+			display: flex;
+			align-items: center;
+			gap: 0.75rem;
+			background: #1a2028;
+			padding: 0.5rem 0.75rem;
+			margin-bottom: 0.5rem;
+			font-size: 0.75rem;
+			color: #8a9099;
+		}
+		.current-file img { width: 48px; height: 34px; object-fit: cover; }
+		.slug-badge {
+			font-family: monospace;
+			font-size: 0.75rem;
+			background: #1a2028;
+			color: #8a9099;
+			padding: 0.4rem 0.75rem;
+			border: 1px solid #2e3844;
+			display: inline-block;
+			margin-bottom: 1.5rem;
+		}
+	</style>
+</head>
+<body>
+	<header class="topbar">
+		<a href="/admin" class="back">← Artículos</a>
+		<h1>Editar artículo</h1>
+	</header>
+
+	<main>
+		{error && <div class="error">{error}</div>}
+
+		<span class="slug-badge">/{article.slug}</span>
+
+		<form method="POST" enctype="multipart/form-data">
+
+			<p class="section-title">General</p>
+
+			<div class="grid-2">
+				<div class="field">
+					<label for="order_num">Orden <span>*</span></label>
+					<input type="number" id="order_num" name="order_num" required value={article.order_num} min="0" />
+				</div>
+			</div>
+
+			<p class="section-title">Contenido en Español</p>
+
+			<div class="field">
+				<label for="title_es">Título ES <span>*</span></label>
+				<input type="text" id="title_es" name="title_es" required value={article.title_es} />
+			</div>
+			<div class="field">
+				<label for="description_es">Descripción ES <span>*</span></label>
+				<textarea id="description_es" name="description_es" required>{article.description_es}</textarea>
+			</div>
+			<div class="field">
+				<label for="image_alt_es">Alt imagen ES <span>*</span></label>
+				<input type="text" id="image_alt_es" name="image_alt_es" required value={article.image_alt_es} />
+			</div>
+
+			<p class="section-title">Contenido en Inglés (opcional)</p>
+
+			<div class="field">
+				<label for="title_en">Título EN</label>
+				<input type="text" id="title_en" name="title_en" value={article.title_en ?? ''} />
+			</div>
+			<div class="field">
+				<label for="description_en">Descripción EN</label>
+				<textarea id="description_en" name="description_en">{article.description_en ?? ''}</textarea>
+			</div>
+			<div class="field">
+				<label for="image_alt_en">Alt imagen EN</label>
+				<input type="text" id="image_alt_en" name="image_alt_en" value={article.image_alt_en ?? ''} />
+			</div>
+
+			<p class="section-title">Archivos (dejar vacío para conservar el actual)</p>
+
+			<div class="grid-2">
+				<div class="field">
+					<label for="image">Imagen de portada</label>
+					<div class="current-file">
+						<img src={getMediaUrl(article.image_key)} alt={article.image_alt_es} />
+						<span>Imagen actual</span>
+					</div>
+					<input type="file" id="image" name="image" accept=".jpg,.jpeg,.png,.webp" />
+					<span class="note">Dejar vacío para mantener la imagen actual</span>
+				</div>
+				<div class="field">
+					<label for="pdf">Archivo PDF</label>
+					<div class="current-file">
+						<span>📄 PDF actual: {article.pdf_key.split('/').pop()}</span>
+					</div>
+					<input type="file" id="pdf" name="pdf" accept=".pdf" />
+					<span class="note">Dejar vacío para mantener el PDF actual</span>
+				</div>
+			</div>
+
+			<div class="actions">
+				<button type="submit" class="btn btn-primary">Guardar cambios</button>
+				<a href="/admin" class="btn btn-ghost">Cancelar</a>
+			</div>
+		</form>
+	</main>
+</body>
+</html>

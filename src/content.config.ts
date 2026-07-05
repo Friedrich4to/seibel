@@ -72,16 +72,4 @@ const areas = defineCollection({
 	}),
 });
 
-const recursos = defineCollection({
-	loader: glob({ pattern: '**/*.md', base: './src/content/recursos' }),
-	schema: z.object({
-		title: z.string(),
-		description: z.string(),
-		order: z.number(),
-		image: z.string(),
-		imageAlt: z.string(),
-		pdfFile: z.string(),
-	}),
-});
-
-export const collections = { team, areas, recursos };
+export const collections = { team, areas };

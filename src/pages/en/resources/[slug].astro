@@ -1,6 +1,9 @@
 ---
+export const prerender = false;
+
 import Layout from '../../../layouts/Layout.astro';
-import { getCollection } from 'astro:content';
+import { getArticle, getTitle, getDescription, getImageAlt } from '../../../lib/db';
+import { getMediaUrl } from '../../../lib/r2';
 import { useTranslations } from '../../../i18n/utils';
 import { newsletterI18n } from '../../../i18n/newsletter';
 import countries from '../../../data/countries.json';
@@ -9,18 +12,18 @@ const lang = 'en';
 const t = useTranslations(lang);
 const n = newsletterI18n[lang];
 
-export async function getStaticPaths() {
-	const recursos = await getCollection('recursos');
-	return recursos
-		.filter((r) => r.id.startsWith('en/'))
-		.map((r) => ({
-			params: { slug: r.id.replace('en/', '') },
-			props: { recurso: r },
-		}));
-}
+const { slug } = Astro.params;
+if (!slug) return Astro.redirect('/en/resources');
 
-const { recurso } = Astro.props;
-const { data } = recurso;
+const { DB } = Astro.locals.runtime.env;
+const article = await getArticle(DB, slug);
+if (!article) return Astro.redirect('/en/resources');
+
+const title = getTitle(article, lang);
+const description = getDescription(article, lang);
+const imageAlt = getImageAlt(article, lang);
+const imageUrl = getMediaUrl(article.image_key);
+const pdfUrl = getMediaUrl(article.pdf_key);
 
 const i18n = {
 	btn: t('resources.download.btn'),
@@ -32,8 +35,8 @@ const i18n = {
 ---
 
 <Layout
-	title={data.title}
-	description={data.description}
+	title={title}
+	description={description}
 	navbarDarkMode={true}
 >
 	<section class="bg-light-gray pt-28 md:pt-36 pb-16 md:pb-24 px-6 md:px-12 lg:px-20">
@@ -43,8 +46,8 @@ const i18n = {
 				<!-- Image -->
 				<div class="w-full">
 					<img
-						src={data.image}
-						alt={data.imageAlt}
+						src={imageUrl}
+						alt={imageAlt}
 						class="w-full h-auto"
 					/>
 				</div>
@@ -53,11 +56,11 @@ const i18n = {
 				<div class="flex flex-col gap-8">
 					<div>
 						<h1 class="text-dark-slate text-3xl md:text-4xl font-light tracking-wide uppercase leading-tight">
-							{data.title}
+							{title}
 						</h1>
 						<div class="w-14 h-0.75 bg-bronze mt-4 mb-6"></div>
 						<div class="flex flex-col gap-4">
-							{data.description.split('\n\n').filter((p: string) => p.trim()).map((paragraph: string) => (
+							{description.split('\n\n').filter((p: string) => p.trim()).map((paragraph: string) => (
 								<p class="text-dark-slate text-sm md:text-base font-light leading-relaxed">{paragraph.trim()}</p>
 							))}
 						</div>
@@ -206,7 +209,7 @@ const i18n = {
 	}
 </style>
 
-<script is:inline define:vars={{ i18n, pdfFile: data.pdfFile }}>
+<script is:inline define:vars={{ i18n, pdfUrl }}>
 	const form = document.getElementById('download-form');
 	const submitBtn = document.getElementById('df-submit');
 	const messageEl = document.getElementById('df-message');
@@ -274,7 +277,7 @@ const i18n = {
 				blockDownload = true;
 			}
 		} catch {
-			// Network error or API unavailable (e.g. local dev) — proceed with download
+			// Network error or API unavailable — proceed with download
 		}
 
 		if (blockDownload) {
@@ -285,7 +288,7 @@ const i18n = {
 		} else {
 			messageEl.className = 'df-message df-message--success';
 			messageEl.textContent = i18n.success;
-			triggerDownload(pdfFile);
+			triggerDownload(pdfUrl);
 		}
 	});
 </script>

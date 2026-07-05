@@ -1,18 +1,17 @@
 ---
+export const prerender = false;
+
 import Layout from '../../layouts/Layout.astro';
 import ResourceCard from '../../components/ResourceCard.astro';
-import { getCollection } from 'astro:content';
+import { getArticles, getTitle, getDescription, getImageAlt } from '../../lib/db';
+import { getMediaUrl } from '../../lib/r2';
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-const langPrefix = `${lang}/`;
 
-const recursos = (await getCollection('recursos')).filter((r) => r.id.startsWith(langPrefix));
-const sortedRecursos = recursos.sort((a, b) => a.data.order - b.data.order);
-
-const recursoBasePath = '/en/resources/';
-const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
+const { DB } = Astro.locals.runtime.env;
+const articles = await getArticles(DB, lang);
 ---
 
 <Layout
@@ -37,13 +36,13 @@ const stripLangPrefix = (id: string) => id.replace(langPrefix, '');
 	<section class="bg-light-gray py-16 md:py-24 px-6 md:px-12 lg:px-20">
 		<div class="max-w-360 mx-auto">
 			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
-				{sortedRecursos.map((recurso) => (
+				{articles.map((article) => (
 					<ResourceCard
-						title={recurso.data.title}
-						description={recurso.data.description}
-						image={recurso.data.image}
-						imageAlt={recurso.data.imageAlt}
-						url={`${recursoBasePath}${stripLangPrefix(recurso.id)}`}
+						title={getTitle(article, lang)}
+						description={getDescription(article, lang)}
+						image={getMediaUrl(article.image_key)}
+						imageAlt={getImageAlt(article, lang)}
+						url={`/en/resources/${article.slug}`}
 					/>
 				))}
 			</div>

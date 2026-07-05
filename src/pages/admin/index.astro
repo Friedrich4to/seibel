@@ -1,0 +1,251 @@
+---
+export const prerender = false;
+
+import { getArticles, deleteArticle, getArticleById } from '../../lib/db';
+import { deleteFile, getMediaUrl } from '../../lib/r2';
+import { generateToken, verifyToken, getTokenFromRequest } from '../../lib/auth';
+
+const { DB, BUCKET, ADMIN_SECRET_KEY } = Astro.locals.runtime.env;
+
+// Check current auth state
+const token = getTokenFromRequest(Astro.request);
+const isAuthenticated = token ? await verifyToken(token, ADMIN_SECRET_KEY) : false;
+
+let loginError = '';
+let articles: Awaited<ReturnType<typeof getArticles>> = [];
+
+if (Astro.request.method === 'POST') {
+	const formData = await Astro.request.formData();
+	const action = formData.get('action') as string;
+
+	if (action === 'login') {
+		const key = (formData.get('key') as string)?.trim() ?? '';
+		if (key && key === ADMIN_SECRET_KEY) {
+			const newToken = await generateToken(ADMIN_SECRET_KEY);
+			Astro.cookies.set('admin_session', newToken, {
+				httpOnly: true,
+				sameSite: 'lax',
+				maxAge: 86400,
+				path: '/',
+			});
+			return Astro.redirect('/admin');
+		}
+		loginError = 'Clave incorrecta.';
+	} else if (action === 'delete' && isAuthenticated) {
+		const id = formData.get('id') as string;
+		if (id) {
+			const article = await getArticleById(DB, id);
+			if (article) {
+				await deleteFile(BUCKET, article.image_key);
+				await deleteFile(BUCKET, article.pdf_key);
+				await deleteArticle(DB, id);
+			}
+		}
+		return Astro.redirect('/admin');
+	}
+}
+
+if (isAuthenticated) {
+	articles = await getArticles(DB, 'es');
+}
+---
+
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Admin — Seibel Henríquez</title>
+	<style>
+		*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+		body { font-family: system-ui, sans-serif; background: #1a2028; color: #e8e4df; min-height: 100vh; }
+
+		/* ——— Login ——— */
+		.login-wrap {
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.login-card {
+			background: #242c36;
+			padding: 2.5rem;
+			width: 100%;
+			max-width: 400px;
+			border-top: 3px solid #b8956a;
+		}
+		.login-card h1 { font-size: 1.25rem; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.4rem; }
+		.login-card .subtitle { font-size: 0.8rem; color: #8a9099; margin-bottom: 2rem; }
+		.login-card label { display: block; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.4rem; }
+		.login-card input[type="password"] {
+			width: 100%;
+			background: #1a2028;
+			border: 1px solid #3a4452;
+			color: #e8e4df;
+			padding: 0.75rem 1rem;
+			font-size: 0.9rem;
+			outline: none;
+			transition: border-color 0.2s;
+		}
+		.login-card input[type="password"]:focus { border-color: #b8956a; }
+		.login-error { margin-top: 0.75rem; font-size: 0.8rem; color: #e57373; }
+		.login-card button {
+			margin-top: 1.5rem;
+			width: 100%;
+			background: #b8956a;
+			color: white;
+			border: none;
+			padding: 0.75rem 1rem;
+			font-size: 0.85rem;
+			letter-spacing: 0.08em;
+			text-transform: uppercase;
+			cursor: pointer;
+			transition: opacity 0.2s;
+		}
+		.login-card button:hover { opacity: 0.85; }
+
+		/* ——— Dashboard ——— */
+		.topbar {
+			background: #242c36;
+			border-bottom: 1px solid #2e3844;
+			padding: 1rem 2rem;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 1rem;
+		}
+		.topbar-left { display: flex; align-items: center; gap: 1rem; }
+		.brand { font-size: 0.85rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: #b8956a; text-decoration: none; }
+		.topbar h1 { font-size: 1rem; font-weight: 300; letter-spacing: 0.05em; color: #c8c0b8; }
+		.topbar-right { display: flex; align-items: center; gap: 1rem; }
+		.btn {
+			display: inline-block;
+			padding: 0.5rem 1.25rem;
+			font-size: 0.75rem;
+			letter-spacing: 0.08em;
+			text-transform: uppercase;
+			cursor: pointer;
+			text-decoration: none;
+			border: none;
+			transition: opacity 0.2s;
+		}
+		.btn-primary { background: #b8956a; color: white; }
+		.btn-ghost { background: transparent; color: #8a9099; border: 1px solid #3a4452; }
+		.btn:hover { opacity: 0.8; }
+		main { padding: 2rem; max-width: 1100px; margin: 0 auto; }
+		.section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; }
+		h2 { font-size: 1rem; font-weight: 300; letter-spacing: 0.08em; text-transform: uppercase; color: #c8c0b8; }
+		.table-wrap { overflow-x: auto; }
+		table { width: 100%; border-collapse: collapse; }
+		thead { background: #242c36; }
+		th {
+			padding: 0.75rem 1rem;
+			text-align: left;
+			font-size: 0.7rem;
+			letter-spacing: 0.1em;
+			text-transform: uppercase;
+			color: #8a9099;
+			font-weight: 400;
+		}
+		td {
+			padding: 0.875rem 1rem;
+			font-size: 0.85rem;
+			font-weight: 300;
+			border-bottom: 1px solid #242c36;
+			vertical-align: middle;
+		}
+		tr:hover td { background: #202830; }
+		.slug { font-family: monospace; font-size: 0.8rem; color: #8a9099; }
+		.thumb { width: 56px; height: 40px; object-fit: cover; }
+		.actions { display: flex; gap: 0.5rem; align-items: center; }
+		.btn-edit { background: #2e4060; color: #7ab4e8; padding: 0.35rem 0.8rem; font-size: 0.7rem; }
+		.btn-delete { background: #3d2020; color: #e57373; padding: 0.35rem 0.8rem; font-size: 0.7rem; border: none; cursor: pointer; }
+		.empty { padding: 3rem; text-align: center; color: #5a6470; font-size: 0.9rem; }
+		.badge-bi { font-size: 0.65rem; background: #1a3030; color: #4caf90; padding: 0.15rem 0.4rem; border-radius: 2px; }
+	</style>
+</head>
+<body>
+
+{!isAuthenticated ? (
+	<div class="login-wrap">
+		<div class="login-card">
+			<h1>Seibel Henríquez</h1>
+			<p class="subtitle">Panel de administración</p>
+			<form method="POST" action="/admin">
+				<input type="hidden" name="action" value="login" />
+				<label for="key">Clave de acceso</label>
+				<input type="password" id="key" name="key" required autofocus />
+				{loginError && <p class="login-error">{loginError}</p>}
+				<button type="submit">Ingresar</button>
+			</form>
+		</div>
+	</div>
+) : (
+	<>
+		<header class="topbar">
+			<div class="topbar-left">
+				<a href="/" class="brand">Seibel Henríquez</a>
+				<h1>/ Artículos</h1>
+			</div>
+			<div class="topbar-right">
+				<a href="/admin/articles/new" class="btn btn-primary">+ Nuevo artículo</a>
+				<form method="POST" action="/api/admin/logout" style="display:inline">
+					<button type="submit" class="btn btn-ghost">Cerrar sesión</button>
+				</form>
+			</div>
+		</header>
+
+		<main>
+			<div class="section-header">
+				<h2>Artículos ({articles.length})</h2>
+			</div>
+
+			{articles.length === 0 ? (
+				<p class="empty">No hay artículos. <a href="/admin/articles/new" style="color:#b8956a">Crea el primero.</a></p>
+			) : (
+				<div class="table-wrap">
+					<table>
+						<thead>
+							<tr>
+								<th>Imagen</th>
+								<th>Título (ES)</th>
+								<th>Slug</th>
+								<th>Orden</th>
+								<th>Bilingüe</th>
+								<th>Acciones</th>
+							</tr>
+						</thead>
+						<tbody>
+							{articles.map((article) => (
+								<tr>
+									<td>
+										<img src={getMediaUrl(article.image_key)} alt={article.image_alt_es} class="thumb" />
+									</td>
+									<td>{article.title_es}</td>
+									<td class="slug">{article.slug}</td>
+									<td>{article.order_num}</td>
+									<td>
+										{article.title_en && <span class="badge-bi">EN</span>}
+									</td>
+									<td>
+										<div class="actions">
+											<a href={`/admin/articles/${article.id}`} class="btn btn-edit">Editar</a>
+											<form method="POST" action="/admin" onsubmit="return confirm('¿Eliminar este artículo? Esta acción no se puede deshacer.')">
+												<input type="hidden" name="action" value="delete" />
+												<input type="hidden" name="id" value={article.id} />
+												<button type="submit" class="btn btn-delete">Eliminar</button>
+											</form>
+										</div>
+									</td>
+								</tr>
+							))}
+						</tbody>
+					</table>
+				</div>
+			)}
+		</main>
+	</>
+)}
+
+</body>
+</html>
