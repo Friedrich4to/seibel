@@ -3,12 +3,17 @@ export const prerender = false;
 
 import { createArticle } from '../../../lib/db';
 import { uploadFile, imageKey, pdfKey } from '../../../lib/r2';
+import { verifyToken, getTokenFromRequest } from '../../../lib/auth';
 
-const { DB, BUCKET } = Astro.locals.runtime.env;
+const { DB, BUCKET, ADMIN_SECRET_KEY } = Astro.locals.runtime.env;
+
+const sessionToken = getTokenFromRequest(Astro.request);
+const authorized = !!(sessionToken && await verifyToken(sessionToken, ADMIN_SECRET_KEY));
 
 let error = '';
+let saved = false;
 
-if (Astro.request.method === 'POST') {
+if (authorized && Astro.request.method === 'POST') {
 	const formData = await Astro.request.formData();
 
 	const slug = (formData.get('slug') as string)?.trim().toLowerCase().replace(/\s+/g, '-') ?? '';
@@ -43,7 +48,7 @@ if (Astro.request.method === 'POST') {
 			pdf_key,
 		});
 
-		return Astro.redirect('/admin');
+		saved = true;
 	}
 }
 ---
@@ -54,6 +59,7 @@ if (Astro.request.method === 'POST') {
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Nuevo artículo — Admin</title>
+	{(!authorized || saved) && <script>window.location.replace('/admin');</script>}
 	<style>
 		*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 		body { font-family: system-ui, sans-serif; background: #1a2028; color: #e8e4df; min-height: 100vh; }

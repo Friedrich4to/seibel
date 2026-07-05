@@ -3,16 +3,20 @@ export const prerender = false;
 
 import { getArticleById, updateArticle } from '../../../lib/db';
 import { uploadFile, deleteFile, imageKey, pdfKey, getMediaUrl } from '../../../lib/r2';
+import { verifyToken, getTokenFromRequest } from '../../../lib/auth';
 
-const { DB, BUCKET } = Astro.locals.runtime.env;
+const { DB, BUCKET, ADMIN_SECRET_KEY } = Astro.locals.runtime.env;
+
+const sessionToken = getTokenFromRequest(Astro.request);
+const authorized = !!(sessionToken && await verifyToken(sessionToken, ADMIN_SECRET_KEY));
+
 const { id } = Astro.params;
-
-const article = id ? await getArticleById(DB, id) : null;
-if (!article) return Astro.redirect('/admin');
+const article = authorized && id ? await getArticleById(DB, id) : null;
 
 let error = '';
+let saved = false;
 
-if (Astro.request.method === 'POST') {
+if (authorized && article && Astro.request.method === 'POST') {
 	const formData = await Astro.request.formData();
 
 	const order_num = parseInt(formData.get('order_num') as string) || 0;
@@ -52,7 +56,7 @@ if (Astro.request.method === 'POST') {
 			pdf_key,
 		});
 
-		return Astro.redirect('/admin');
+		saved = true;
 	}
 }
 ---
@@ -63,6 +67,7 @@ if (Astro.request.method === 'POST') {
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Editar artículo — Admin</title>
+	{(!authorized || !article || saved) && <script>window.location.replace('/admin');</script>}
 	<style>
 		*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 		body { font-family: system-ui, sans-serif; background: #1a2028; color: #e8e4df; min-height: 100vh; }
@@ -146,84 +151,88 @@ if (Astro.request.method === 'POST') {
 	</style>
 </head>
 <body>
-	<header class="topbar">
-		<a href="/admin" class="back">← Artículos</a>
-		<h1>Editar artículo</h1>
-	</header>
+	{authorized && article && (
+		<>
+			<header class="topbar">
+				<a href="/admin" class="back">← Artículos</a>
+				<h1>Editar artículo</h1>
+			</header>
 
-	<main>
-		{error && <div class="error">{error}</div>}
+			<main>
+				{error && <div class="error">{error}</div>}
 
-		<span class="slug-badge">/{article.slug}</span>
+				<span class="slug-badge">/{article.slug}</span>
 
-		<form method="POST" enctype="multipart/form-data">
+				<form method="POST" enctype="multipart/form-data">
 
-			<p class="section-title">General</p>
+					<p class="section-title">General</p>
 
-			<div class="grid-2">
-				<div class="field">
-					<label for="order_num">Orden <span>*</span></label>
-					<input type="number" id="order_num" name="order_num" required value={article.order_num} min="0" />
-				</div>
-			</div>
-
-			<p class="section-title">Contenido en Español</p>
-
-			<div class="field">
-				<label for="title_es">Título ES <span>*</span></label>
-				<input type="text" id="title_es" name="title_es" required value={article.title_es} />
-			</div>
-			<div class="field">
-				<label for="description_es">Descripción ES <span>*</span></label>
-				<textarea id="description_es" name="description_es" required>{article.description_es}</textarea>
-			</div>
-			<div class="field">
-				<label for="image_alt_es">Alt imagen ES <span>*</span></label>
-				<input type="text" id="image_alt_es" name="image_alt_es" required value={article.image_alt_es} />
-			</div>
-
-			<p class="section-title">Contenido en Inglés (opcional)</p>
-
-			<div class="field">
-				<label for="title_en">Título EN</label>
-				<input type="text" id="title_en" name="title_en" value={article.title_en ?? ''} />
-			</div>
-			<div class="field">
-				<label for="description_en">Descripción EN</label>
-				<textarea id="description_en" name="description_en">{article.description_en ?? ''}</textarea>
-			</div>
-			<div class="field">
-				<label for="image_alt_en">Alt imagen EN</label>
-				<input type="text" id="image_alt_en" name="image_alt_en" value={article.image_alt_en ?? ''} />
-			</div>
-
-			<p class="section-title">Archivos (dejar vacío para conservar el actual)</p>
-
-			<div class="grid-2">
-				<div class="field">
-					<label for="image">Imagen de portada</label>
-					<div class="current-file">
-						<img src={getMediaUrl(article.image_key)} alt={article.image_alt_es} />
-						<span>Imagen actual</span>
+					<div class="grid-2">
+						<div class="field">
+							<label for="order_num">Orden <span>*</span></label>
+							<input type="number" id="order_num" name="order_num" required value={article.order_num} min="0" />
+						</div>
 					</div>
-					<input type="file" id="image" name="image" accept=".jpg,.jpeg,.png,.webp" />
-					<span class="note">Dejar vacío para mantener la imagen actual</span>
-				</div>
-				<div class="field">
-					<label for="pdf">Archivo PDF</label>
-					<div class="current-file">
-						<span>📄 PDF actual: {article.pdf_key.split('/').pop()}</span>
-					</div>
-					<input type="file" id="pdf" name="pdf" accept=".pdf" />
-					<span class="note">Dejar vacío para mantener el PDF actual</span>
-				</div>
-			</div>
 
-			<div class="actions">
-				<button type="submit" class="btn btn-primary">Guardar cambios</button>
-				<a href="/admin" class="btn btn-ghost">Cancelar</a>
-			</div>
-		</form>
-	</main>
+					<p class="section-title">Contenido en Español</p>
+
+					<div class="field">
+						<label for="title_es">Título ES <span>*</span></label>
+						<input type="text" id="title_es" name="title_es" required value={article.title_es} />
+					</div>
+					<div class="field">
+						<label for="description_es">Descripción ES <span>*</span></label>
+						<textarea id="description_es" name="description_es" required>{article.description_es}</textarea>
+					</div>
+					<div class="field">
+						<label for="image_alt_es">Alt imagen ES <span>*</span></label>
+						<input type="text" id="image_alt_es" name="image_alt_es" required value={article.image_alt_es} />
+					</div>
+
+					<p class="section-title">Contenido en Inglés (opcional)</p>
+
+					<div class="field">
+						<label for="title_en">Título EN</label>
+						<input type="text" id="title_en" name="title_en" value={article.title_en ?? ''} />
+					</div>
+					<div class="field">
+						<label for="description_en">Descripción EN</label>
+						<textarea id="description_en" name="description_en">{article.description_en ?? ''}</textarea>
+					</div>
+					<div class="field">
+						<label for="image_alt_en">Alt imagen EN</label>
+						<input type="text" id="image_alt_en" name="image_alt_en" value={article.image_alt_en ?? ''} />
+					</div>
+
+					<p class="section-title">Archivos (dejar vacío para conservar el actual)</p>
+
+					<div class="grid-2">
+						<div class="field">
+							<label for="image">Imagen de portada</label>
+							<div class="current-file">
+								<img src={getMediaUrl(article.image_key)} alt={article.image_alt_es} />
+								<span>Imagen actual</span>
+							</div>
+							<input type="file" id="image" name="image" accept=".jpg,.jpeg,.png,.webp" />
+							<span class="note">Dejar vacío para mantener la imagen actual</span>
+						</div>
+						<div class="field">
+							<label for="pdf">Archivo PDF</label>
+							<div class="current-file">
+								<span>📄 PDF actual: {article.pdf_key.split('/').pop()}</span>
+							</div>
+							<input type="file" id="pdf" name="pdf" accept=".pdf" />
+							<span class="note">Dejar vacío para mantener el PDF actual</span>
+						</div>
+					</div>
+
+					<div class="actions">
+						<button type="submit" class="btn btn-primary">Guardar cambios</button>
+						<a href="/admin" class="btn btn-ghost">Cancelar</a>
+					</div>
+				</form>
+			</main>
+		</>
+	)}
 </body>
 </html>

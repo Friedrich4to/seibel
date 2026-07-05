@@ -7,12 +7,10 @@ import { generateToken, verifyToken, getTokenFromRequest } from '../../lib/auth'
 
 const { DB, BUCKET, ADMIN_SECRET_KEY } = Astro.locals.runtime.env;
 
-// Check current auth state
-const token = getTokenFromRequest(Astro.request);
-const isAuthenticated = token ? await verifyToken(token, ADMIN_SECRET_KEY) : false;
+const existingToken = getTokenFromRequest(Astro.request);
+let isAuthenticated = existingToken ? await verifyToken(existingToken, ADMIN_SECRET_KEY) : false;
 
 let loginError = '';
-let articles: Awaited<ReturnType<typeof getArticles>> = [];
 
 if (Astro.request.method === 'POST') {
 	const formData = await Astro.request.formData();
@@ -28,9 +26,13 @@ if (Astro.request.method === 'POST') {
 				maxAge: 86400,
 				path: '/',
 			});
-			return Astro.redirect('/admin');
+			isAuthenticated = true;
+		} else {
+			loginError = 'Clave incorrecta.';
 		}
-		loginError = 'Clave incorrecta.';
+	} else if (action === 'logout') {
+		Astro.cookies.delete('admin_session', { path: '/' });
+		isAuthenticated = false;
 	} else if (action === 'delete' && isAuthenticated) {
 		const id = formData.get('id') as string;
 		if (id) {
@@ -41,13 +43,10 @@ if (Astro.request.method === 'POST') {
 				await deleteArticle(DB, id);
 			}
 		}
-		return Astro.redirect('/admin');
 	}
 }
 
-if (isAuthenticated) {
-	articles = await getArticles(DB, 'es');
-}
+const articles = isAuthenticated ? await getArticles(DB, 'es') : [];
 ---
 
 <!doctype html>
@@ -189,7 +188,8 @@ if (isAuthenticated) {
 			</div>
 			<div class="topbar-right">
 				<a href="/admin/articles/new" class="btn btn-primary">+ Nuevo artículo</a>
-				<form method="POST" action="/api/admin/logout" style="display:inline">
+				<form method="POST" action="/admin" style="display:inline">
+					<input type="hidden" name="action" value="logout" />
 					<button type="submit" class="btn btn-ghost">Cerrar sesión</button>
 				</form>
 			</div>
