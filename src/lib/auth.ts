@@ -13,6 +13,7 @@ export async function generateToken(secret: string): Promise<string> {
 }
 
 export async function verifyToken(token: string, secret: string): Promise<boolean> {
+	if (!token || !secret) return false;
 	const expected = await generateToken(secret);
 	return token === expected;
 }

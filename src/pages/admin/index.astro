@@ -46,7 +46,10 @@ if (Astro.request.method === 'POST') {
 	}
 }
 
-const articles = isAuthenticated ? await getArticles(DB, 'es') : [];
+let articles: Awaited<ReturnType<typeof getArticles>> = [];
+if (isAuthenticated) {
+	try { articles = await getArticles(DB, 'es'); } catch { articles = []; }
+}
 ---
 
 <!doctype html>

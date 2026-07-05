@@ -59,7 +59,7 @@ if (authorized && Astro.request.method === 'POST') {
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Nuevo artículo — Admin</title>
-	{(!authorized || saved) && <script>window.location.replace('/admin');</script>}
+	{(!authorized || saved) && <script is:inline>window.location.replace('/admin');</script>}
 	<style>
 		*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 		body { font-family: system-ui, sans-serif; background: #1a2028; color: #e8e4df; min-height: 100vh; }
