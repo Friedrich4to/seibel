@@ -1,8 +1,9 @@
 ---
 export const prerender = false;
 
-import { getArticles, deleteArticle, getArticleById } from '../../lib/db';
-import { deleteFile, getMediaUrl } from '../../lib/r2';
+import { getArticles, getArticleById, createArticle, updateArticle, deleteArticle } from '../../lib/db';
+import type { Article } from '../../lib/db';
+import { uploadFile, deleteFile, imageKey, pdfKey, getMediaUrl } from '../../lib/r2';
 import { generateToken, verifyToken, getTokenFromRequest } from '../../lib/auth';
 
 const { DB, BUCKET, ADMIN_SECRET_KEY } = Astro.locals.runtime.env;
@@ -11,6 +12,8 @@ const existingToken = getTokenFromRequest(Astro.request);
 let isAuthenticated = existingToken ? await verifyToken(existingToken, ADMIN_SECRET_KEY) : false;
 
 let loginError = '';
+let saved = false;
+let formError = '';
 
 if (Astro.request.method === 'POST') {
 	const formData = await Astro.request.formData();
@@ -21,10 +24,7 @@ if (Astro.request.method === 'POST') {
 		if (key && key === ADMIN_SECRET_KEY) {
 			const newToken = await generateToken(ADMIN_SECRET_KEY);
 			Astro.cookies.set('admin_session', newToken, {
-				httpOnly: true,
-				sameSite: 'lax',
-				maxAge: 86400,
-				path: '/',
+				httpOnly: true, sameSite: 'lax', maxAge: 86400, path: '/',
 			});
 			isAuthenticated = true;
 		} else {
@@ -43,10 +43,83 @@ if (Astro.request.method === 'POST') {
 				await deleteArticle(DB, id);
 			}
 		}
+	} else if (action === 'create' && isAuthenticated) {
+		const slug = (formData.get('slug') as string)?.trim().toLowerCase().replace(/\s+/g, '-') ?? '';
+		const order_num = parseInt(formData.get('order_num') as string) || 0;
+		const title_es = (formData.get('title_es') as string)?.trim() ?? '';
+		const title_en = (formData.get('title_en') as string)?.trim() || null;
+		const description_es = (formData.get('description_es') as string)?.trim() ?? '';
+		const description_en = (formData.get('description_en') as string)?.trim() || null;
+		const image_alt_es = (formData.get('image_alt_es') as string)?.trim() ?? '';
+		const image_alt_en = (formData.get('image_alt_en') as string)?.trim() || null;
+		const imageFile = formData.get('image') as File | null;
+		const pdfFile = formData.get('pdf') as File | null;
+
+		if (!slug || !title_es || !description_es || !image_alt_es) {
+			formError = 'Completa todos los campos requeridos.';
+		} else if (!imageFile || imageFile.size === 0) {
+			formError = 'Debes subir una imagen de portada.';
+		} else if (!pdfFile || pdfFile.size === 0) {
+			formError = 'Debes subir un archivo PDF.';
+		} else {
+			const img_key = imageKey(slug, imageFile.name);
+			const pdf_key = pdfKey(slug);
+			await uploadFile(BUCKET, img_key, imageFile);
+			await uploadFile(BUCKET, pdf_key, pdfFile);
+			await createArticle(DB, {
+				slug, order_num, title_es, title_en,
+				description_es, description_en,
+				image_key: img_key, image_alt_es, image_alt_en,
+				pdf_key,
+			});
+			saved = true;
+		}
+	} else if (action === 'update' && isAuthenticated) {
+		const id = formData.get('id') as string;
+		const article = id ? await getArticleById(DB, id) : null;
+		if (article) {
+			const order_num = parseInt(formData.get('order_num') as string) || 0;
+			const title_es = (formData.get('title_es') as string)?.trim() ?? '';
+			const title_en = (formData.get('title_en') as string)?.trim() || null;
+			const description_es = (formData.get('description_es') as string)?.trim() ?? '';
+			const description_en = (formData.get('description_en') as string)?.trim() || null;
+			const image_alt_es = (formData.get('image_alt_es') as string)?.trim() ?? '';
+			const image_alt_en = (formData.get('image_alt_en') as string)?.trim() || null;
+			const newImageFile = formData.get('image') as File | null;
+			const newPdfFile = formData.get('pdf') as File | null;
+
+			if (!title_es || !description_es || !image_alt_es) {
+				formError = 'Completa todos los campos requeridos.';
+			} else {
+				let img_key = article.image_key;
+				let pdf_key = article.pdf_key;
+
+				if (newImageFile && newImageFile.size > 0) {
+					if (img_key !== imageKey(article.slug, newImageFile.name)) {
+						await deleteFile(BUCKET, img_key);
+					}
+					img_key = imageKey(article.slug, newImageFile.name);
+					await uploadFile(BUCKET, img_key, newImageFile);
+				}
+				if (newPdfFile && newPdfFile.size > 0) {
+					await deleteFile(BUCKET, pdf_key);
+					pdf_key = pdfKey(article.slug);
+					await uploadFile(BUCKET, pdf_key, newPdfFile);
+				}
+
+				await updateArticle(DB, article.id, {
+					order_num, title_es, title_en,
+					description_es, description_en,
+					image_key: img_key, image_alt_es, image_alt_en,
+					pdf_key,
+				});
+				saved = true;
+			}
+		}
 	}
 }
 
-let articles: Awaited<ReturnType<typeof getArticles>> = [];
+let articles: Article[] = [];
 if (isAuthenticated) {
 	try { articles = await getArticles(DB, 'es'); } catch { articles = []; }
 }
@@ -58,79 +131,30 @@ if (isAuthenticated) {
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Admin — Seibel Henríquez</title>
+	{saved && <script is:inline>window.location.replace('/admin');</script>}
 	<style>
 		*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 		body { font-family: system-ui, sans-serif; background: #1a2028; color: #e8e4df; min-height: 100vh; }
 
-		/* ——— Login ——— */
-		.login-wrap {
-			min-height: 100vh;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-		}
-		.login-card {
-			background: #242c36;
-			padding: 2.5rem;
-			width: 100%;
-			max-width: 400px;
-			border-top: 3px solid #b8956a;
-		}
+		/* Login */
+		.login-wrap { min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+		.login-card { background: #242c36; padding: 2.5rem; width: 100%; max-width: 400px; border-top: 3px solid #b8956a; }
 		.login-card h1 { font-size: 1.25rem; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.4rem; }
 		.login-card .subtitle { font-size: 0.8rem; color: #8a9099; margin-bottom: 2rem; }
 		.login-card label { display: block; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.4rem; }
-		.login-card input[type="password"] {
-			width: 100%;
-			background: #1a2028;
-			border: 1px solid #3a4452;
-			color: #e8e4df;
-			padding: 0.75rem 1rem;
-			font-size: 0.9rem;
-			outline: none;
-			transition: border-color 0.2s;
-		}
+		.login-card input[type="password"] { width: 100%; background: #1a2028; border: 1px solid #3a4452; color: #e8e4df; padding: 0.75rem 1rem; font-size: 0.9rem; outline: none; transition: border-color 0.2s; }
 		.login-card input[type="password"]:focus { border-color: #b8956a; }
 		.login-error { margin-top: 0.75rem; font-size: 0.8rem; color: #e57373; }
-		.login-card button {
-			margin-top: 1.5rem;
-			width: 100%;
-			background: #b8956a;
-			color: white;
-			border: none;
-			padding: 0.75rem 1rem;
-			font-size: 0.85rem;
-			letter-spacing: 0.08em;
-			text-transform: uppercase;
-			cursor: pointer;
-			transition: opacity 0.2s;
-		}
+		.login-card button { margin-top: 1.5rem; width: 100%; background: #b8956a; color: white; border: none; padding: 0.75rem 1rem; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; transition: opacity 0.2s; font-family: inherit; }
 		.login-card button:hover { opacity: 0.85; }
 
-		/* ——— Dashboard ——— */
-		.topbar {
-			background: #242c36;
-			border-bottom: 1px solid #2e3844;
-			padding: 1rem 2rem;
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			gap: 1rem;
-		}
+		/* Dashboard */
+		.topbar { background: #242c36; border-bottom: 1px solid #2e3844; padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
 		.topbar-left { display: flex; align-items: center; gap: 1rem; }
 		.brand { font-size: 0.85rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: #b8956a; text-decoration: none; }
 		.topbar h1 { font-size: 1rem; font-weight: 300; letter-spacing: 0.05em; color: #c8c0b8; }
 		.topbar-right { display: flex; align-items: center; gap: 1rem; }
-		.btn {
-			display: inline-block;
-			padding: 0.5rem 1.25rem;
-			font-size: 0.75rem;
-			letter-spacing: 0.08em;
-			text-transform: uppercase;
-			cursor: pointer;
-			text-decoration: none;
-			border: none;
-			transition: opacity 0.2s;
-		}
+		.btn { display: inline-block; padding: 0.5rem 1.25rem; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; text-decoration: none; border: none; font-family: inherit; transition: opacity 0.2s; }
 		.btn-primary { background: #b8956a; color: white; }
 		.btn-ghost { background: transparent; color: #8a9099; border: 1px solid #3a4452; }
 		.btn:hover { opacity: 0.8; }
@@ -140,30 +164,42 @@ if (isAuthenticated) {
 		.table-wrap { overflow-x: auto; }
 		table { width: 100%; border-collapse: collapse; }
 		thead { background: #242c36; }
-		th {
-			padding: 0.75rem 1rem;
-			text-align: left;
-			font-size: 0.7rem;
-			letter-spacing: 0.1em;
-			text-transform: uppercase;
-			color: #8a9099;
-			font-weight: 400;
-		}
-		td {
-			padding: 0.875rem 1rem;
-			font-size: 0.85rem;
-			font-weight: 300;
-			border-bottom: 1px solid #242c36;
-			vertical-align: middle;
-		}
+		th { padding: 0.75rem 1rem; text-align: left; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: #8a9099; font-weight: 400; }
+		td { padding: 0.875rem 1rem; font-size: 0.85rem; font-weight: 300; border-bottom: 1px solid #242c36; vertical-align: middle; }
 		tr:hover td { background: #202830; }
 		.slug { font-family: monospace; font-size: 0.8rem; color: #8a9099; }
 		.thumb { width: 56px; height: 40px; object-fit: cover; }
-		.actions { display: flex; gap: 0.5rem; align-items: center; }
+		.row-actions { display: flex; gap: 0.5rem; align-items: center; }
 		.btn-edit { background: #2e4060; color: #7ab4e8; padding: 0.35rem 0.8rem; font-size: 0.7rem; }
-		.btn-delete { background: #3d2020; color: #e57373; padding: 0.35rem 0.8rem; font-size: 0.7rem; border: none; cursor: pointer; }
+		.btn-delete { background: #3d2020; color: #e57373; padding: 0.35rem 0.8rem; font-size: 0.7rem; border: none; cursor: pointer; font-family: inherit; }
 		.empty { padding: 3rem; text-align: center; color: #5a6470; font-size: 0.9rem; }
 		.badge-bi { font-size: 0.65rem; background: #1a3030; color: #4caf90; padding: 0.15rem 0.4rem; border-radius: 2px; }
+		.form-error { color: #e57373; font-size: 0.85rem; background: #3d2020; padding: 0.75rem 1rem; margin-bottom: 1.5rem; }
+
+		/* Modal */
+		.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.75); display: flex; align-items: flex-start; justify-content: center; z-index: 200; padding: 2rem 1rem; overflow-y: auto; }
+		.modal-overlay[hidden] { display: none; }
+		.modal-card { background: #1a2028; border: 1px solid #2e3844; border-top: 3px solid #b8956a; width: 100%; max-width: 700px; flex-shrink: 0; }
+		.modal-header { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 1.75rem; border-bottom: 1px solid #2e3844; }
+		.modal-header h3 { font-size: 0.85rem; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; }
+		.modal-close { background: none; border: none; color: #8a9099; font-size: 1.25rem; cursor: pointer; line-height: 1; padding: 0; }
+		.modal-close:hover { color: #e8e4df; }
+		.modal-body { padding: 1.75rem; }
+		.modal-actions { display: flex; gap: 0.75rem; padding: 1.25rem 1.75rem; border-top: 1px solid #2e3844; }
+		.modal-error { color: #e57373; font-size: 0.8rem; background: #3d2020; padding: 0.65rem 0.9rem; margin-bottom: 1.25rem; }
+		.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+		.field { display: flex; flex-direction: column; gap: 0.35rem; margin-bottom: 1.1rem; }
+		.field label { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: #8a9099; }
+		.field label span { color: #e57373; margin-left: 0.15rem; }
+		.field input, .field textarea { background: #242c36; border: 1px solid #3a4452; color: #e8e4df; padding: 0.6rem 0.85rem; font-size: 0.875rem; outline: none; font-family: inherit; transition: border-color 0.2s; width: 100%; }
+		.field input:focus, .field textarea:focus { border-color: #b8956a; }
+		.field input[type="file"] { padding: 0.4rem 0.85rem; }
+		.field textarea { min-height: 90px; resize: vertical; }
+		.modal-section { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: #b8956a; border-bottom: 1px solid #2e3844; padding-bottom: 0.4rem; margin: 1.25rem 0 1rem; }
+		.note { font-size: 0.7rem; color: #5a6470; }
+		.current-file { display: flex; align-items: center; gap: 0.5rem; background: #242c36; padding: 0.4rem 0.75rem; font-size: 0.75rem; color: #8a9099; margin-bottom: 0.4rem; }
+		.current-file img { width: 44px; height: 32px; object-fit: cover; }
+		.slug-badge { font-family: monospace; font-size: 0.8rem; background: #242c36; color: #8a9099; padding: 0.4rem 0.75rem; border: 1px solid #2e3844; display: inline-block; margin-bottom: 1rem; }
 	</style>
 </head>
 <body>
@@ -190,7 +226,7 @@ if (isAuthenticated) {
 				<h1>/ Artículos</h1>
 			</div>
 			<div class="topbar-right">
-				<a href="/admin/articles/new" class="btn btn-primary">+ Nuevo artículo</a>
+				<button type="button" id="btn-new" class="btn btn-primary">+ Nuevo artículo</button>
 				<form method="POST" action="/admin" style="display:inline">
 					<input type="hidden" name="action" value="logout" />
 					<button type="submit" class="btn btn-ghost">Cerrar sesión</button>
@@ -199,12 +235,14 @@ if (isAuthenticated) {
 		</header>
 
 		<main>
+			{formError && <div class="form-error">{formError}</div>}
+
 			<div class="section-header">
 				<h2>Artículos ({articles.length})</h2>
 			</div>
 
 			{articles.length === 0 ? (
-				<p class="empty">No hay artículos. <a href="/admin/articles/new" style="color:#b8956a">Crea el primero.</a></p>
+				<p class="empty">No hay artículos. <button type="button" id="btn-new-empty" style="background:none;border:none;color:#b8956a;cursor:pointer;font-size:inherit;font-family:inherit">Crea el primero.</button></p>
 			) : (
 				<div class="table-wrap">
 					<table>
@@ -221,18 +259,28 @@ if (isAuthenticated) {
 						<tbody>
 							{articles.map((article) => (
 								<tr>
-									<td>
-										<img src={getMediaUrl(article.image_key)} alt={article.image_alt_es} class="thumb" />
-									</td>
+									<td><img src={getMediaUrl(article.image_key)} alt={article.image_alt_es} class="thumb" /></td>
 									<td>{article.title_es}</td>
 									<td class="slug">{article.slug}</td>
 									<td>{article.order_num}</td>
+									<td>{article.title_en && <span class="badge-bi">EN</span>}</td>
 									<td>
-										{article.title_en && <span class="badge-bi">EN</span>}
-									</td>
-									<td>
-										<div class="actions">
-											<a href={`/admin/articles/${article.id}`} class="btn btn-edit">Editar</a>
+										<div class="row-actions">
+											<button
+												type="button"
+												class="btn btn-edit"
+												data-id={article.id}
+												data-slug={article.slug}
+												data-order={String(article.order_num)}
+												data-title-es={article.title_es}
+												data-title-en={article.title_en ?? ''}
+												data-desc-es={article.description_es}
+												data-desc-en={article.description_en ?? ''}
+												data-alt-es={article.image_alt_es}
+												data-alt-en={article.image_alt_en ?? ''}
+												data-image-url={getMediaUrl(article.image_key)}
+												data-pdf-name={article.pdf_key.split('/').pop()}
+											>Editar</button>
 											<form method="POST" action="/admin" onsubmit="return confirm('¿Eliminar este artículo? Esta acción no se puede deshacer.')">
 												<input type="hidden" name="action" value="delete" />
 												<input type="hidden" name="id" value={article.id} />
@@ -247,6 +295,194 @@ if (isAuthenticated) {
 				</div>
 			)}
 		</main>
+
+		<!-- Modal de artículo (crear / editar) -->
+		<div id="article-modal" class="modal-overlay" hidden>
+			<div class="modal-card">
+				<div class="modal-header">
+					<h3 id="modal-title">Nuevo artículo</h3>
+					<button type="button" class="modal-close" id="modal-close" aria-label="Cerrar">✕</button>
+				</div>
+				<form method="POST" action="/admin" enctype="multipart/form-data" id="article-form">
+					<input type="hidden" name="action" id="f-action" value="create" />
+					<input type="hidden" name="id" id="f-id" value="" />
+
+					<div class="modal-body">
+						{formError && <div class="modal-error">{formError}</div>}
+
+						<!-- Cabecera: slug (crear) / slug-badge (editar) + orden -->
+						<div class="grid-2">
+							<div id="slug-field" class="field" style="margin-bottom:0">
+								<label for="f-slug">Slug (URL) <span>*</span></label>
+								<input type="text" id="f-slug" name="slug" pattern="[a-z0-9\-]+" placeholder="nombre-del-articulo" />
+								<span class="note">Minúsculas, números y guiones</span>
+							</div>
+							<div id="slug-display" hidden style="padding-top:0.1rem">
+								<p style="font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:#8a9099;margin-bottom:0.35rem">Slug</p>
+								<span class="slug-badge" id="f-slug-badge"></span>
+							</div>
+							<div class="field" style="margin-bottom:0">
+								<label for="f-order">Orden <span>*</span></label>
+								<input type="number" id="f-order" name="order_num" required value="1" min="0" />
+							</div>
+						</div>
+
+						<p class="modal-section">Contenido en Español</p>
+						<div class="field">
+							<label for="f-title-es">Título ES <span>*</span></label>
+							<input type="text" id="f-title-es" name="title_es" required />
+						</div>
+						<div class="field">
+							<label for="f-desc-es">Descripción ES <span>*</span></label>
+							<textarea id="f-desc-es" name="description_es" required></textarea>
+						</div>
+						<div class="field">
+							<label for="f-alt-es">Alt imagen ES <span>*</span></label>
+							<input type="text" id="f-alt-es" name="image_alt_es" required />
+						</div>
+
+						<p class="modal-section">Contenido en Inglés (opcional)</p>
+						<div class="field">
+							<label for="f-title-en">Título EN</label>
+							<input type="text" id="f-title-en" name="title_en" />
+						</div>
+						<div class="field">
+							<label for="f-desc-en">Descripción EN</label>
+							<textarea id="f-desc-en" name="description_en"></textarea>
+						</div>
+						<div class="field">
+							<label for="f-alt-en">Alt imagen EN</label>
+							<input type="text" id="f-alt-en" name="image_alt_en" />
+						</div>
+
+						<p class="modal-section">Archivos</p>
+						<div class="grid-2">
+							<div class="field">
+								<label for="f-image">Imagen de portada <span id="img-req">*</span></label>
+								<div id="f-cur-image" class="current-file" hidden></div>
+								<input type="file" id="f-image" name="image" accept=".jpg,.jpeg,.png,.webp" />
+								<span class="note" id="img-note">JPG, PNG o WebP</span>
+							</div>
+							<div class="field">
+								<label for="f-pdf">Archivo PDF <span id="pdf-req">*</span></label>
+								<div id="f-cur-pdf" class="current-file" hidden></div>
+								<input type="file" id="f-pdf" name="pdf" accept=".pdf" />
+								<span class="note" id="pdf-note">PDF para descarga</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="modal-actions">
+						<button type="submit" id="modal-submit" class="btn btn-primary">Crear artículo</button>
+						<button type="button" id="modal-cancel" class="btn btn-ghost">Cancelar</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<script is:inline>
+		(function () {
+			var modal    = document.getElementById('article-modal');
+			var form     = document.getElementById('article-form');
+			var fAction  = document.getElementById('f-action');
+			var fId      = document.getElementById('f-id');
+			var mTitle   = document.getElementById('modal-title');
+			var mSubmit  = document.getElementById('modal-submit');
+			var slugField   = document.getElementById('slug-field');
+			var slugDisplay = document.getElementById('slug-display');
+			var slugBadge   = document.getElementById('f-slug-badge');
+			var fSlug    = document.getElementById('f-slug');
+			var fOrder   = document.getElementById('f-order');
+			var fImage   = document.getElementById('f-image');
+			var fPdf     = document.getElementById('f-pdf');
+			var imgReq   = document.getElementById('img-req');
+			var pdfReq   = document.getElementById('pdf-req');
+			var imgNote  = document.getElementById('img-note');
+			var pdfNote  = document.getElementById('pdf-note');
+			var curImg   = document.getElementById('f-cur-image');
+			var curPdf   = document.getElementById('f-cur-pdf');
+
+			function openCreate() {
+				form.reset();
+				fAction.value = 'create';
+				fId.value = '';
+				mTitle.textContent = 'Nuevo artículo';
+				mSubmit.textContent = 'Crear artículo';
+				slugField.hidden = false;
+				slugDisplay.hidden = true;
+				fSlug.required = true;
+				fImage.required = true;
+				fPdf.required = true;
+				imgReq.hidden = false;
+				pdfReq.hidden = false;
+				curImg.hidden = true;
+				curPdf.hidden = true;
+				imgNote.textContent = 'JPG, PNG o WebP';
+				pdfNote.textContent = 'PDF para descarga';
+				modal.hidden = false;
+				document.getElementById('f-title-es').focus();
+			}
+
+			function openEdit(d) {
+				form.reset();
+				fAction.value = 'update';
+				fId.value = d.id;
+				mTitle.textContent = 'Editar artículo';
+				mSubmit.textContent = 'Guardar cambios';
+				slugField.hidden = true;
+				slugDisplay.hidden = false;
+				slugBadge.textContent = '/' + d.slug;
+				fSlug.required = false;
+				fImage.required = false;
+				fPdf.required = false;
+				imgReq.hidden = true;
+				pdfReq.hidden = true;
+				fOrder.value = d.order;
+				document.getElementById('f-title-es').value  = d.titleEs;
+				document.getElementById('f-title-en').value  = d.titleEn;
+				document.getElementById('f-desc-es').value   = d.descEs;
+				document.getElementById('f-desc-en').value   = d.descEn;
+				document.getElementById('f-alt-es').value    = d.altEs;
+				document.getElementById('f-alt-en').value    = d.altEn;
+				curImg.hidden = false;
+				curImg.innerHTML = '<img src="' + d.imageUrl + '" alt=""><span>Imagen actual</span>';
+				curPdf.hidden = false;
+				curPdf.textContent = '📄 ' + d.pdfName;
+				imgNote.textContent = 'Dejar vacío para mantener la actual';
+				pdfNote.textContent = 'Dejar vacío para mantener el actual';
+				modal.hidden = false;
+				document.getElementById('f-title-es').focus();
+			}
+
+			function closeModal() { modal.hidden = true; }
+
+			var btnNew = document.getElementById('btn-new');
+			if (btnNew) btnNew.addEventListener('click', openCreate);
+			var btnNewEmpty = document.getElementById('btn-new-empty');
+			if (btnNewEmpty) btnNewEmpty.addEventListener('click', openCreate);
+			document.getElementById('modal-close').addEventListener('click', closeModal);
+			document.getElementById('modal-cancel').addEventListener('click', closeModal);
+			modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+
+			document.querySelectorAll('.btn-edit').forEach(function (btn) {
+				btn.addEventListener('click', function () {
+					openEdit({
+						id:       btn.dataset.id,
+						slug:     btn.dataset.slug,
+						order:    btn.dataset.order,
+						titleEs:  btn.dataset.titleEs,
+						titleEn:  btn.dataset.titleEn,
+						descEs:   btn.dataset.descEs,
+						descEn:   btn.dataset.descEn,
+						altEs:    btn.dataset.altEs,
+						altEn:    btn.dataset.altEn,
+						imageUrl: btn.dataset.imageUrl,
+						pdfName:  btn.dataset.pdfName,
+					});
+				});
+			});
+		})();
+		</script>
 	</>
 )}
 

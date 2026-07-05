@@ -46,7 +46,14 @@
       "Bash(npx wrangler *)",
       "Bash(python3 -c \"import json; d=json.load\\(open\\('src/data/countries.json'\\)\\); print\\(len\\(d\\)\\)\")",
       "Bash(npm info *)",
-      "Bash(node -e \"const d=require\\('fs'\\).readFileSync\\('/dev/stdin','utf8'\\); const v=JSON.parse\\(d\\); console.log\\(v.slice\\(-20\\).join\\('\\\\n'\\)\\);\")"
+      "Bash(node -e \"const d=require\\('fs'\\).readFileSync\\('/dev/stdin','utf8'\\); const v=JSON.parse\\(d\\); console.log\\(v.slice\\(-20\\).join\\('\\\\n'\\)\\);\")",
+      "Bash(Remove-Item -Path \"c:\\\\Users\\\\frede\\\\Documents\\\\Clientes\\\\1_Websites\\\\SeibelHenriquez\\\\seibel\\\\src\\\\pages\\\\admin\\\\articles\\\\new.astro\" -Force)",
+      "Bash(Remove-Item -Path \"c:\\\\Users\\\\frede\\\\Documents\\\\Clientes\\\\1_Websites\\\\SeibelHenriquez\\\\seibel\\\\src\\\\pages\\\\admin\\\\articles\\\\[id].astro\" -Force)",
+      "Bash(Get-ChildItem \"c:\\\\Users\\\\frede\\\\Documents\\\\Clientes\\\\1_Websites\\\\SeibelHenriquez\\\\seibel\\\\src\\\\pages\\\\admin\\\\articles\" -ErrorAction SilentlyContinue)",
+      "Bash(rm \"c:/Users/frede/Documents/Clientes/1_Websites/SeibelHenriquez/seibel/src/pages/admin/articles/new.astro\" && rm \"c:/Users/frede/Documents/Clientes/1_Websites/SeibelHenriquez/seibel/src/pages/admin/articles/[id].astro\" && ls \"c:/Users/frede/Documents/Clientes/1_Websites/SeibelHenriquez/seibel/src/pages/admin/articles/\" 2>/dev/null || echo \"Directory empty or deleted\")"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\frede\\Documents\\Clientes\\1_Websites\\SeibelHenriquez\\seibel\\src\\pages\\admin\\articles"
     ]
   }
 }
